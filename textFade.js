@@ -8,7 +8,13 @@ const spanWrap = (string) => {
 
     let htmEl = '';
     for (let i = 0, len = strArr.length; i < len; i++) {
-      htmEl += `<span class="char-${i}">${strArr[i]}</span>`;
+      if (strArr[i] === '<') {
+        const j = i;
+        while (strArr[i++] !== '>');
+        htmEl += str.slice(j, i + 1);
+      } else {
+        htmEl += `<span class="char-${i}">${strArr[i]}</span>`;
+      }
     }
 
     $(this).html(htmEl);
@@ -32,15 +38,11 @@ const lineWrap = (line) => {
 };
 
 const shuffle = (array) => {
-  let counter = array.length, temp, index;
-  while (counter) {
-    index = Math.floor(Math.random() * counter);
-
-    counter--;
-
-    temp = array[counter];
-    array[counter] = array[index];
-    array[index] = temp;
+  for (let i = 0; i < array.length; i++) {
+    const temp = array[i];
+    const j = Math.floor(Math.random() * i);
+    array[i] = array[j];
+    array[j] = temp;
   }
   return array;
 };
