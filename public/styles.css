@@ -1,0 +1,12 @@
+.intro {
+  position: relative;
+}
+
+.step {
+  position: absolute;
+  display: none;
+}
+
+.step:first-child {
+  display: block;
+}

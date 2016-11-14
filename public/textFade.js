@@ -1,5 +1,5 @@
 /* eslint-disable no-undef, func-names, one-var, one-var-declaration-per-line, no-param-reassign */
-const $intro = $('.intro .step');
+let $intro;
 let currentStep = 0;
 
 const spanWrap = (string) => {
@@ -55,27 +55,32 @@ const fadeIn = (idx) => {
   $($intro[idx]).show();
   $.each(letters, (i, el) => {
     setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
-      (1000 / letters.length * i) + (1000 / 2)
+      (1000 / letters.length * i) + (950)
     );
   });
 };
 
 const fadeOut = (idx) => {
   const letters = shuffle($('[class*="char"]', $intro[idx]));
-  $($intro[idx]).hide();
   $.each(letters, (i, el) => {
     setTimeout(() => ($(el).animate({ opacity: 0 }, 100)), (1000 / letters.length * i));
   });
+  // $($intro[idx]).hide();
 };
 
 const next = () => {
-  fadeOut(currentStep);
-  fadeIn(currentStep + 1);
+  const lastStep = currentStep;
   currentStep = ++currentStep % $intro.length;
+  fadeOut(lastStep);
+  fadeIn(currentStep);
 };
 
-$intro.each((i, step) => {
-  lineWrap(spanWrap($(step)));
+$(document).ready(() => {
+  $intro = $('.intro .step');
+  $intro.each((i, step) => {
+    lineWrap(spanWrap($(step)));
+    const opacity = (i === 0 ? '1' : '0');
+    $("[class*='char']", $intro[i]).css('opacity', opacity);
+  });
+  setInterval(next, 5000);
 });
-
-setInterval(next, 5000);
