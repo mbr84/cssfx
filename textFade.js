@@ -1,4 +1,6 @@
 /* eslint-disable no-undef, func-names, one-var, one-var-declaration-per-line, no-param-reassign */
+const $intro = $('.intro .step');
+let currentStep = 0;
 
 const spanWrap = (string) => {
   $(string).each(function () {
@@ -18,6 +20,7 @@ const spanWrap = (string) => {
     }
 
     $(this).html(htmEl);
+    return $(this);
   });
 };
 
@@ -46,3 +49,31 @@ const shuffle = (array) => {
   }
   return array;
 };
+
+const fadeIn = (idx) => {
+  const letters = shuffle($('[class*="char"]', $intro[idx]));
+  $($intro[idx]).show();
+  $.each(letters, (i, el) => {
+    setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
+      (1000 / letters.length * i) + (1000 / 2)
+    );
+  });
+};
+
+const fadeOut = (idx) => {
+  const letters = shuffle($('[class*="char"]', $intro[idx]));
+  $($intro[idx]).hide();
+  $.each(letters, (i, el) => {
+    setTimeout(() => ($(el).animate({ opacity: 0 }, 100)), (1000 / letters.length * i));
+  });
+};
+
+const next = () => {
+  fadeOut(currentStep);
+  fadeIn(currentStep + 1);
+  currentStep++;
+};
+
+$intro.each((i, step) => {
+  lineWrap(spanwrap($(step)));
+});
