@@ -32,15 +32,7 @@ const lineWrap = (line) => {
 };
 
 const shuffle = (array) => {
-  let counter = array.length, temp, index;
-  while (counter) {
-    index = Math.floor(Math.random() * counter);
-
-    counter--;
-
-    temp = array[counter];
-    array[counter] = array[index];
-    array[index] = temp;
-  }
+  for (let j, temp, i = array.length; i; j = Math.floor(Math.random() *
+      i), temp = array[--i], array[i] = array[j], array[j] = temp);
   return array;
 };
