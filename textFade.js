@@ -71,9 +71,11 @@ const fadeOut = (idx) => {
 const next = () => {
   fadeOut(currentStep);
   fadeIn(currentStep + 1);
-  currentStep++;
+  currentStep = ++currentStep % $intro.length;
 };
 
 $intro.each((i, step) => {
-  lineWrap(spanwrap($(step)));
+  lineWrap(spanWrap($(step)));
 });
+
+setInterval(next, 5000);
