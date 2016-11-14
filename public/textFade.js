@@ -55,7 +55,7 @@ const fadeIn = (idx) => {
   $($intro[idx]).show();
   $.each(letters, (i, el) => {
     setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
-      (1000 / letters.length * i) + (950)
+      (1000 / letters.length * i) + (1000)
     );
   });
 };
