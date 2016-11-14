@@ -1,4 +1,4 @@
-/* eslint-disable no-undef, func-names */
+/* eslint-disable no-undef, func-names, one-var, one-var-declaration-per-line, no-param-reassign */
 
 const spanWrap = (string) => {
   $(string).each(function () {
@@ -29,4 +29,18 @@ const lineWrap = (line) => {
 
     $(this).html(htmEl);
   });
+};
+
+const shuffle = (array) => {
+  let counter = array.length, temp, index;
+  while (counter) {
+    index = Math.floor(Math.random() * counter);
+
+    counter--;
+
+    temp = array[counter];
+    array[counter] = array[index];
+    array[index] = temp;
+  }
+  return array;
 };
