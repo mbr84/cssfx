@@ -1,5 +1,14 @@
+body {
+  font-family: Arial;
+}
+
 .intro {
+  font-size: xx-large;
+  font-weight: 600;
   position: relative;
+  width: 500px;
+  margin: auto;
+  text-align: center;
 }
 
 .step {
