@@ -65,7 +65,6 @@ const fadeOut = (idx) => {
   $.each(letters, (i, el) => {
     setTimeout(() => ($(el).animate({ opacity: 0 }, 100)), (1000 / letters.length * i));
   });
-  // $($intro[idx]).hide();
 };
 
 const next = () => {
