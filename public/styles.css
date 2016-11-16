@@ -237,12 +237,12 @@ figure {
 
 #flip3 {
   transform: rotateZ(-90deg);
-  margin-top: 55px;
+  margin-top: 43px;
 }
 
 #flip4 {
   transform: rotateZ(90deg);
-  margin-top: 55px;
+  margin-top: 43px;
 }
 
 .rfront, .rback, .rleft, .rright {
