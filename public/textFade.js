@@ -55,7 +55,7 @@ const fadeIn = (idx) => {
   $($intro[idx]).show();
   $.each(letters, (i, el) => {
     setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
-      (750 / letters.length * i) + (750)
+      (500 / letters.length * i) + (500)
     );
   });
 };
@@ -63,7 +63,7 @@ const fadeIn = (idx) => {
 const fadeOut = (idx) => {
   const letters = shuffle($('[class*="char"]', $intro[idx]));
   $.each(letters, (i, el) => {
-    setTimeout(() => ($(el).animate({ opacity: 0 }, 100)), (1000 / letters.length * i));
+    setTimeout(() => ($(el).animate({ opacity: 0 }, 100)), (500 / letters.length * i));
   });
 };
 
