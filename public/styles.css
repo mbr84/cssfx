@@ -78,6 +78,15 @@ body {
 /* Spinners */
 .spinners-boxes {
   font-weight: 600;
+  position: relative;
+  height: 90%;
+  width: 85%;
+  overflow-x: hidden;
+}
+
+.spinners-boxes section {
+  position: absolute;
+  top: 10px;
 }
 
 .hidebf div {
