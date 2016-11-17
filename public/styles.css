@@ -5,8 +5,8 @@ body {
 /* section scroll */
 
 .outer-container {
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   position: fixed;
   display: flex;
   top: 0px;
@@ -14,23 +14,30 @@ body {
 }
 
 .left-container, .right-container {
-  width: 50%;
   height: 100%;
+  width: 50%;
   overflow: hidden;
   position: relative;
 }
 
 .left-scroll, .right-scroll {
-  position: absolute;
-  top: 0%;
   height: calc(100vh * 3);
   width: 100%;
-  transition: .3s top ease-in-out;
+  position: absolute;
+  transition: .3s top ease-in;
+}
+
+.left-scroll {
+  top: 0%;
+}
+
+.right-scroll {
+  bottom: 0%;
 }
 
 .section {
   height: 100vh;
-  width: 100;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
