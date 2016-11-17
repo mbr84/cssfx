@@ -56,7 +56,9 @@ body {
   top: 776px;
 }
 
-
+.section1 {
+  padding-top: 35%;
+}
 
 .intro {
   font-size: xx-large;
