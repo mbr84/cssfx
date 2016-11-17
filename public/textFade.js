@@ -75,6 +75,16 @@ const next = () => {
 };
 
 $(document).ready(() => {
+  let timestamp = Date.parse(new Date);
+  $(document).on('wheel', () => {
+    if (Date.parse(new Date) - timestamp > 1200) {
+      let top = $('.left-scroll').css('top');
+      top = top.slice(0, top.length - 2);
+      const newTop = `${top.slice(0, top.lenth - 2) - window.innerHeight}px`;
+      $('.left-scroll').css('top', newTop);
+      timestamp = Date.parse(new Date);
+    }
+  });
   $intro = $('.intro .step');
   $intro.each((i, step) => {
     lineWrap(spanWrap($(step)));
