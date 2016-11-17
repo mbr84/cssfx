@@ -5,66 +5,44 @@ body {
 /* section scroll */
 
 .outer-container {
-  width: 100%;
-  height: 776px;
-  position: relative;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  top: 0px;
+  left: 0px;
 }
 
 .left-container, .right-container {
   width: 50%;
   height: 100%;
-  position: absolute;
-}
-
-.left-container {
-  left: 0%;
-}
-
-.right-container {
-  left: 50%;
-}
-
-.left-scroll-container, .right-scroll-container {
-  position: relative;
-  height: 100%;
-  width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .left-scroll, .right-scroll {
   position: absolute;
-  top: 0px;
-  height: 2328px;
+  top: 0%;
+  height: calc(100vh * 3);
   width: 100%;
+  transition: .3s top ease-in-out;
 }
 
 .section {
-  height: 776px;
-  width: 100%;
-  position: absolute;
-}
-
-.left-container .section1, .right-container .section3 {
-  top: 0px;
-}
-
-.left-container .section3, .right-container .section1 {
-  top: 1552px;
-}
-
-.section2 {
-  top: 776px;
-}
-
-.section1 {
-  padding-top: 35%;
+  height: 100vh;
+  width: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro {
   font-size: xx-large;
   font-weight: 900;
-  margin: auto;
+  width: 60%;
   text-align: center;
+  position: relative;
+  height: 20%;
 }
 
 .step {
@@ -170,7 +148,7 @@ body {
 }
 
 .rotating .container:hover .front {
-	transform: translateZ(300px);
+	transform: translateZ(275px);
 }
 
 .back, .rback {
@@ -183,7 +161,7 @@ body {
 }
 
 .rotating .container:hover .back {
-  transform: rotateY(180deg) translateZ(300px);
+  transform: rotateY(180deg) translateZ(275px);
 
 }
 
@@ -196,7 +174,7 @@ body {
 }
 
 .rotating .container:hover .right {
-  transform: rotateY(-270deg) translateZ(300px);
+  transform: rotateY(-270deg) translateZ(275px);
 
 }
 
@@ -209,7 +187,7 @@ body {
 }
 
 .rotating .container:hover .left {
-  transform: rotateY(270deg) translateZ(300px);
+  transform: rotateY(270deg) translateZ(275px);
 }
 
 .top, .rtop {
@@ -221,7 +199,7 @@ body {
 }
 
 .rotating .container:hover .top {
-  transform: rotateX(-270deg) translateZ(300px);
+  transform: rotateX(-270deg) translateZ(275px);
 }
 
 .bottom, .rbottom {
@@ -233,7 +211,7 @@ body {
 }
 
 .rotating .container:hover .bottom {
-	transform: rotateX(270deg) translateZ(300px);
+	transform: rotateX(270deg) translateZ(275px);
 }
 
 @keyframes rotate {
@@ -245,8 +223,9 @@ body {
 
 figure {
   margin: auto;
-  padding-top: 280px;
+  padding-top: 40%;
   width: 400px;
+  padding-left: 33%;
 }
 
 .buttons {
