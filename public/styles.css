@@ -76,17 +76,40 @@ body {
 
 
 /* Spinners */
-.spinners-boxes {
+.spinners-view-box {
   font-weight: 600;
   position: relative;
-  height: 90%;
-  width: 85%;
-  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-.spinners-boxes section {
+.spinners-scroll-container {
   position: absolute;
   top: 10px;
+  height: 100%;
+  width: 200%;
+}
+
+.spinner-scroll {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.box1, .box2 {
+  top: 0px;
+  position: absolute;
+}
+
+.box1 {
+  left: 0%;
+  width: 50%;
+}
+
+.box2 {
+  left: 50%;
+  width: 50%;
 }
 
 .hidebf div {
