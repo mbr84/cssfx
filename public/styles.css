@@ -24,7 +24,7 @@ body {
   height: calc(100vh * 3);
   width: 100%;
   position: absolute;
-  transition: .3s top ease-in;
+  transition: .3s top ease-in, .3s bottom ease-in;
 }
 
 .left-scroll {

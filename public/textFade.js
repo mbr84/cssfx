@@ -80,7 +80,7 @@ $(document).ready(() => {
 
   $(document).on('wheel', (e) => {
     const now = (new Date).getTime();
-    if (now - timestamp > 700 && now - lastFire > 300) {
+    if (now - timestamp > 700 && now - lastFire > 200) {
       const top = $('.left-scroll').css('top');
       const bottom = $('.right-scroll').css('bottom')
       if (e.originalEvent.deltaY > 0) {
