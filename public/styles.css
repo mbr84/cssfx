@@ -23,15 +23,21 @@ body {
     padding: 0;
 }
 
-.contents li {
+li {
   display: inline-block;
   margin: 10px;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255,255,255,.3);
   border-radius: 10px;
   font-size: larger;
   letter-spacing: 1.5px;
   padding-left: 5px;
   padding-right: 5px;
+  transition: background-color .2s;
+  cursor: pointer;
+}
+
+.active {
+  background-color: white;
 }
 
 .outer-container {
@@ -54,7 +60,8 @@ body {
   height: calc(100vh * 3);
   width: 100%;
   position: absolute;
-  transition: .3s top ease-in, .3s bottom ease-in;
+  transition: .4s top ease-in, .4s bottom ease-in;
+  transition-delay: .4s;
 }
 
 .left-scroll {
