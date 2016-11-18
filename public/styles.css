@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   overflow: hidden;
+  background-color: cornflowerblue;
 }
 
 body {
@@ -10,17 +11,18 @@ body {
 /* section scroll */
 
 .contents {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 40px;
-    z-index: 2;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  z-index: 2;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
 }
 
 li {
@@ -30,13 +32,21 @@ li {
   border-radius: 10px;
   font-size: larger;
   letter-spacing: 1.5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  transition: background-color .2s;
+  padding: 6px 19px;
   cursor: pointer;
+  font-size: 15px;
+  transition: background-color .2s;
+}
+
+li:hover {
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .active {
+  background-color: white;
+}
+
+.active:hover {
   background-color: white;
 }
 
@@ -61,7 +71,7 @@ li {
   width: 100%;
   position: absolute;
   transition: .4s top ease-in, .4s bottom ease-in;
-  transition-delay: .4s;
+  transition-delay: .3s;
 }
 
 .left-scroll {
