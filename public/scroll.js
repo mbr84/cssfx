@@ -7,7 +7,6 @@ $(document).ready(() => {
     const inRange = $('.left-scroll').height() + (3 / 2) * $('.section1').offset().top !== 0;
     const menuItems = Array.from(document.querySelectorAll('[data-position]'));
     const currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
-    if (currentIndex !== 0 && !currentIndex) { return; }
     let op, activeNow;
     const deltaY = (e.originalEvent ? e.originalEvent.deltaY || 0 : 0);
     if (typeof e === 'string') {
@@ -47,17 +46,12 @@ $(document).ready(() => {
 
   let timestamp = 0;
   let lastFire = 0;
-  let first = middle = 5;
   $(document).on('wheel', (e) => {
     const now = (new Date).getTime();
-    const last = e.originalEvent.deltaY;
-    if (Math.abs(middle) < 5) {
-      first = middle = 5;
-    } else if (now - timestamp > 200 && (middle > last && middle > first) || (middle < last && middle < first)) {
+    if (now - timestamp > 500 && now - lastFire > 100) {
       scroll(e);
       timestamp = Date.parse(new Date);
     }
-    first = middle;
-    middle = last;
+    lastFire = now;
   });
 });
