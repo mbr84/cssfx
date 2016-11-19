@@ -4,7 +4,7 @@ $(document).ready(() => {
   const scroll = (e) => {
     let top = $('.left-scroll').css('top');
     let bottom = $('.right-scroll').css('bottom');
-    const inRange = $('.left-scroll').height() + (4 / 3) * $('.section1').offset().top !== 0;
+    const atBottom = $('.left-scroll').height() + (4 / 3) * $('.section1').offset().top === 0;
     const menuItems = Array.from(document.querySelectorAll('[data-position]'));
     const currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
     let op, activeNow;
@@ -15,7 +15,7 @@ $(document).ready(() => {
       activeNow = currentIndex;
       menuItems[currentIndex] = {};
     } else if (e.which === 40 || deltaY > 0) {
-      if (!inRange) { return; }
+      if (atBottom) { return; }
       activeNow = currentIndex + 1;
       op = '-';
     } else if (e.which === 38 || deltaY < 0) {
@@ -23,12 +23,10 @@ $(document).ready(() => {
       op = '+';
       activeNow = currentIndex - 1;
     }
-    if (menuItems[currentIndex]) {
-      menuItems[currentIndex].className = '';
-      menuItems[activeNow].className = 'active';
-      $('.left-scroll').css({ top: `calc(${top} ${op} 100%)` });
-      $('.right-scroll').css({ bottom: `calc(${bottom} ${op} 100%)` });
-    }
+    menuItems[currentIndex].className = '';
+    menuItems[activeNow].className = 'active';
+    $('.left-scroll').css({ top: `calc(${top} ${op} 100%)` });
+    $('.right-scroll').css({ bottom: `calc(${bottom} ${op} 100%)` });
   };
 
   // const clickScroll = (pos) => {
@@ -49,7 +47,7 @@ $(document).ready(() => {
   let lastFire = 0;
   $(document).on('wheel', (e) => {
     const now = (new Date).getTime();
-    if (now - lastFire > 100) {
+    if (now - lastFire > 280) {
       scroll(e);
       timestamp = Date.parse(new Date);
     }
