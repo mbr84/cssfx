@@ -326,19 +326,19 @@ figure.rotating {
 }
 
 .show-back {
-  transform: rotateX(-180deg) translateY(200px) translateZ(50px);
+  transform: rotateX(-180deg) translateY(200px) translateZ(50px) translatex(7px);
 }
 
 .show-front {
-  transform: translateZ(-50px);
+  transform: translateZ(-50px) translatex(8px);
 }
 
 .show-bottom {
-  transform: rotateX(90deg) translatez(100px);
+  transform: rotateX(90deg) translatez(100px) translatex(13px);
 }
 
 .show-top {
-  transform: translatez(-200px) translatey(-100px) rotateX(-90deg);
+  transform: translatez(-200px) translatey(-106px) translatex(12px) rotateX(-90deg);
 }
 
 .show-right {
