@@ -337,7 +337,7 @@ figure.rotating {
 }
 
 .show-top {
-  transform: translatez(-200px) translatey(-106px) translatex(12px) rotateX(-90deg);
+  transform: translatez(-200px) translatey(-106px) translatex(13px) rotateX(-90deg);
 }
 
 .show-right {
