@@ -276,7 +276,6 @@ figure.rotating {
 	font-size: xx-large;
   color: #fefefa;
   z-index: 100;
-	text-decoration:none;
 	color:#fff;
 	position:relative;
 	padding:10px 30px;
@@ -294,7 +293,7 @@ figure.rotating {
 .button:last-child {
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
-	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 5px 8px 5px #999, 0px 10px 5px #999;
+	box-shadow: inset 0px 2px 2px #2ab7ec, 0px 5px 0px 0px #156785, 5px 8px 5px #999, 0px 10px 5px #999;
 }
 
 .button:active {
