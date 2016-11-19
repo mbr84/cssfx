@@ -23,10 +23,12 @@ $(document).ready(() => {
       op = '+';
       activeNow = currentIndex - 1;
     }
-    menuItems[currentIndex].className = '';
-    menuItems[activeNow].className = 'active';
-    $('.left-scroll').css({ top: `calc(${top} ${op} 100%)` });
-    $('.right-scroll').css({ bottom: `calc(${bottom} ${op} 100%)` });
+    if (menuItems[currentIndex]) {
+      menuItems[currentIndex].className = '';
+      menuItems[activeNow].className = 'active';
+      $('.left-scroll').css({ top: `calc(${top} ${op} 100%)` });
+      $('.right-scroll').css({ bottom: `calc(${bottom} ${op} 100%)` });
+    }
   };
 
   // const clickScroll = (pos) => {
@@ -47,7 +49,7 @@ $(document).ready(() => {
   let lastFire = 0;
   $(document).on('wheel', (e) => {
     const now = (new Date).getTime();
-    if (now - lastFire > 150) {
+    if (now - lastFire > 100) {
       scroll(e);
       timestamp = Date.parse(new Date);
     }
