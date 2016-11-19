@@ -302,6 +302,7 @@ figure.rotating {
 .button:active {
 	top:3px;
 	background-image: linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+  border: none;
 	box-shadow: inset 0px 1px 0px #2ab7ec, inset 5px 0px 5px #0b698b, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
 }
 
