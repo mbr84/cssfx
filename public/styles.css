@@ -326,11 +326,11 @@ figure.rotating {
 }
 
 .show-back {
-  transform: rotateX(-180deg) translateY(200px) translateZ(50px) translatex(7px);
+  transform: rotateX(-180deg) translateY(200px) translateZ(50px) translatex(10px);
 }
 
 .show-front {
-  transform: translateZ(-50px) translatex(8px);
+  transform: translateZ(-50px) translatex(11px);
 }
 
 .show-bottom {
