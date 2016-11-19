@@ -47,7 +47,7 @@ $(document).ready(() => {
   let lastFire = 0;
   $(document).on('wheel', (e) => {
     const now = (new Date).getTime();
-    if (now - lastFire > 100) {
+    if (now - lastFire > 150) {
       scroll(e);
       timestamp = Date.parse(new Date);
     }
