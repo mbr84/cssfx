@@ -1,7 +1,6 @@
 html, body {
   height: 100%;
   overflow: hidden;
-  background-color: cornflowerblue;
 }
 
 body {
@@ -137,14 +136,9 @@ li:hover {
 }
 
 .box1 {
-  left: 0%;
-  width: 50%;
+  left: 15%;
 }
 
-.box2 {
-  left: 50%;
-  width: 50%;
-}
 
 .hidebf div {
   backface-visibility: hidden;

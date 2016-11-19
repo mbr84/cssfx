@@ -1,10 +1,10 @@
-/* eslint-disable no-undef */
+/* eslint-disable no-undef, one-var, one-var-declaration-per-line, no-param-reassign*/
 
 $(document).ready(() => {
   const scroll = (e) => {
     let top = $('.left-scroll').css('top');
     let bottom = $('.right-scroll').css('bottom');
-    const inRange = $('.left-scroll').height() + (3 / 2) * $('.section1').offset().top !== 0;
+    const inRange = $('.left-scroll').height() + (4 / 3) * $('.section1').offset().top !== 0;
     const menuItems = Array.from(document.querySelectorAll('[data-position]'));
     const currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
     let op, activeNow;
@@ -44,11 +44,10 @@ $(document).ready(() => {
     if (e.which === 40 || e.which === 38) scroll(e);
   });
 
-  let timestamp = 0;
   let lastFire = 0;
   $(document).on('wheel', (e) => {
     const now = (new Date).getTime();
-    if (now - timestamp > 500 && now - lastFire > 100) {
+    if (now - lastFire > 100) {
       scroll(e);
       timestamp = Date.parse(new Date);
     }
