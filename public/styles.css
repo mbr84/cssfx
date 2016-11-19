@@ -408,7 +408,7 @@ figure.rotating {
 .space {
   margin: auto;
   width: 800px;
-  height: 700px;
+  height: 100vh;
   background: url('./Ery_Concept_X-Wing_small.png') no-repeat center 150px, url('./stars.jpg'), no-repeat top right;
   transition: background-position 10s;
 }
