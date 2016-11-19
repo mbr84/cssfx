@@ -279,14 +279,15 @@ figure {
 .buttons {
   display: flex;
   margin-bottom: 50px;
-  margin-left: -69px;
+  margin-left: -9px;
+  margin-top: -117px;
 }
 
 
 .button {
 	background-color:#3bb3e0;
 	font-family: 'Open Sans', sans-serif;
-	font-size: x-large;
+	font-size: xx-large;
   color: #fefefa;
   z-index: 100;
 	text-decoration:none;
