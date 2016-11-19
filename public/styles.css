@@ -332,11 +332,11 @@ figure.rotating {
 }
 
 .show-right {
-  transform: rotateY(-90deg) rotateX(90deg) translatey(129px) translatez(100px);
+  transform: rotateY(-90deg) rotateX(90deg) translatey(141px) translatez(100px);
 }
 
 .show-left {
-  transform: rotateY(90deg) rotateX(90deg) translatey(67px) translatez(100px) translatex(100px);
+  transform: rotateY(90deg) rotateX(90deg) translatey(55px) translatez(100px) translatex(100px);
 }
 
 .rface {
