@@ -1,56 +1,68 @@
 /* eslint-disable no-undef, one-var, one-var-declaration-per-line, no-param-reassign*/
 
 $(document).ready(() => {
+  let isMoving = false;
+  const delay = 900;
   const scroll = (e) => {
-    let top = $('.left-scroll').css('top');
-    let bottom = $('.right-scroll').css('bottom');
-    const atBottom = $('.left-scroll').height() + (4 / 3) * $('.section1').offset().top === 0;
-    const menuItems = Array.from(document.querySelectorAll('[data-position]'));
-    const currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
-    let op, activeNow;
-    const deltaY = (e.originalEvent ? e.originalEvent.deltaY || 0 : 0);
-    if (typeof e === 'string') {
-      top = bottom = e;
-      op = '* -1 *';
-      activeNow = currentIndex;
-      menuItems[currentIndex] = {};
-    } else if (e.which === 40 || deltaY > 0) {
-      if (atBottom) { return; }
-      activeNow = currentIndex + 1;
-      op = '-';
-    } else if (e.which === 38 || deltaY < 0) {
-      if ($('.section1').offset().top === 0) { return; }
-      op = '+';
-      activeNow = currentIndex - 1;
+    if (!isMoving) {
+      isMoving = true;
+      then = (new Date).getTime();
+      const top = $('.left-scroll').css('top');
+      const bottom = $('.right-scroll').css('bottom');
+      const atBottom = $('.left-scroll').height() + (4 / 3) * $('.section1').offset().top === 0;
+      const atTop = $('.section1').offset().top === 0;
+      const menuItems = Array.from(document.querySelectorAll('[data-position]'));
+      const currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
+      const deltaY = e.originalEvent.deltaY || 0;
+      let op, activeNow;
+
+      if (e.which === 40 || deltaY > 0) {
+        if (atBottom) {
+          isMoving = false;
+          return;
+        }
+
+        activeNow = currentIndex + 1;
+        op = '-';
+      } else if (e.which === 38 || deltaY < 0) {
+        if (atTop) {
+          isMoving = false;
+          return;
+        }
+
+        activeNow = currentIndex - 1;
+        op = '+';
+      }
+
+      setTimeout(() => { isMoving = false; }, delay);
+
+      $([menuItems[activeNow]]).addClass('active').siblings()
+      .removeClass('active');
+      $('.left-scroll').css({ top: `calc(${top} ${op} 100%)` });
+      $('.right-scroll').css({ bottom: `calc(${bottom} ${op} 100%)` });
     }
-    menuItems[currentIndex].className = '';
-    menuItems[activeNow].className = 'active';
-    $('.left-scroll').css({ top: `calc(${top} ${op} 100%)` });
-    $('.right-scroll').css({ bottom: `calc(${bottom} ${op} 100%)` });
   };
 
-  // const clickScroll = (pos) => {
-  //   $('.left-scroll').css({ top: `calc(${pos} * -100%)` });
-  //   $('.right-scroll').css({ bottom: `calc(${pos} * -100%)` });
-  // };
+  const clickScroll = (pos) => {
+    isMoving = true;
+    setTimeout(() => { isMoving = false; }, 800);
+    $('.left-scroll').css({ top: `calc(${pos} * -100%)` });
+    $('.right-scroll').css({ bottom: `calc(${pos} * -100%)` });
+  };
 
   $('.contents').click((e) => {
-    document.getElementsByClassName('active')[0].className = '';
-    e.target.className = 'active';
-    scroll(e.target.dataset.position);
+    if (e.target.tagName === 'LI') {
+      $([e.target]).addClass('active').siblings()
+      .removeClass('active');
+      clickScroll(e.target.dataset.position);
+    }
   });
 
   $(document).on('keydown', (e) => {
     if (e.which === 40 || e.which === 38) scroll(e);
   });
 
-  let lastFire = 0;
   $(document).on('wheel', (e) => {
-    const now = (new Date).getTime();
-    if (now - lastFire > 80) {
-      scroll(e);
-      timestamp = Date.parse(new Date);
-    }
-    lastFire = now;
+    if (Math.abs(e.originalEvent.deltaY) > 35) scroll(e);
   });
 });

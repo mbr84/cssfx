@@ -69,7 +69,7 @@ li:hover {
   height: calc(100vh * 4);
   width: 100%;
   position: absolute;
-  transition: .4s top ease-in, .4s bottom ease-in;
+  transition: .5s top ease-in, .5s bottom ease-in;
   transition-delay: .3s;
 }
 
@@ -87,6 +87,11 @@ li:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.section1 {
+  background-image: linear-gradient(#ffebc6 0%, #ad925f 100%);
+  color: #4a3104;
 }
 
 .intro {
@@ -419,7 +424,7 @@ figure.rotating {
   margin: auto;
   width: 800px;
   height: 100vh;
-  background: url('./Ery_Concept_X-Wing_small.png') no-repeat center 150px, url('./stars.jpg'), no-repeat top right;
+  background: url('./Ery_Concept_X-Wing_small.png') no-repeat center 150px, url('./stars2.jpg'), no-repeat top right;
   transition: background-position 10s;
 }
 
