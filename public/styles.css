@@ -327,6 +327,7 @@ figure {
   padding-top: 40%;
   width: 400px;
   padding-left: 33%;
+  font-weight: 600;
 }
 
 .buttons {
@@ -401,19 +402,19 @@ figure {
 }
 
 .show-bottom {
-  transform: rotateX(90deg) translatez(100px) translatex(13px);
+  transform: rotateX(90deg) translatez(100px) translatex(7px);
 }
 
 .show-top {
-  transform: translatez(-200px) translatey(-106px) translatex(13px) rotateX(-90deg);
+  transform: translatez(-200px) translatey(-106px) translatex(7px) rotateX(-90deg);
 }
 
 .show-right {
-  transform: rotateY(-90deg) rotateX(90deg) translatey(141px) translatez(100px);
+  transform: rotateY(-90deg) rotateX(90deg) translatey(137px) translatez(100px);
 }
 
 .show-left {
-  transform: rotateY(90deg) rotateX(90deg) translatey(55px) translatez(100px) translatex(100px);
+  transform: rotateY(90deg) rotateX(90deg) translatey(58px) translatez(100px) translatex(100px);
 }
 
 .rface {
