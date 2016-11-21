@@ -99,7 +99,18 @@ li:hover {
 }
 
 .section2 {
-  background-color: black;
+  height: 100vh;
+  width: 100%;
+}
+
+.left-container .section2 {
+  background-image: radial-gradient(at 100% 50%, black, #110221);
+  height: 100vh;
+  width: 100%;
+}
+
+.right-container .section2 {
+  background-image: radial-gradient(at 0% 50%, black, #110221);
   height: 100vh;
   width: 100%;
 }
@@ -323,11 +334,12 @@ li:hover {
 }
 
 figure {
-  margin: auto;
-  padding-top: 40%;
-  width: 400px;
-  padding-left: 33%;
   font-weight: 600;
+}
+
+.rotating {
+  align-self: flex-end;
+  padding-bottom: 10%;
 }
 
 .buttons {
