@@ -81,5 +81,5 @@ $(document).ready(() => {
     const opacity = (i === 0 ? '1' : '0');
     $("[class*='char']", $intro[i]).css('opacity', opacity);
   });
-  setInterval(next, 3000);
+  setInterval(next, 4000);
 });

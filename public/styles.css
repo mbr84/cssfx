@@ -404,7 +404,7 @@ figure {
 
 .button:active:last-child {
   border-right: none;
-	box-shadow: inset 0px 1px 0px #2ab7ec, inset 5px 0px 5px #0b698b, 0px 2px 0px 0px #156785, 2px 4px 5px #282b4a, 0px 4px 3px #282b4a;
+	box-shadow: inset 0px 1px 0px #2ab7ec, inset 5px 0px 5px #0b698b, 0px 2px 0px 0px #156785, 1px 4px 5px #282b4a, 0px 4px 3px #282b4a;
 }
 
 
