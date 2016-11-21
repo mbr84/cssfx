@@ -206,7 +206,7 @@ li:hover {
 /* Define each face based on direction */
 
 .rfront {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(23,69,214,0.7);
 }
 
 .front {
@@ -269,7 +269,7 @@ li:hover {
 }
 
 .rleft {
-  background: rgba(0, 0, 196, 0.7);
+  background: rgba(0, 196, 164, 0.7);
 }
 
 .left {
