@@ -329,10 +329,6 @@ figure {
   padding-left: 33%;
 }
 
-figure.rotating {
-  padding-top: 47%;
-}
-
 .buttons {
   display: flex;
   margin-bottom: 50px;
