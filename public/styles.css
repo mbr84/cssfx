@@ -103,6 +103,16 @@ li:hover {
   width: 100%;
 }
 
+.left-container .section3 {
+  background-image: radial-gradient(at 100% 50%, #a1d6ea, #110221);
+}
+
+.right-container .section3 {
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(at 0% 50%, #a1d6ea, #110221);
+}
+
 .left-container .section2 {
   background-image: radial-gradient(at 100% 50%, black, #110221);
   height: 100vh;
@@ -362,7 +372,7 @@ figure {
 	border-left:2px solid #2ab7ec;
   border-right: 2px solid #2b9bc5;
 	background-image: linear-gradient(rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 13px 5px #282b4a;
 	cursor: pointer;
 }
 
@@ -376,7 +386,7 @@ figure {
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
   border-right: none;
-	box-shadow: inset 0px 2px 2px #2ab7ec, 0px 5px 0px 0px #156785, 5px 8px 5px #999, 0px 10px 5px #999;
+	box-shadow: inset 0px 2px 2px #2ab7ec, 0px 5px 0px 0px #156785, 4px 10px 5px #282b4a, 0px 12px 5px #282b4a
 }
 
 .button:active {
@@ -384,18 +394,19 @@ figure {
 	background-image: linear-gradient(rgb(62,184,229) 0%, rgb(44,160,202) 100%);
   border-left: 2px solid #0b698b;
   border-right: 2px solid #2b9bc5;
-	box-shadow: inset 0px 1px 0px #2ab7ec, inset 5px 0px 5px #0b698b, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+	box-shadow: inset 0px 1px 0px #2ab7ec, inset 5px 0px 5px #0b698b, 0px 2px 0px 0px #156785, 0px 6px 3px #282b4a;
 }
 
 .button:active:first-child {
   border-left: none;
-	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #282b4a;
 }
 
 .button:active:last-child {
   border-right: none;
-	box-shadow: inset 0px 1px 0px #2ab7ec, inset 5px 0px 5px #0b698b, 0px 2px 0px 0px #156785, 1px 3px 5px #999, 0px 3px 3px #999;
+	box-shadow: inset 0px 1px 0px #2ab7ec, inset 5px 0px 5px #0b698b, 0px 2px 0px 0px #156785, 2px 4px 5px #282b4a, 0px 4px 3px #282b4a;
 }
+
 
 .box {
   height: 100%;
