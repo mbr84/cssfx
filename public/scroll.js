@@ -2,7 +2,7 @@
 
 $(document).ready(() => {
   let isMoving = false;
-  const delay = 900;
+  const delay = 850;
   const scroll = (e) => {
     if (!isMoving) {
       isMoving = true;
@@ -65,4 +65,6 @@ $(document).ready(() => {
   $(document).on('wheel', (e) => {
     if (Math.abs(e.originalEvent.deltaY) > 35) scroll(e);
   });
+
+  $(window).resize(() => { clickScroll($('.active').data().position); });
 });

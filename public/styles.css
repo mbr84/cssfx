@@ -103,16 +103,6 @@ li:hover {
   width: 100%;
 }
 
-.left-container .section3 {
-  background-image: radial-gradient(at 100% 50%, #a1d6ea, #110221);
-}
-
-.right-container .section3 {
-  height: 100%;
-  width: 100%;
-  background-image: radial-gradient(at 0% 50%, #a1d6ea, #110221);
-}
-
 .left-container .section2 {
   background-image: radial-gradient(at 100% 50%, black, #110221);
   height: 100vh;
@@ -122,6 +112,21 @@ li:hover {
 .right-container .section2 {
   background-image: radial-gradient(at 0% 50%, black, #110221);
   height: 100vh;
+  width: 100%;
+}
+.left-container .section3 {
+  background-image: radial-gradient(at 100% 50%, #428098, #110221);
+}
+
+.right-container .section3 {
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(at 0% 50%, #428098, #110221);
+}
+
+.right-container .section4 {
+  background:  black;
+  height: 100%;
   width: 100%;
 }
 
@@ -380,13 +385,18 @@ figure {
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
   border-left: none;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 13px 5px #232642;
+}
+
+.button:nth-child(2) {
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 13px 5px #272a48;
 }
 
 .button:last-child {
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
   border-right: none;
-	box-shadow: inset 0px 2px 2px #2ab7ec, 0px 5px 0px 0px #156785, 4px 10px 5px #282b4a, 0px 12px 5px #282b4a
+	box-shadow: inset 0px 2px 2px #2ab7ec, 0px 5px 0px 0px #156785, 4px 10px 5px #282b4a, 0px 13px 5px #282b4a
 }
 
 .button:active {
