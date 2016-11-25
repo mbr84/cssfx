@@ -98,18 +98,18 @@ body {
   color: #4a3104;
 }
 
-.section3 {
+.section2 {
   height: 100vh;
   width: 100%;
 }
 
-.left-container .section3 {
+.left-container .section2 {
   background-image: radial-gradient(at 100% 50%, black, #110221);
   height: 100vh;
   width: 100%;
 }
 
-.right-container .section3 {
+.right-container .section2 {
   background-image: radial-gradient(at 0% 50%, black, #110221);
   height: 100vh;
   width: 100%;
