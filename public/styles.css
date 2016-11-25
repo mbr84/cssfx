@@ -70,7 +70,7 @@ body {
 }
 
 .left-scroll, .right-scroll {
-  height: calc(100vh * 4);
+  height: calc(100vh * 5);
   width: 100%;
   position: absolute;
   transition: .5s top ease-in, .5s bottom ease-in;
@@ -98,33 +98,33 @@ body {
   color: #4a3104;
 }
 
-.section2 {
+.section3 {
   height: 100vh;
   width: 100%;
 }
 
-.left-container .section2 {
+.left-container .section3 {
   background-image: radial-gradient(at 100% 50%, black, #110221);
   height: 100vh;
   width: 100%;
 }
 
-.right-container .section2 {
+.right-container .section3 {
   background-image: radial-gradient(at 0% 50%, black, #110221);
   height: 100vh;
   width: 100%;
 }
-.left-container .section3 {
+.left-container .section4 {
   background-image: radial-gradient(at 100% 50%, #428098, #110221);
 }
 
-.right-container .section3 {
+.right-container .section4 {
   height: 100%;
   width: 100%;
   background-image: radial-gradient(at 0% 50%, #428098, #110221);
 }
 
-.right-container .section4 {
+.right-container .section5 {
   background-image: url('./stars2.jpg');
   height: 100%;
   width: 100%;
@@ -152,11 +152,55 @@ body {
 
 /* Spinners */
 
+.spinner-container {
+  perspective: 800px;
+  margin: 200px 0px;
+}
+
+.spinner {
+  margin: auto;
+  position: relative;
+  display: block;
+  position: relative;
+  margin: 30px auto;
+  background-blend-mode: luminosity;
+  transform-style: preserve-3d;
+  background-image: url('./css_orange.png');
+  background-size: cover;
+ }
+
+ .spinner:hover {
+   animation: animate-y 5s infinite linear;
+ }
+
+ @keyframes animate-y {
+  0% { transform: rotateY(0); }
+  100% { transform: rotateY(360deg); }
+}
+
+.spinner, #front, #back {
+  height: 256px;
+  width: 256px;
+}
+
+#front, #back {
+  position: absolute;
+  backface-visibility: visible;
+}
+
+#front {
+  transform: translateZ(100px);
+}
+
+#back {
+  transform: translateZ(-100px);
+}
+
 .showbf {
   backface-visibility: visible;
 }
 
-.section2 {
+.section5 {
   background-color; black;
 }
 

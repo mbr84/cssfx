@@ -9,7 +9,7 @@ $(document).ready(() => {
       then = (new Date).getTime();
       const top = $('.left-scroll').css('top');
       const bottom = $('.right-scroll').css('bottom');
-      const atBottom = $('.left-scroll').height() + (4 / 3) * $('.section1').offset().top === 0;
+      const atBottom = $('.left-scroll').height() + (5 / 4) * $('.section1').offset().top === 0;
       const atTop = $('.section1').offset().top === 0;
       const menuItems = Array.from(document.querySelectorAll('[data-position]'));
       const currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
