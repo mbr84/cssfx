@@ -344,7 +344,7 @@ body {
 }
 
 .section3, .layered-spinner {
-  background-position: 50% 0%;
+  background-position: 0% 0%;
   width: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
