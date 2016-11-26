@@ -7,11 +7,12 @@
     <link href="https://fonts.googleapis.com/css?family=Catamaran:400.600,900" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.js"></script>
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sons-of-obsidian"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
     <script src="./public/cube.js"></script>
     <script src="./public/textFade.js"></script>
     <script src="./public/scroll.js"></script>
     <script src="./public/space.js"></script>
+    <script src="./public/fab.js"></script>
   </head>
   <body>
     <div class="outer-container">
@@ -20,7 +21,8 @@
         <li data-position="1">Spin Box</li>
         <li data-position="2">Spinning Background</li>
         <li data-position="3">3d Box</li>
-        <li data-position="4">CSS3 Basics</li>
+        <li data-position="4">FAB</li>
+        <li data-position="5">CSS3 Basics</li>
       </ul>
       <div class="left-container">
         <div class="left-scroll" id="left">
@@ -96,6 +98,30 @@
             </figure>
           </div>
           <div class="section section5">
+            <nav class="nav-links">
+              <input type="checkbox" class="open-menu" name="open-menu" id="open-menu" />
+              <label for="open-menu" class="open-menu-button">
+                <span class="minus"></span>
+                <span class="plus"></span>
+              </label>
+              <a class="nav-link" href="#">1</a>
+              <a class="nav-link" href="#">2</a>
+              <a class="nav-link" href="#">3</a>
+              <a class="nav-link" href="#">4</a>
+            </nav>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+              <defs>
+                <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                  <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+              </defs>
+            </svg>
+
+          </div>
+          <div class="section section6">
             <div class="section css3-basics">
               <div class="space"></div>
             </div>
@@ -106,12 +132,12 @@
       <div class="right-container">
         <div class="right-scroll">
           <div class="section">
-            <div class="section5">
+            <div class="section6">
               <div class="code">
-                <pre class="prettyprint lang-html linenums" id="space-html">
+                <pre class="prettyprint lang-html" id="space-html">
       &lt;div class="space"&gt;&lt;/div&gt;
                 </pre>
-                <pre class="prettyprint lang-css linenums" id="space-css">
+                <pre class="prettyprint lang-css" id="space-css">
       .space {
         margin: auto;
         width: 800px;
@@ -125,7 +151,7 @@
         background-position: 400px 350px, bottom left;
       }
                 </pre>
-                <pre class="prettyprint lang-js linenums" id="space-js">
+                <pre class="prettyprint lang-js" id="space-js">
       $('.space').mousemove(function (e) {
         const offset = $(this).offset();
         const relativeX = (e.pageX - offset.left);
@@ -142,6 +168,9 @@
                 </pre>
               </div>
             </div>
+          </div>
+          <div class="section section5">
+
           </div>
           <div class="section">
             <div class="section4 rotating-box">
