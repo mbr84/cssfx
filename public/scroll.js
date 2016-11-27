@@ -34,10 +34,17 @@ $(document).ready(() => {
         op = '+';
       }
 
-      setTimeout(() => { isMoving = false; }, delay);
+
+      const lastActive = $('.active').data('position');
+      setTimeout(() => {
+        isMoving = false;
+        $(`#${lastActive}`).css('display', 'none')
+      }, delay);
 
       $([menuItems[activeNow]]).addClass('active').siblings()
-      .removeClass('active');
+        .removeClass('active');
+      $(`#${$('.active').data('position')}`).css('display', 'block');
+
       $('.left-scroll').css({ top: `calc(${top} ${op} 100%)` });
       $('.right-scroll').css({ bottom: `calc(${bottom} ${op} 100%)` });
     }

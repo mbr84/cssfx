@@ -7,6 +7,10 @@ body {
   font-family: 'Catamaran', sans-serif;
 }
 
+#2, #3, #4, #5 {
+  display: none;
+}
+
 /* section scroll */
 
 .contents {
