@@ -568,6 +568,15 @@ figure {
 
 /* nav bars */
 
+.gooey-title {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  color: #6082B6;
+  font-size: 8em;
+  z-index: 99;
+}
+
 .section5 {
   position: relative;
 }
