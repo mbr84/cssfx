@@ -575,6 +575,7 @@ figure {
   color: #6082B6;
   font-size: 8em;
   z-index: 99;
+  text-shadow: 0px 2px 4px black;
 }
 
 .section5 {
