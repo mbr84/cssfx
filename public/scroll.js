@@ -2,7 +2,15 @@
 
 $(document).ready(() => {
   let isMoving = false;
-  const delay = 850;
+
+  const timer = (delay) => {
+    const lastActive = $('.active').data('position');
+    setTimeout(() => {
+      isMoving = false;
+      $(`#${lastActive}`).css('display', 'none')
+    }, delay);
+  }
+
   const scroll = (e) => {
     if (!isMoving) {
       isMoving = true;
@@ -34,12 +42,7 @@ $(document).ready(() => {
         op = '+';
       }
 
-
-      const lastActive = $('.active').data('position');
-      setTimeout(() => {
-        isMoving = false;
-        $(`#${lastActive}`).css('display', 'none')
-      }, delay);
+      timer(850);
 
       $([menuItems[activeNow]]).addClass('active').siblings()
         .removeClass('active');
@@ -52,15 +55,16 @@ $(document).ready(() => {
 
   const clickScroll = (pos) => {
     isMoving = true;
-    setTimeout(() => { isMoving = false; }, 800);
     $('.left-scroll').css({ top: `calc(${pos} * -100%)` });
     $('.right-scroll').css({ bottom: `calc(${pos} * -100%)` });
   };
 
   $('.contents').click((e) => {
     if (e.target.tagName === 'LI') {
+      timer(800)
       $([e.target]).addClass('active').siblings()
       .removeClass('active');
+      $(`#${$('.active').data('position')}`).css('display', 'block');
       clickScroll(e.target.dataset.position);
     }
   });

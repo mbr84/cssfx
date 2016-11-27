@@ -7,7 +7,7 @@ body {
   font-family: 'Catamaran', sans-serif;
 }
 
-#2, #3, #4, #5 {
+figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   display: none;
 }
 
