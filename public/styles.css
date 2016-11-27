@@ -585,7 +585,7 @@ figure {
 .nav-links {
   position: absolute;
   top: 45%;
-  left: 50%;
+  left: 51%;
   bottom: 0;
   right: 0;
   z-index: 99;
@@ -600,8 +600,8 @@ figure {
   border-radius: 100%;
   font-weight: 600;
   font-size: 20px;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   position: absolute;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
@@ -616,6 +616,7 @@ figure {
 }
 
 .open-menu-button {
+  cursor: pointer;
   z-index: 5;
   cursor: pointer;
   -webkit-transition-duration: 400ms;
@@ -663,31 +664,31 @@ figure {
 }
 
 .minus {
-  height: 8px;
+  height: 9px;
   width: 25px;
   background-color: white;
   display: block;
   position: absolute;
   border-radius: 5px;
-  top: 45%;
-  left: 37%;
+  top: 46%;
+  left: 36%;
 }
 
 .plus {
   height: 25px;
-  width: 8px;
+  width: 9px;
   background-color: white;
   display: block;
   position: absolute;
   border-radius: 5px;
-  top: 37%;
+  top: 37.25%;
   left: 45%;
   transition: all .4s;
 }
 
 .plus-hide {
   height: 8px;
-  top: 45%;
+  top: 46%;
 }
 
 
@@ -710,11 +711,21 @@ figure {
           transform: translateX(125px);
 }
 
+.open-menu:checked ~ .nav-link:nth-child(3):hover {
+  -webkit-transform: translateX(125px) scale(1.1, 1.1);
+          transform: translateX(125px) scale(1.1, 1.1);
+}
+
 .open-menu:checked ~ .nav-link:nth-child(4) {
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
   -webkit-transform: translateX(250px);
           transform: translateX(250px);
+}
+
+.open-menu:checked ~ .nav-link:nth-child(4):hover {
+  -webkit-transform: translateX(250px) scale(1.1, 1.1);
+          transform: translateX(250px) scale(1.1, 1.1);
 }
 
 .open-menu:checked ~ .nav-link:nth-child(5) {
@@ -724,12 +735,24 @@ figure {
           transform: translateX(375px);
 }
 
+.open-menu:checked ~ .nav-link:nth-child(5):hover {
+  -webkit-transform: translateX(375px) scale(1.1, 1.1);
+          transform: translateX(375px) scale(1.1, 1.1);
+}
+
 .open-menu:checked ~ .nav-link:nth-child(6) {
   -webkit-transition-duration: 600ms;
           transition-duration: 600ms;
   -webkit-transform: translateX(500px);
           transform: translateX(500px);
 }
+
+.open-menu:checked ~ .nav-link:nth-child(6):hover {
+  -webkit-transform: translateX(500px) scale(1.1, 1.1);
+          transform: translateX(500px) scale(1.1, 1.1);
+}
+
+
 
 /* space */
 

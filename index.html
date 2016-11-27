@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.js"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="./public/cube.js"></script>
     <script src="./public/textFade.js"></script>
     <script src="./public/scroll.js"></script>
@@ -107,10 +108,10 @@
                 <span class="minus"></span>
                 <span class="plus"></span>
               </label>
-              <a class="nav-link" href="#">1</a>
-              <a class="nav-link" href="#">2</a>
-              <a class="nav-link" href="#">3</a>
-              <a class="nav-link" href="#">4</a>
+              <a class="nav-link" href="mailto:matthew.bramfeld@gmail.com"><i class="material-icons">mail</i></a>
+              <a class="nav-link" href="http://linkedin.com/in/matthew-bramfeld"><i class="material-icons">info</i></a>
+              <a class="nav-link" href="http://github.com/mbr84"><img src="./public/images/github.png"></a>
+              <a class="nav-link" href="#"><i class="material-icons">golf_course</i></a>
             </nav>
 
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -156,8 +157,8 @@
                 </pre>
                 <pre class="prettyprint lang-js" id="space-js">
       $('.space').mousemove(function (e) {
-        const offset = $(this).offset();
-        const relativeX = (e.pageX - offset.left);
+        var offset = $(this).offset();
+        var relativeX = (e.pageX - offset.left);
 
         $('.space').hover(() => {
           $(this).css({
