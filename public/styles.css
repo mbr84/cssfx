@@ -584,9 +584,10 @@ figure {
 .nav-links {
   position: absolute;
   top: 45%;
-  left: 2%;
+  left: 50%;
   bottom: 0;
   right: 0;
+  z-index: 99;
   -webkit-filter: url("#goo");
      -moz-filter: url("#goo");
        -o-filter: url("#goo");
@@ -679,7 +680,7 @@ figure {
   border-radius: 5px;
   top: 37%;
   left: 45%;
-  transition: all .2s;
+  transition: all .4s;
 }
 
 .plus-hide {
