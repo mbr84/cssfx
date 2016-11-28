@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="./public/styles.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:400.600,900" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.js"></script>
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/languages/css.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <script src="./public/cube.js"></script>
     <script src="./public/textFade.js"></script>
     <script src="./public/scroll.js"></script>
@@ -23,7 +25,7 @@
         <li data-position="2">Spinning Background</li>
         <li data-position="3">3d Box</li>
         <li data-position="4">FAB</li>
-        <li data-position="5">CSS3 Basics</li>
+        <li data-position="5">X-Wing</li>
       </ul>
       <div class="left-container">
         <div class="left-scroll" id="left">
@@ -103,7 +105,7 @@
               <h2 class="gooey-title">
                 GOOEY!
               </h2>
-              <nav class="nav-links" id="4">
+              <nav class="nav-links" style="filter: url('#goo')" id="4">
                 <input type="checkbox" class="open-menu" name="open-menu" id="open-menu" />
                 <label for="open-menu" class="open-menu-button">
                   <span class="minus"></span>
@@ -183,18 +185,50 @@
             </div>
           </div>
           <div class="section layered-spinner">
-            now
           </div>
           <div class="section">
             <div class="section2 spinners-boxes">
             </div>
           </div>
           <div class="section section1">
-            <div class="intro">
-              code snippets here
+
+              <div class="code-container">
+                <div class="menu-bar">
+                  <div class="code-button">Info</div>
+                  <div class="code-button">HTML</div>
+                  <div class="code-button">CSS</div>
+                  <div class="code-button">JS</div>
+                </div>
+                <div class="code-pane">
+                  <div class="info show"></div>
+                  <div class="html">
+                    <pre><code class="html">&lt;div class="intro" id="0"&gt;
+  &lt;div class="step"&gt;
+    Hey there! Thanks for checking out my site, CSSfx
+  &lt;/div&gt;
+  &lt;div class="step"&gt;
+    Navigation is easy, but let me walk you through it
+  &lt;/div&gt;
+  &lt;div class="step"&gt;
+    The site is divided into a handful of sections
+  &lt;/div&gt;
+  &lt;div class="step"&gt;
+    Each section has a CSS demo on the left, code on the right
+  &lt;/div&gt;
+  &lt;div class="step"&gt;
+    Code for the layout/scroll effects is in last section
+  &lt;/div&gt;
+  &lt;div class="step"&gt;
+    To navigate between sections, just scroll like you normally would
+  &lt;/div&gt;
+  &lt;div class="step"&gt;
+    Alright -  that about covers it! Thanks for coming, have fun!
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
             </div>
           </div>
-        </div>
+
       </div>
     </div>
   </body>
