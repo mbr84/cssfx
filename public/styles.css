@@ -39,8 +39,6 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   cursor: pointer;
   font-size: 15px;
   position: relative;
-  -moz-transition: linear 0.2s background-color;
-  -o-transition: linear 0.2s background-color;
   -webkit-transition: linear 0.2s background-color;
   transition: linear 0.2s background-color;
 }
@@ -61,6 +59,8 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   height: 100vh;
   width: 100vw;
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   top: 0px;
   left: 0px;
@@ -77,8 +77,10 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   height: calc(100vh * 6);
   width: 100%;
   position: absolute;
+  -webkit-transition: .5s top ease-in, .5s bottom ease-in;
   transition: .5s top ease-in, .5s bottom ease-in;
-  transition-delay: .3s;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
 }
 
 .left-scroll {
@@ -92,12 +94,19 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
 .section {
   height: 100vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .section1 {
+  background-image: -webkit-linear-gradient(#ffebc6 0%, #ad925f 100%);
   background-image: linear-gradient(#ffebc6 0%, #ad925f 100%);
   color: #4a3104;
 }
@@ -108,23 +117,27 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
 }
 
 .left-container .section2 {
+  background-image: -webkit-radial-gradient(at 100% 50%, black, #110221);
   background-image: radial-gradient(at 100% 50%, black, #110221);
   height: 100vh;
   width: 100%;
 }
 
 .right-container .section2 {
+  background-image: -webkit-radial-gradient(at 0% 50%, black, #110221);
   background-image: radial-gradient(at 0% 50%, black, #110221);
   height: 100vh;
   width: 100%;
 }
 .left-container .section4 {
+  background-image: -webkit-radial-gradient(at 100% 50%, #428098, #110221);
   background-image: radial-gradient(at 100% 50%, #428098, #110221);
 }
 
 .right-container .section4 {
   height: 100%;
   width: 100%;
+  background-image: -webkit-radial-gradient(at 0% 50%, #428098, #110221);
   background-image: radial-gradient(at 0% 50%, #428098, #110221);
 }
 
@@ -132,8 +145,12 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   background-image: url('./images/stars_right.jpg');
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .intro {
@@ -158,11 +175,12 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
 
 
 .showbf {
-  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
 }
 
 .section6 {
-  background-color; black;
+  background-color: black;
 }
 
 .box1, .box2 {
@@ -177,8 +195,10 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
 .container {
   height: 400px;
   border: none;
-	perspective: 1000px;
-  perspective-origin: 50% 50%;
+	-webkit-perspective: 1000px;
+	        perspective: 1000px;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
 }
 
 .cube {
@@ -199,7 +219,10 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   font-size: 60px;
   color: white;
   text-align: center;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
   transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
 }
 
 .face:hover {
@@ -217,17 +240,13 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   background: url('./images/M1-67_&_WR124.png');
   background-size: cover;
   -webkit-transform: translateZ(100px);
-  -moz-transform: translateZ(100px);
-  -o-transform: translateZ(100px);
-  transform: translateZ(100px);
+          transform: translateZ(100px);
 }
 
 .rotating .container:hover .front {
   border: 2px solid white;
-	-webkit-transform:transform: translateZ(275px);
-	-moz-transform:transform: translateZ(275px);
-	-o-transform:transform: translateZ(275px);
-	transform: translateZ(275px);
+	-webkit-transform: translateZ(275px);
+	        transform: translateZ(275px);
 }
 
 .rback {
@@ -239,14 +258,13 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   background-size: cover;
   color: black;
   -webkit-transform: rotateY(180deg) translateZ(100px);
-  -moz-transform: rotateY(180deg) translateZ(100px);
-  -o-transform: rotateY(180deg) translateZ(100px);
-  transform: rotateY(180deg) translateZ(100px);
+          transform: rotateY(180deg) translateZ(100px);
 }
 
 .rotating .container:hover .back {
   border: 2px solid white;
-  transform: rotateY(180deg) translateZ(275px);
+  -webkit-transform: rotateY(180deg) translateZ(275px);
+          transform: rotateY(180deg) translateZ(275px);
 
 }
 
@@ -258,17 +276,13 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   background: url("./images/1purple_starry_sky.png");
   background-size: cover;
   -webkit-transform: rotateY(-270deg) translateZ(100px);
-  -moz-transform:rotateY(-270deg) translateZ(100px);
-  -o-transform:rotateY(-270deg) translateZ(100px);
-  transform: rotateY(-270deg) translateZ(100px);
+          transform: rotateY(-270deg) translateZ(100px);
 }
 
 .rotating .container:hover .right {
   border: 2px solid white;
-  -webkit-transform:rotateY(-270deg) translateZ(275px);
-  -moz-transform:rotateY(-270deg) translateZ(275px);
-  -o-transform:rotateY(-270deg) translateZ(275px);
-  transform: rotateY(-270deg) translateZ(275px);
+  -webkit-transform: rotateY(-270deg) translateZ(275px);
+          transform: rotateY(-270deg) translateZ(275px);
 
 }
 
@@ -279,18 +293,14 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
 .left {
   background: url('./images/brightstars.png');
   background-size: cover;
-  -webkit-transform:rotateY(270deg) translateZ(100px);
-  -moz-transform:rotateY(270deg) translateZ(100px);
-  -o-transform:rotateY(270deg) translateZ(100px);
-  transform: rotateY(270deg) translateZ(100px);
+  -webkit-transform: rotateY(270deg) translateZ(100px);
+          transform: rotateY(270deg) translateZ(100px);
 }
 
 .rotating .container:hover .left {
   border: 2px solid white;
-  -webkit-transform:rotateY(270deg) translateZ(275px);
-  -moz-transform:rotateY(270deg) translateZ(275px);
-  -o-transform:rotateY(270deg) translateZ(275px);
-  transform: rotateY(270deg) translateZ(275px);
+  -webkit-transform: rotateY(270deg) translateZ(275px);
+          transform: rotateY(270deg) translateZ(275px);
 }
 
 .rtop {
@@ -301,17 +311,13 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   background: url('./images/darkstarry.png');
   background-size: cover;
   -webkit-transform:rotateX(-270deg) translateZ(100px);
-  -moz-transform:rotateX(-270deg) translateZ(100px);
-  -o-transform:rotateX(-270deg) translateZ(100px);
-  transform: rotateX(-270deg) translateZ(100px);
+          transform: rotateX(-270deg) translateZ(100px);
 }
 
 .rotating .container:hover .top {
   border: 2px solid white;
   -webkit-transform:rotateX(-270deg) translateZ(275px);
-  -moz-transform:rotateX(-270deg) translateZ(275px);
-  -o-transform:rotateX(-270deg) translateZ(275px);
-  transform: rotateX(-270deg) translateZ(275px);
+          transform: rotateX(-270deg) translateZ(275px);
 }
 
 .rbottom {
@@ -322,29 +328,30 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   background: url('./images/treestars.png');
   background-size: cover;
   -webkit-transform:rotateX(270deg) translateZ(100px);
-  -moz-transform:rotateX(270deg) translateZ(100px);
-  -o-transform:rotateX(270deg) translateZ(100px);
   transform: rotateX(270deg) translateZ(100px);
 }
 
 .rotating .container:hover .bottom {
   border: 2px solid white;
   -webkit-transform:rotateX(270deg) translateZ(275px);
-  -moz-transform:rotateX(270deg) translateZ(275px);
-  -o-transform:rotateX(270deg) translateZ(275px);
 	transform: rotateX(270deg) translateZ(275px);
 }
 
+@-webkit-keyframes rotate {
+  from {-webkit-transform: rotateX(0deg) rotateY(0deg);transform: rotateX(0deg) rotateY(0deg);}
+  to {-webkit-transform: rotateX(360deg) rotateY(360deg);transform: rotateX(360deg) rotateY(360deg);}
+}
+
 @keyframes rotate {
-  from {transform: rotateX(0deg) rotateY(0deg);}
-  to {transform: rotateX(360deg) rotateY(360deg);}
+  from {-webkit-transform: rotateX(0deg) rotateY(0deg);transform: rotateX(0deg) rotateY(0deg);}
+  to {-webkit-transform: rotateX(360deg) rotateY(360deg);transform: rotateX(360deg) rotateY(360deg);}
 }
 
 .rotating .container .cube {
-  -webkit-transform:rotate 20s infinite linear;
-  -moz-transform:rotate 20s infinite linear;
-  -o-transform:rotate 20s infinite linear;
-  animation: rotate 20s infinite linear;
+  -webkit-transform: rotate 20s infinite linear;
+          transform: rotate 20s infinite linear;
+  -webkit-animation: rotate 20s infinite linear;
+          animation: rotate 20s infinite linear;
 }
 
 .section3, .layered-spinner {
@@ -357,7 +364,8 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
 }
 
 .spinner-container {
-  perspective: 800px;
+  -webkit-perspective: 800px;
+          perspective: 800px;
   margin: 200px 0px;
 }
 
@@ -369,17 +377,24 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
   margin: 30px auto;
   background-blend-mode: luminosity;
   transform-style: preserve-3d;
-  background-image: url('./images//css_darkblue.png');
+  -webkit-transform-style: preserve-3d;
+  background-image: url('./images/css_darkblue.png');
   background-size: cover;
  }
 
  .spinner:hover {
-   animation: animate-y 5s infinite linear;
+   -webkit-animation: animate-y 5s infinite linear;
+           animation: animate-y 5s infinite linear;
  }
 
+ @-webkit-keyframes animate-y {
+  0% { -webkit-transform: rotateY(0); transform: rotateY(0); }
+  100% { -webkit-transform: rotateY(360deg); transform: rotateY(360deg); }
+}
+
  @keyframes animate-y {
-  0% { transform: rotateY(0); }
-  100% { transform: rotateY(360deg); }
+  0% { -webkit-transform: rotateY(0); transform: rotateY(0); }
+  100% { -webkit-transform: rotateY(360deg); transform: rotateY(360deg); }
 }
 
 .spinner, #front, #back {
@@ -389,14 +404,17 @@ figure[id="1"], div[id="2"], div[id="3"], nav[id="4"], div[id="5"] {
 
 #front, #back {
   position: absolute;
-  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
 }
 
 #front {
-  transform: translateZ(100px);
+  -webkit-transform: translateZ(100px);
+          transform: translateZ(100px);
 }
 
 #back {
+  -webkit-transform: translateZ(-100px);
   transform: translateZ(-100px);
 }
 
@@ -406,11 +424,14 @@ figure {
 }
 
 .rotating {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   padding-bottom: 10%;
 }
 
 .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 50px;
   margin-left: -80px;
@@ -429,6 +450,7 @@ figure {
 	padding:10px 30px;
 	border-left:2px solid #2ab7ec;
   border-right: 2px solid #2b9bc5;
+	background-image: -webkit-linear-gradient(rgb(44,160,202) 0%, rgb(62,184,229) 100%);
 	background-image: linear-gradient(rgb(44,160,202) 0%, rgb(62,184,229) 100%);
 	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 13px 5px #282b4a;
 	cursor: pointer;
@@ -454,6 +476,7 @@ figure {
 
 .button:active {
 	top:3px;
+	background-image: -webkit-linear-gradient(rgb(62,184,229) 0%, rgb(44,160,202) 100%);
 	background-image: linear-gradient(rgb(62,184,229) 0%, rgb(44,160,202) 100%);
   border-left: 2px solid #0b698b;
   border-right: 2px solid #2b9bc5;
@@ -475,31 +498,41 @@ figure {
   height: 100%;
   width: 100%;
   position: absolute;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
   transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
 .show-back {
+  -webkit-transform: rotateX(-180deg) translateY(200px) translateZ(50px) translatex(10px);
   transform: rotateX(-180deg) translateY(200px) translateZ(50px) translatex(10px);
 }
 
 .show-front {
+  -webkit-transform: translateZ(-50px) translatex(11px);
   transform: translateZ(-50px) translatex(11px);
 }
 
 .show-bottom {
+  -webkit-transform: rotateX(90deg) translatez(100px) translatex(7px);
   transform: rotateX(90deg) translatez(100px) translatex(7px);
 }
 
 .show-top {
+  -webkit-transform: translatez(-200px) translatey(-106px) translatex(7px) rotateX(-90deg);
   transform: translatez(-200px) translatey(-106px) translatex(7px) rotateX(-90deg);
 }
 
 .show-right {
+  -webkit-transform: rotateY(-90deg) rotateX(90deg) translatey(137px) translatez(100px);
   transform: rotateY(-90deg) rotateX(90deg) translatey(137px) translatez(100px);
 }
 
 .show-left {
+  -webkit-transform: rotateY(90deg) rotateX(90deg) translatey(58px) translatez(100px) translatex(100px);
   transform: rotateY(90deg) rotateX(90deg) translatey(58px) translatez(100px) translatex(100px);
 }
 
@@ -518,11 +551,13 @@ figure {
 }
 
 #flip3 {
+  -webkit-transform: rotateZ(-90deg);
   transform: rotateZ(-90deg);
   margin-top: 43px;
 }
 
 #flip4 {
+  -webkit-transform: rotateZ(90deg);
   transform: rotateZ(90deg);
   margin-top: 43px;
 }
@@ -547,26 +582,32 @@ figure {
 }
 
 .rfront {
-  transform: translateZ(50px);
+  -webkit-transform: translateZ(50px);
+          transform: translateZ(50px);
 }
 
 .rback {
+  -webkit-transform: rotateX(180deg) translateZ(50px);
   transform: rotateX(180deg) translateZ(50px);
 }
 
 .rtop {
+  -webkit-transform: rotateX(90deg) translateZ(100px);
   transform: rotateX(90deg) translateZ(100px);
 }
 
 .rbottom {
+  -webkit-transform: rotateX(-90deg) translateZ(100px);
   transform: rotateX(-90deg) translateZ(100px);
 }
 
 .rleft {
+  -webkit-transform: rotateY(-90deg) translateZ(150px);
   transform: rotateY(-90deg) translateZ(150px);
 }
 
 .rright {
+  -webkit-transform: rotateY(90deg) translateZ(150px);
   transform: rotateY(90deg) translateZ(150px);
 }
 
@@ -591,10 +632,10 @@ figure {
 .nav-links {
   margin-left: -59px;
   z-index: 99;
-  -webkit-filter: url("#goo");
-     -moz-filter: url("#goo");
-       -o-filter: url("#goo");
-          filter: url("#goo");
+  -webkit-filter: url("../index.html#goo");
+     -moz-filter: url("../index.html#goo");
+       -o-filter: url("../index.html#goo");
+          filter: url("../index.html#goo");
 }
 
 .nav-link, .open-menu-button {
@@ -627,12 +668,8 @@ figure {
   z-index: 5;
   cursor: pointer;
   -webkit-transition-duration: 400ms;
-     -moz-transition-duration: 400ms;
-       -o-transition-duration: 400ms;
           transition-duration: 400ms;
   -webkit-transform: scale(1, 1);
-     -moz-transform: scale(1, 1);
-       -o-transform: scale(1, 1);
           transform: scale(1, 1);
 }
 
@@ -653,22 +690,19 @@ figure {
 }
 
 .open-menu:checked ~ .open-menu-button {
-  transform: scale(.65) translate3d(0,0,0);
+  -webkit-transform: scale(.65) translate3d(0,0,0);
+          transform: scale(.65) translate3d(0,0,0);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
 .open-menu:checked ~ .open-menu-button:hover {
   -webkit-transform: scale(.75) translate3d(0,0,0);
-     -moz-transform: scale(.75) translate3d(0,0,0);
-       -o-transform: scale(.75) translate3d(0,0,0);
           transform: scale(.75) translate3d(0,0,0);
 }
 
 .open-menu-button:hover {
   -webkit-transform: scale(1.2);
-     -moz-transform: scale(1.2);
-       -o-transform: scale(1.2);
           transform: scale(1.2);
 }
 
@@ -692,6 +726,7 @@ figure {
   border-radius: 5px;
   top: 37.25%;
   left: 45%;
+  -webkit-transition: all .4s;
   transition: all .4s;
 }
 
@@ -770,7 +805,8 @@ figure {
   margin: auto;
   width: 100%;
   height: 100vh;
-  background: url('./images/x-wing.png') no-repeat center 150px, url('./images/stars2.jpg'), no-repeat top right;
+  background: url('./images/x-wing.png') no-repeat center 150px, url('./images/stars2.jpg'), no-repeat top left;
+  -webkit-transition: background-position 8s;
   transition: background-position 8s;
 }
 
@@ -781,5 +817,6 @@ figure {
 .code {
   width: 100%;
   opacity: 0;
+  -webkit-transition: opacity .2s;
   transition: opacity .2s;
 }
