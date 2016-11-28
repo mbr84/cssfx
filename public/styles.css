@@ -633,8 +633,6 @@ figure {
   margin-left: -59px;
   z-index: 99;
   -webkit-filter: url("../index.html#goo");
-     -moz-filter: url("../index.html#goo");
-       -o-filter: url("../index.html#goo");
           filter: url("../index.html#goo");
 }
 
