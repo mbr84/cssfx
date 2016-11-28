@@ -653,23 +653,23 @@ figure {
 }
 
 .open-menu:checked ~ .open-menu-button {
-  transform: scale(.65, .65) translate3d(0,0,0);
+  transform: scale(.65) translate3d(0,0,0);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
 .open-menu:checked ~ .open-menu-button:hover {
-  -webkit-transform: scale(.75, .75) translate3d(0,0,0);
-     -moz-transform: scale(.75, .75) translate3d(0,0,0);
-       -o-transform: scale(.75, .75) translate3d(0,0,0);
-          transform: scale(.75, .75) translate3d(0,0,0);
+  -webkit-transform: scale(.75) translate3d(0,0,0);
+     -moz-transform: scale(.75) translate3d(0,0,0);
+       -o-transform: scale(.75) translate3d(0,0,0);
+          transform: scale(.75) translate3d(0,0,0);
 }
 
 .open-menu-button:hover {
-  -webkit-transform: scale(1.2, 1.2);
-     -moz-transform: scale(1.2, 1.2);
-       -o-transform: scale(1.2, 1.2);
-          transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2);
+     -moz-transform: scale(1.2);
+       -o-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .minus {
@@ -722,8 +722,8 @@ figure {
 }
 
 .open-menu:checked ~ .nav-link:nth-child(3):hover {
-  -webkit-transform: translateX(125px) scale(1.1, 1.1);
-          transform: translateX(125px) scale(1.1, 1.1);
+  -webkit-transform: translateX(125px) scale(1.1);
+          transform: translateX(125px) scale(1.1);
 }
 
 .open-menu:checked ~ .nav-link:nth-child(4) {
@@ -734,8 +734,8 @@ figure {
 }
 
 .open-menu:checked ~ .nav-link:nth-child(4):hover {
-  -webkit-transform: translateX(250px) scale(1.1, 1.1);
-          transform: translateX(250px) scale(1.1, 1.1);
+  -webkit-transform: translateX(250px) scale(1.1);
+          transform: translateX(250px) scale(1.1);
 }
 
 .open-menu:checked ~ .nav-link:nth-child(5) {
@@ -746,8 +746,8 @@ figure {
 }
 
 .open-menu:checked ~ .nav-link:nth-child(5):hover {
-  -webkit-transform: translateX(375px) scale(1.1, 1.1);
-          transform: translateX(375px) scale(1.1, 1.1);
+  -webkit-transform: translateX(375px) scale(1.1);
+          transform: translateX(375px) scale(1.1);
 }
 
 .open-menu:checked ~ .nav-link:nth-child(6) {
@@ -758,8 +758,8 @@ figure {
 }
 
 .open-menu:checked ~ .nav-link:nth-child(6):hover {
-  -webkit-transform: translateX(500px) scale(1.1, 1.1);
-          transform: translateX(500px) scale(1.1, 1.1);
+  -webkit-transform: translateX(500px) scale(1.1);
+          transform: translateX(500px) scale(1.1);
 }
 
 
