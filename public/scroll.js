@@ -1,28 +1,28 @@
 /* eslint-disable no-undef, one-var, one-var-declaration-per-line, no-param-reassign*/
 
 $(document).ready(() => {
-  let isMoving = false;
+  var isMoving = false;
 
-  const timer = (delay) => {
-    const lastActive = $('.active').data('position');
+  var timer = (delay) => {
+    var lastActive = $('.active').data('position');
     setTimeout(() => {
       isMoving = false;
       $(`#${lastActive}`).css('display', 'none')
     }, delay);
   }
 
-  const scroll = (e) => {
+  var scroll = (e) => {
     if (!isMoving) {
       isMoving = true;
       then = (new Date).getTime();
-      const top = $('.left-scroll').css('top');
-      const bottom = $('.right-scroll').css('bottom');
-      const atBottom = $('.left-scroll').height() + (6 / 5) * $('.section1').offset().top === 0;
-      const atTop = $('.section1').offset().top === 0;
-      const menuItems = Array.from(document.querySelectorAll('[data-position]'));
-      const currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
-      const deltaY = e.originalEvent.deltaY || 0;
-      let op, activeNow;
+      var top = $('.left-scroll').css('top');
+      var bottom = $('.right-scroll').css('bottom');
+      var atBottom = $('.left-scroll').height() + (6 / 5) * $('.section1').offset().top === 0;
+      var atTop = $('.section1').offset().top === 0;
+      var menuItems = Array.from(document.querySelectorAll('[data-position]'));
+      var currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
+      var deltaY = e.originalEvent.deltaY || 0;
+      var op, activeNow;
 
       if (e.which === 40 || deltaY > 0) {
         if (atBottom) {
@@ -53,17 +53,17 @@ $(document).ready(() => {
     }
   };
 
-  const clickScroll = (pos) => {
-    isMoving = true;
+  var clickScroll = (pos) => {
     $('.left-scroll').css({ top: `calc(${pos} * -100%)` });
     $('.right-scroll').css({ bottom: `calc(${pos} * -100%)` });
   };
 
   $('.contents').click((e) => {
     if (e.target.tagName === 'LI') {
+      isMoving = true;
       timer(800)
       $([e.target]).addClass('active').siblings()
-      .removeClass('active');
+        .removeClass('active');
       $(`#${$('.active').data('position')}`).css('display', 'block');
       clickScroll(e.target.dataset.position);
     }
@@ -77,5 +77,10 @@ $(document).ready(() => {
     if (Math.abs(e.originalEvent.deltaY) > 35) scroll(e);
   });
 
-  $(window).resize(() => { clickScroll($('.active').data().position); });
+  $(window).resize(() => {
+    const space = `https://res.cloudinary.com/dxbwq1eyw/image/upload/c_fill,h_${window.innerHeight},w_${window.innerWidth}/v1480305081/stars2_qiu9qm.jpg`
+    $('.layered-spinner').css({ 'background-image': `url('${space}')` })
+    $('.section3').css({ 'background-image': `url('${space}')` })
+    clickScroll($('.active').data().position);
+  });
 });

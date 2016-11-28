@@ -1,9 +1,13 @@
 /* eslint-disable no-undef, func-names */
 
 $(document).ready(() => {
+  let space = `https://res.cloudinary.com/dxbwq1eyw/image/upload/c_fill,h_${window.innerHeight},w_${window.innerWidth}/v1480305081/stars2_qiu9qm.jpg`
+  $('.layered-spinner').css({ 'background-image': `url('${space}')` })
+  $('.section3').css({ 'background-image': `url('${space}')` })
+
   $('.space').mousemove(function (e) {
-    const offset = $(this).offset();
-    const relativeX = (e.pageX - offset.left);
+    var offset = $(this).offset();
+    var relativeX = (e.pageX - offset.left);
 
     $('.space').hover(() => {
       $(this).css({ 'background-position': `${relativeX}px 350px, bottom left` });
