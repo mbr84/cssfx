@@ -572,10 +572,15 @@ figure {
 
 /* nav bars */
 
-.gooey-title {
+.goo-container {
   position: absolute;
-  top: 5%;
-  left: 60%;
+  left: 65%;
+  z-index: 2;
+  top: 25%;
+}
+
+.gooey-title {
+  margin: 0px;
   color: #6082B6;
   font-size: 8em;
   z-index: 99;
@@ -587,11 +592,7 @@ figure {
 }
 
 .nav-links {
-  position: absolute;
-  top: 45%;
-  left: 51%;
-  bottom: 0;
-  right: 0;
+  margin-left: -59px;
   z-index: 99;
   -webkit-filter: url("#goo");
      -moz-filter: url("#goo");
@@ -606,9 +607,13 @@ figure {
   font-size: 20px;
   height: 90px;
   width: 90px;
+  -webkit-transform-style: preserve-3d;
   position: absolute;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
+}
+
+.nav-link {
   -webkit-transition: -webkit-transform ease-out 300ms;
   transition: -webkit-transform ease-out 300ms;
   transition: transform ease-out 300ms;
