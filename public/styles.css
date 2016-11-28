@@ -595,8 +595,6 @@ figure {
   margin-left: -59px;
   z-index: 99;
   -webkit-filter: url("#goo");
-     -moz-filter: url("#goo");
-       -o-filter: url("#goo");
           filter: url("#goo");
 }
 
