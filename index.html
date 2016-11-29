@@ -140,39 +140,56 @@
         <div class="right-scroll">
           <div class="section">
             <div class="section6">
-              <div class="code">
-                <pre class="prettyprint lang-html" id="space-html">
-      &lt;div class="space"&gt;&lt;/div&gt;
-                </pre>
-                <pre class="prettyprint lang-css" id="space-css">
-      .space {
-        margin: auto;
-        width: 800px;
-        height: 100vh;
-        background: url('./x-wing.png') no-repeat center 150px,
-          url('./stars2.jpg'), no-repeat top right;
-        transition: background-position 8s;
-      }
+              <div class="code-container">
+                <div class="menu-bar" data-screen="six">
+                  <div class="code-button" data-lang="info">Info</div>
+                  <div class="code-button" data-lang="html">HTML</div>
+                  <div class="code-button" data-lang="css">CSS</div>
+                  <div class="code-button" data-lang="js">JS</div>
+                </div>
+                <div class="code-pane">
+                  <div class="code-view">
+                    <div class="code-snip out" data-lang="info"></div>
+                    <div class="code-snip" data-lang="html">
+                      <pre><code class="html">
+ &lt;div class="space"&gt;&lt;/div&gt;
+                      </code></pre>
+                    </div>
+                    <div class="code-snip" data-lang="css">
+                      <pre><code class="css">
+ .space {
+   margin: auto;
+   width: 800px;
+   height: 100vh;
+   background: url('./x-wing.png') no-repeat center 150px,
+     url('./stars2.jpg'), no-repeat top right;
+   transition: background-position 8s;
+ }
 
-      .space:hover {
-        background-position: 400px 350px, bottom left;
-      }
-                </pre>
-                <pre class="prettyprint lang-js" id="space-js">
-      $('.space').mousemove(function (e) {
-        var offset = $(this).offset();
-        var relativeX = (e.pageX - offset.left);
+ .space:hover {
+   background-position: 400px 350px, bottom left;
+ }
+                      </code></pre>
+                    </div>
+                    <div class="code-snip" data-lang="js">
+                      <pre><code class="javascript">
+ $('.space').mousemove(function (e) {
+   var offset = $(this).offset();
+   var relativeX = (e.pageX - offset.left);
 
-        $('.space').hover(() => {
-          $(this).css({
-            'background-position': `${relativeX}px 350px, bottom left`
-          });
-        }, () => {
-          $(this).css('background-position', 'center 150px, top left');
-        });
-        $('.space').trigger('mouseleave').trigger('mouseenter');
-      });
-                </pre>
+   $('.space').hover(() => {
+     $(this).css({
+       'background-position': `${relativeX}px 350px, bottom left`
+     });
+   }, () => {
+     $(this).css('background-position', 'center 150px, top left');
+   });
+   $('.space').trigger('mouseleave').trigger('mouseenter');
+ });
+                      </code></pre>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
