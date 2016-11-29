@@ -1002,7 +1002,3 @@ div[data-screen="four"] .code-button:last-child:active {
   border-bottom-left-radius: 3px;
   border-left: none;
 }
-
-.left-scroll .section5 {
-  contain: none;
-}
