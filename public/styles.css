@@ -923,7 +923,7 @@ div[data-screen="two"] .code-button:first-child:active {
 div[data-screen="three"] .code-button, div[data-screen="six"] .code-button {
   border-left: 2px solid rgba(88, 85, 88, 0.13);
   border-right: 1px solid rgb(0, 0, 0);
-  background-image: linear-gradient(rgba(88, 85, 88, 0.3) 0%, rgba(13,7,68,.3) 100%);
+  background-image: linear-gradient(rgba(13, 7, 68, 0.3) 0%, rgba(88, 85, 88, 0.3) 100%);
   box-shadow: 0px 5px 0px 0px #02011b, 3px 9px 5px #03041b;
 }
 
