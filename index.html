@@ -71,13 +71,11 @@
           </div>
           <div class="section section3">
             <div class="spinner-container" id="2">
-              <section>
-                <div class="spinner">
-                  <img id="front" src="./public/images/css_purple2.png" alt="" />
-                  <img id="back" src="./public/images/css.png" alt="" />
-                </div>
+              <div class="spinner">
+                <img id="front" src="./public/images/css_purple2.png" alt="" />
+                <img id="back" src="./public/images/css.png" alt="" />
               </div>
-            </section>
+            </div>
           </div>
           <div class="section section4">
             <figure class="box-figure" id="3">
@@ -186,9 +184,155 @@
             </div>
           </div>
           <div class="section layered-spinner">
+            <div class="code-container">
+              <div class="menu-bar" data-screen="three">
+                <div class="code-button" data-lang="info">Info</div>
+                <div class="code-button" data-lang="html">HTML</div>
+                <div class="code-button" data-lang="css">CSS</div>
+                <div class="code-button" data-lang="js">JS</div>
+              </div>
+              <div class="code-pane">
+                <div class="code-view">
+                  <div class="code-snip out" data-lang="info"></div>
+                  <div class="code-snip" data-lang="html">
+                    <pre><code class="html"></code></pre>
+                  </div>
+                  <div class="code-snip" data-lang="css">
+                    <pre><code class="css">
+                    </code></pre>
+                  </div>
+                  <div class="code-snip" data-lang="js">
+                    <pre><code class="javascript">
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="section">
             <div class="section2 spinners-boxes">
+              <div class="code-container">
+                <div class="menu-bar" data-screen="two">
+                  <div class="code-button" data-lang="info">Info</div>
+                  <div class="code-button" data-lang="html">HTML</div>
+                  <div class="code-button" data-lang="css">CSS</div>
+                  <div class="code-button" data-lang="js">JS</div>
+                </div>
+                <div class="code-pane">
+                  <div class="code-view">
+                    <div class="code-snip out" data-lang="info"></div>
+                    <div class="code-snip" data-lang="html">
+                      <pre><code class="html">
+ &lt;figure class="rotating" id="1"&gt;
+   &lt;div class="container"&gt;
+     &lt;div class="cube showbf"&gt;
+       &lt;div class="face front"&gt;&lt;/div&gt;
+       &lt;div class="face back"&gt;&lt;/div&gt;
+       &lt;div class="face right"&gt;&lt;/div&gt;
+       &lt;div class="face left"&gt;&lt;/div&gt;
+       &lt;div class="face top"&gt;&lt;/div&gt;
+       &lt;div class="face bottom"&gt;&lt;/div&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/figure&gt;
+                      </code></pre>
+                    </div>
+                    <div class="code-snip" data-lang="css">
+                      <pre><code class="css">
+ .container {
+   height: 400px;
+   border: none;
+   perspective: 1000px;
+   perspective-origin: 50% 50%;
+ }
+
+ .cube {
+   width: 200px;
+   height: 200px;
+   transform-style: preserve-3d;
+ }
+
+ .cube .face {
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   font-size: 60px;
+   color: white;
+   text-align: center;
+   transition: transform .3s;
+ }
+
+ .face:hover {
+   outline: 2px dodgerblue dashed;
+   border: none;
+   background-color: rgba(100,149,237,.8);
+ }
+
+ .front {
+   background: url('./image.png');
+   background-size: cover;
+   transform: translateZ(100px);
+ }
+
+ .rotating .container:hover .front {
+   border: 2px solid white;
+   transform: translateZ(275px);
+ }
+
+ ...
+
+ .right {
+   background: url("./image.png");
+   background-size: cover;
+   transform: rotateY(-270deg) translateZ(100px);
+ }
+
+ .rotating .container:hover .right {
+   border: 2px solid white;
+   transform: rotateY(-270deg) translateZ(275px);
+
+ }
+
+ ...
+
+ .top {
+   background: url('./image.png');
+   background-size: cover;
+   transform: rotateX(-270deg) translateZ(100px);
+ }
+
+ .rotating .container:hover .top {
+   border: 2px solid white;
+   transform: rotateX(-270deg) translateZ(275px);
+ }
+
+
+ ...
+
+ @keyframes rotate {
+   from {-webkit-transform: rotateX(0deg) rotateY(0deg);transform: rotateX(0deg) rotateY(0deg);}
+   to {-webkit-transform: rotateX(360deg) rotateY(360deg);transform: rotateX(360deg) rotateY(360deg);}
+ }
+
+ .rotating .container .cube {
+   transform: rotate 20s infinite linear;
+   animation: rotate 20s infinite linear;
+ }
+                      </code></pre>
+                    </div>
+                    <div class="code-snip" data-lang="js">
+                      <pre><code class="javascript">
+
+
+      You mean to tell me you did this with NO JAVASCRIPT!?!
+
+
+                      </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="section section1">
@@ -204,78 +348,71 @@
                 <div class="code-view">
                   <div class="code-snip out" data-lang="info"></div>
                   <div class="code-snip" data-lang="html">
-                    <pre><code class="html">&lt;div class="intro" id="0"&gt;
-&lt;div class="step"&gt;
-Hey there! Thanks for checking out my site, CSSfx
-&lt;/div&gt;
-&lt;div class="step"&gt;
-Navigation is easy, but let me walk you through it
-&lt;/div&gt;
-&lt;div class="step"&gt;
-The site is divided into a handful of sections
-&lt;/div&gt;
-&lt;div class="step"&gt;
-Each section has a CSS demo on the left, code on the right
-&lt;/div&gt;
-&lt;div class="step"&gt;
-Code for the layout/scroll effects is in last section
-&lt;/div&gt;
-&lt;div class="step"&gt;
-To navigate between sections, just scroll like you normally would
-&lt;/div&gt;
-&lt;div class="step"&gt;
-Alright -  that about covers it! Thanks for coming, have fun!
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                    <pre><code class="html"> &lt;div class="intro" id="0"&gt;
+ &lt;div class="step"&gt;
+ Hey there! Thanks for checking out my site, CSSfx
+ &lt;/div&gt;
+ &lt;div class="step"&gt;
+ Navigation is easy, but let me walk you through it
+ &lt;/div&gt;
+ &lt;div class="step"&gt;
+ The site is divided into a handful of sections
+ &lt;/div&gt;
+ &lt;div class="step"&gt;
+ Each section has a CSS demo on the left, code on the right
+ &lt;/div&gt;
+ &lt;div class="step"&gt;
+ Code for the layout/scroll effects is in last section
+ &lt;/div&gt;
+ &lt;div class="step"&gt;
+ To navigate between sections, just scroll like you normally would
+ &lt;/div&gt;
+ &lt;div class="step"&gt;
+ Alright -  that about covers it! Thanks for coming, have fun!
+ &lt;/div&gt;
+ &lt;/div&gt;</code></pre>
                   </div>
                   <div class="code-snip" data-lang="css">
-                    <pre><code class="css">.intro {
-  font-size: xx-large;
-  font-weight: 900;
-  width: 60%;
-  text-align: center;
-  position: relative;
-  height: 30%;
-}
+                    <pre><code class="css">
+ .intro {
+   font-size: xx-large;
+   font-weight: 900;
+   width: 60%;
+   text-align: center;
+   position: relative;
+   height: 30%;
+ }
 
-.step {
-  position: absolute;
-  display: none;
-}
+ .step {
+   position: absolute;
+   display: none;
+ }
 
-.step:first-child {
-  display: block;
-}
-
-
-
-
-
+ .step:first-child {
+   display: block;
+ }
                     </code></pre>
                   </div>
                   <div class="code-snip" data-lang="js">
-                    <pre><code class="javascript">const fadeIn = (idx) => {
-  const letters = shuffle($('[class*="char"]', $intro[idx]));
-  $($intro[idx]).show();
-  $.each(letters, (i, el) => {
-    setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
-      (500 / letters.length * i) + (500)
-    );
-  });
-};
+                    <pre><code class="javascript">
+ const fadeIn = (idx) => {
+   const letters = shuffle($('[class*="char"]', $intro[idx]));
+   $($intro[idx]).show();
+   $.each(letters, (i, el) => {
+     setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
+       (500 / letters.length * i) + (500)
+     );
+   });
+ };
 
-const fadeOut = (idx) => {
-  const letters = shuffle($('[class*="char"]', $intro[idx]));
-  $.each(letters, (i, el) => {
-    setTimeout(() => (
-      $(el).animate({ opacity: 0 }, 100)), (500 / letters.length * i)
-    );
-  });
-};
-
-
-
-
+ const fadeOut = (idx) => {
+   const letters = shuffle($('[class*="char"]', $intro[idx]));
+   $.each(letters, (i, el) => {
+     setTimeout(() => (
+       $(el).animate({ opacity: 0 }, 100)), (500 / letters.length * i)
+     );
+   });
+ };
                     </code></pre>
                   </div>
                 </div>
