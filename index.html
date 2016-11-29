@@ -181,6 +181,141 @@
           </div>
           <div class="section">
             <div class="section4 rotating-box">
+              <div class="code-container">
+                <div class="menu-bar" data-screen="four">
+                  <div class="code-button" data-lang="info">Info</div>
+                  <div class="code-button" data-lang="html">HTML</div>
+                  <div class="code-button" data-lang="css">CSS</div>
+                  <div class="code-button" data-lang="js">JS</div>
+                </div>
+                <div class="code-pane">
+                  <div class="code-view">
+                    <div class="code-snip out" data-lang="info"></div>
+                    <div class="code-snip" data-lang="html">
+                      <pre><code class="html">
+ &lt;figure class="box-figure" id="3"&gt;
+   &lt;div class="container"&gt;
+     &lt;div class="box show-front"&gt;
+       &lt;span class="rface rfront"&gt;&lt;br/&gt;1&lt;/span&gt;
+       &lt;span class="rface rback"&gt;&lt;br/&gt;2&lt;/span&gt;
+       &lt;span class="rface rright"&gt;&lt;br/&gt;&lt;div id="flip3"&gt;3&lt;/div&gt;&lt;/span&gt;
+       &lt;span class="rface rleft"&gt;&lt;br/&gt;&lt;div id="flip4"&gt;4&lt;/div&gt;&lt;/span&gt;
+       &lt;span class="rface rtop"&gt;&lt;br/&gt;5&lt;/span&gt;
+       &lt;span class="rface rbottom"&gt;&lt;br/&gt;6&lt;/span&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="buttons" id="buttons"&gt;
+     &lt;div class="button" data-face="show-front"&gt;1&lt;/div&gt;
+     &lt;div class="button" data-face="show-back"&gt;2&lt;/div&gt;
+     &lt;div class="button" data-face="show-right"&gt;3&lt;/div&gt;
+     &lt;div class="button" data-face="show-left"&gt;4&lt;/div&gt;
+     &lt;div class="button" data-face="show-top"&gt;5&lt;/div&gt;
+     &lt;div class="button" data-face="show-bottom"&gt;6&lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/figure&gt;
+                      </code></pre>
+                    </div>
+                    <div class="code-snip" data-lang="css">
+                      <pre><code class="css">
+ .box {
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   transform-style: preserve-3d;
+   transition: transform 1s;
+ }
+
+ .show-front {
+   transform: translateZ(-50px) translatex(11px);
+ }
+
+ .show-back {
+   transform: rotateX(-180deg) translateY(200px) translateZ(50px) translatex(10px);
+ }
+
+ .show-bottom {
+   transform: rotateX(90deg) translatez(100px) translatex(7px);
+ }
+
+ /* etc... */
+
+ .face {
+   display: block;
+   position: absolute;
+   border-radius: 5px;
+   border: 2px solid white;
+   color: white;
+   text-align: center;
+   font-size: x-large;
+ }
+
+ .front, .back, .top, .bottom {
+   width: 300px;
+ }
+
+ .front, .back, .left, .right {
+   height: 200px;
+ }
+
+ .left, .right {
+   width: 100px;
+   left: 100px;
+ }
+
+ .top, .bottom {
+   height: 100px;
+   top: 50px;
+   line-height: 35px;
+ }
+
+ .front {
+   transform: translateZ(50px);
+ }
+
+ .back {
+   transform: rotateX(180deg) translateZ(50px);
+ }
+
+ .top {
+   transform: rotateX(90deg) translateZ(100px);
+ }
+
+ /* etc... */
+                      </code></pre>
+                    </div>
+                    <div class="code-snip" data-lang="js">
+                      <pre><code class="javascript">
+ document.getElementById('buttons').addEventListener('click', (e) => {
+   document.getElementsByClassName('box')[0].className = `box ${e.target.dataset.face}`;
+ });
+ $(document).on('keyup', (e) => {
+   const box = document.getElementsByClassName('box')[0];
+   switch (e.which) {
+     case 49:
+       box.className = 'box show-front';
+       break;
+     case 50:
+       box.className = 'box show-back';
+       break;
+     case 51:
+       box.className = 'box show-right';
+       break;
+     case 52:
+       box.className = 'box show-left';
+       break;
+     case 53:
+       box.className = 'box show-top';
+       break;
+     case 54:
+       box.className = 'box show-bottom';
+       break;
+   }
+ });
+                      </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="section layered-spinner">
