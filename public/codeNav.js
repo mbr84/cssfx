@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 
 $(document).ready(() => {
-  const codePanes = {
+  var codePanes = {
     one: [$("div[data-screen='one'] + .code-pane .out")],
     two: [$("div[data-screen='two'] + .code-pane .out")],
     three: [$("div[data-screen='three'] + .code-pane .out")],
@@ -11,16 +11,15 @@ $(document).ready(() => {
   }
   let zIndex = 2
 
-  const showCode = (e) => {
-    const code = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane div[data-lang='${e.target.dataset.lang}`);
-    const codePane = codePanes[e.currentTarget.dataset.screen]
+  var showCode = (e) => {
+    var code = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane div[data-lang='${e.target.dataset.lang}`);
+    var codePane = codePanes[e.currentTarget.dataset.screen]
     if (code.hasClass('out')) {
-      const topItem = codePane[codePane.length - 1];
+      var topItem = codePane[codePane.length - 1];
       if (topItem.data('lang') !== (e.target.dataset.lang)) {
         topItem.toggleClass('out');
         codePane.pop()
         setTimeout(() => { showCode(e); }, 300)
-        // showCode(e);
       }
     } else {
       codePane.push(code)
