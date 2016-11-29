@@ -16,7 +16,7 @@ $(document).ready(() => {
       isMoving = true;
       then = (new Date).getTime();
       var top = $('.left-scroll').css('top');
-      var atTop = $('.section1').offset().top === 0;
+      var atTop = $('.active').data('position') === 0;
       var bottom = $('.right-scroll').css('bottom');
       var atBottom = $('.active').data('position') === 5;
       var menuItems = Array.from(document.querySelectorAll('[data-position]'));
