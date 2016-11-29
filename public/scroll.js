@@ -22,7 +22,7 @@ $(document).ready(() => {
       var menuItems = Array.from(document.querySelectorAll('[data-position]'));
       var currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
       var deltaY = e.originalEvent.deltaY || 0;
-      var op, activeNow;)
+      var op, activeNow;
       if (e.which === 40 || deltaY > 0) {
         if (atBottom) {
           isMoving = false;
