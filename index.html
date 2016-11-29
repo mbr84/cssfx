@@ -16,6 +16,7 @@
     <script src="./public/scroll.js"></script>
     <script src="./public/space.js"></script>
     <script src="./public/fab.js"></script>
+    <script src="./public/codeNav.js"></script>
   </head>
   <body>
     <div class="outer-container">
@@ -192,43 +193,96 @@
           </div>
           <div class="section section1">
 
-              <div class="code-container">
-                <div class="menu-bar">
-                  <div class="code-button">Info</div>
-                  <div class="code-button">HTML</div>
-                  <div class="code-button">CSS</div>
-                  <div class="code-button">JS</div>
-                </div>
-                <div class="code-pane">
-                  <div class="info show"></div>
-                  <div class="html">
+            <div class="code-container">
+              <div class="menu-bar" data-screen="one">
+                <div class="code-button" data-lang="info">Info</div>
+                <div class="code-button" data-lang="html">HTML</div>
+                <div class="code-button" data-lang="css">CSS</div>
+                <div class="code-button" data-lang="js">JS</div>
+              </div>
+              <div class="code-pane">
+                <div class="code-view">
+                  <div class="code-snip out" data-lang="info"></div>
+                  <div class="code-snip" data-lang="html">
                     <pre><code class="html">&lt;div class="intro" id="0"&gt;
-  &lt;div class="step"&gt;
-    Hey there! Thanks for checking out my site, CSSfx
-  &lt;/div&gt;
-  &lt;div class="step"&gt;
-    Navigation is easy, but let me walk you through it
-  &lt;/div&gt;
-  &lt;div class="step"&gt;
-    The site is divided into a handful of sections
-  &lt;/div&gt;
-  &lt;div class="step"&gt;
-    Each section has a CSS demo on the left, code on the right
-  &lt;/div&gt;
-  &lt;div class="step"&gt;
-    Code for the layout/scroll effects is in last section
-  &lt;/div&gt;
-  &lt;div class="step"&gt;
-    To navigate between sections, just scroll like you normally would
-  &lt;/div&gt;
-  &lt;div class="step"&gt;
-    Alright -  that about covers it! Thanks for coming, have fun!
-  &lt;/div&gt;
+&lt;div class="step"&gt;
+Hey there! Thanks for checking out my site, CSSfx
+&lt;/div&gt;
+&lt;div class="step"&gt;
+Navigation is easy, but let me walk you through it
+&lt;/div&gt;
+&lt;div class="step"&gt;
+The site is divided into a handful of sections
+&lt;/div&gt;
+&lt;div class="step"&gt;
+Each section has a CSS demo on the left, code on the right
+&lt;/div&gt;
+&lt;div class="step"&gt;
+Code for the layout/scroll effects is in last section
+&lt;/div&gt;
+&lt;div class="step"&gt;
+To navigate between sections, just scroll like you normally would
+&lt;/div&gt;
+&lt;div class="step"&gt;
+Alright -  that about covers it! Thanks for coming, have fun!
+&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-          </div>
+                  </div>
+                  <div class="code-snip" data-lang="css">
+                    <pre><code class="css">.intro {
+  font-size: xx-large;
+  font-weight: 900;
+  width: 60%;
+  text-align: center;
+  position: relative;
+  height: 30%;
+}
+
+.step {
+  position: absolute;
+  display: none;
+}
+
+.step:first-child {
+  display: block;
+}
+
+
+
+
+
+                    </code></pre>
+                  </div>
+                  <div class="code-snip" data-lang="js">
+                    <pre><code class="javascript">const fadeIn = (idx) => {
+  const letters = shuffle($('[class*="char"]', $intro[idx]));
+  $($intro[idx]).show();
+  $.each(letters, (i, el) => {
+    setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
+      (500 / letters.length * i) + (500)
+    );
+  });
+};
+
+const fadeOut = (idx) => {
+  const letters = shuffle($('[class*="char"]', $intro[idx]));
+  $.each(letters, (i, el) => {
+    setTimeout(() => (
+      $(el).animate({ opacity: 0 }, 100)), (500 / letters.length * i)
+    );
+  });
+};
+
+
+
+
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
+        </div>
       </div>
     </div>
   </body>
