@@ -19,7 +19,7 @@ $(document).ready(() => {
       if (topItem.data('lang') !== (e.target.dataset.lang)) {
         topItem.toggleClass('out');
         codePane.pop()
-        setTimeout(() => { showCode(e); }, 150)
+        setTimeout(() => { showCode(e); }, 250)
         // showCode(e);
       }
     } else {
