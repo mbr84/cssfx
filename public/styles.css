@@ -865,6 +865,10 @@ div[data-screen="two"] + .code-pane pre, div[data-screen="three"] + .code-pane p
   cursor: pointer;
 }
 
+div[data-screen="three"] .code-button {
+  width: 33%;
+}
+
 .code-button:last-child {
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
@@ -900,21 +904,40 @@ div[data-screen="one"] .code-button:active {
   box-shadow: 0px 2px 0px 0px #3e1d05, 1px 4px 3px #2d1818;
 }
 
-div[data-screen^="t"] .code-button {
+div[data-screen="two"] .code-button {
   background-image: linear-gradient(#1e0944 0%, #0d0744 100%);
   box-shadow: 0px 5px 0px 0px #02011b, 3px 9px 5px #03041b;
 }
 
-div[data-screen^="t"] .code-button:last-child {
+div[data-screen="two"] .code-button:last-child {
   box-shadow: 0px 5px 0px 0px #02011b, 3px 9px 5px #03041b;
 }
 
-div[data-screen^="t"] .code-button:active {
+div[data-screen="two"] .code-button:active {
   background-image: linear-gradient(#0d0744 0%, #1e0944 100%);
   box-shadow: inset 5px 0px 5px #130d27, 0px 2px 0px 0px #02011b, 1px 4px 3px #03041b;
 }
 
-div[data-screen^="t"] .code-button:first-child:active {
+div[data-screen="two"] .code-button:first-child:active {
   background-image: linear-gradient(#0d0744 0%, #1e0944 100%);
   box-shadow: 0px 2px 0px 0px #02011b, 1px 4px 3px #03041b;
+}
+
+div[data-screen="three"] .code-button {
+  background-image: linear-gradient(rgba(88, 85, 88, 0.3) 0%, rgba(13,7,68,.3) 100%);
+  box-shadow: 0px 5px 0px 0px #02011b, 3px 9px 5px #03041b;
+}
+
+div[data-screen="three"] .code-button:last-child {
+  box-shadow: 0px 5px 0px 0px #02011b, 3px 9px 5px #03041b;
+}
+
+div[data-screen="three"] .code-button:active {
+  background-image: linear-gradient(rgba(13,7,68,.1) 0%, rgba(30,9,68,.1) 100%);
+  box-shadow: inset 5px 0px 5px #130d27, 0px 2px 0px 0px #02011b, 1px 4px 3px #03041b;
+}
+
+div[data-screen="three"] .code-button:first-child:active {
+  background-image: linear-gradient(rgba(13,7,68,.1) 0%, rgba(30,9,68,.1) 100%);
+  box-shadow: 0px 2px 0px 0px #02011b, 1px 4px 3px #03041b, -4px 4px 3px #03041b;
 }
