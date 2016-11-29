@@ -16,14 +16,13 @@ $(document).ready(() => {
       isMoving = true;
       then = (new Date).getTime();
       var top = $('.left-scroll').css('top');
+      var atTop = $('.section1').offset().top === 0;
       var bottom = $('.right-scroll').css('bottom');
       var atBottom = $('.left-scroll').height() + (6 / 5) * $('.section1').offset().top === 0;
-      var atTop = $('.section1').offset().top === 0;
       var menuItems = Array.from(document.querySelectorAll('[data-position]'));
       var currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
       var deltaY = e.originalEvent.deltaY || 0;
-      var op, activeNow;
-
+      var op, activeNow;)
       if (e.which === 40 || deltaY > 0) {
         if (atBottom) {
           isMoving = false;
