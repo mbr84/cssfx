@@ -18,7 +18,7 @@ $(document).ready(() => {
       var top = $('.left-scroll').css('top');
       var atTop = $('.section1').offset().top === 0;
       var bottom = $('.right-scroll').css('bottom');
-      var atBottom = $('.left-scroll').height() + (6 / 5) * $('.section1').offset().top === 0;
+      var atBottom = $('.active').data('position') === 5;
       var menuItems = Array.from(document.querySelectorAll('[data-position]'));
       var currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
       var deltaY = e.originalEvent.deltaY || 0;
