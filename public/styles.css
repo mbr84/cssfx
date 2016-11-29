@@ -857,7 +857,7 @@ div[data-screen="two"] + .code-pane pre, div[data-screen="three"] + .code-pane p
   position: absolute;
   top: -400px;
   width: 100%;
-  transition: top 200ms;
+  transition: top 300ms;
 }
 
 .out {
