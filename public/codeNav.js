@@ -9,15 +9,13 @@ $(document).ready(() => {
     five: false,
     six: false,
   }
-  
+
   var inTransition = false
 
   var showCode = (e) => {
     var code = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane div[data-lang='${e.target.dataset.lang}`);
     var codePane = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane`);
     var activePane = activePanes[e.currentTarget.dataset.screen]
-console.log(activePane)
-
 
     if (!activePane) {
       code.toggleClass('out');
