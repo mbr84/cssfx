@@ -871,6 +871,10 @@ div[data-screen="two"] + .code-pane pre, div[data-screen="three"] + .code-pane p
   transition: transform .75s cubic-bezier(.24,1.61,.35,.89);
 }
 
+.fall {
+  transition: transform .25s;
+}
+
 .down {
   transform: translateY(100vh);
 }
