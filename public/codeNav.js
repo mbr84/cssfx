@@ -9,6 +9,7 @@ $(document).ready(() => {
     five: false,
     six: false,
   }
+  
   var inTransition = false
 
   var showCode = (e) => {
