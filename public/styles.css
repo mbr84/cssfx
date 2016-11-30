@@ -872,7 +872,7 @@ div[data-screen="two"] + .code-pane pre, div[data-screen="three"] + .code-pane p
 }
 
 .fall {
-  transition: transform .25s;
+  transition: transform .4s ease-in-out;
 }
 
 .down {
