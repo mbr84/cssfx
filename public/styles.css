@@ -835,6 +835,7 @@ div[data-screen="two"] + .code-pane pre, div[data-screen="three"] + .code-pane p
   flex-direction: column;
   width: 75%;
   margin: 25% auto auto auto;
+  transform-style: preserve-3d;
 }
 
 .menu-bar {
@@ -843,6 +844,9 @@ div[data-screen="two"] + .code-pane pre, div[data-screen="three"] + .code-pane p
 
 .code-pane {
   padding: 0 5px;
+  transform: perspective(1000px)  rotatex(0deg);
+  transform-style: preserve-3d;
+  transform-origin: top;
 }
 
 .code-view {
@@ -857,11 +861,27 @@ div[data-screen="two"] + .code-pane pre, div[data-screen="three"] + .code-pane p
   position: absolute;
   top: -400px;
   width: 100%;
-  transition: top 300ms;
 }
 
 .out {
   top: 0px;
+}
+
+.swing {
+  transition: transform .75s cubic-bezier(.24,1.61,.35,.89);
+}
+
+.down {
+  transform: translateY(100vh);
+}
+
+.hide-transition {
+  transition: none;
+  display: none;
+}
+
+.up {
+  transform: perspective(1000px)  rotateX(-90deg);
 }
 
 .code-button {
