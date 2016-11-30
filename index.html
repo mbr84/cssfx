@@ -305,7 +305,7 @@
    document.getElementsByClassName('box')[0].className = `box ${e.target.dataset.face}`;
  });
  $(document).on('keyup', (e) => {
-   const box = document.getElementsByClassName('box')[0];
+   var box = document.getElementsByClassName('box')[0];
    switch (e.which) {
      case 49:
        box.className = 'box show-front';
@@ -601,21 +601,21 @@
                   </div>
                   <div class="code-snip" data-lang="js">
                     <pre><code class="javascript">
- const fadeIn = (idx) => {
-   const letters = shuffle($('[class*="char"]', $intro[idx]));
+ var fadeIn = (idx) => {
+   var varters = shuffle($('[class*="char"]', $intro[idx]));
    $($intro[idx]).show();
-   $.each(letters, (i, el) => {
+   $.each(varters, (i, el) => {
      setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
-       (500 / letters.length * i) + (500)
+       (500 / varters.length * i) + (500)
      );
    });
  };
 
- const fadeOut = (idx) => {
-   const letters = shuffle($('[class*="char"]', $intro[idx]));
-   $.each(letters, (i, el) => {
+ var fadeOut = (idx) => {
+   var varters = shuffle($('[class*="char"]', $intro[idx]));
+   $.each(varters, (i, el) => {
      setTimeout(() => (
-       $(el).animate({ opacity: 0 }, 100)), (500 / letters.length * i)
+       $(el).animate({ opacity: 0 }, 100)), (500 / varters.length * i)
      );
    });
  };

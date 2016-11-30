@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementsByClassName('box')[0].className = `box ${e.target.dataset.face}`;
   });
   $(document).on('keyup', (e) => {
-    const box = document.getElementsByClassName('box')[0];
+    var box = document.getElementsByClassName('box')[0];
     switch (e.which) {
       case 49:
         box.className = 'box show-front';

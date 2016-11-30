@@ -9,7 +9,7 @@ $(document).ready(() => {
     five: false,
     six: false,
   }
-  let inTransition = false
+  var inTransition = false
 
   var showCode = (e) => {
     var code = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane div[data-lang='${e.target.dataset.lang}`);

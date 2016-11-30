@@ -1,17 +1,17 @@
 /* eslint-disable no-undef, func-names, one-var, one-var-declaration-per-line, no-param-reassign */
-let $intro;
-let currentStep = 0;
+var $intro;
+var currentStep = 0;
 
-const spanWrap = (string) => {
+var spanWrap = (string) => {
   $(string).each(function () {
-    const str = $(this).html();
+    var str = $(this).html();
 
-    const strArr = str.split('');
+    var strArr = str.split('');
 
-    let htmEl = '';
-    for (let i = 0, len = strArr.length; i < len; i++) {
+    var htmEl = '';
+    for (var i = 0, len = strArr.length; i < len; i++) {
       if (strArr[i] === '<') {
-        const j = i;
+        var j = i;
         while (strArr[i++] !== '>');
         htmEl += str.slice(j, i + 1);
       } else {
@@ -24,14 +24,14 @@ const spanWrap = (string) => {
   });
 };
 
-const lineWrap = (line) => {
+var lineWrap = (line) => {
   $(line).each(function () {
-    const str = $(this).html();
+    var str = $(this).html();
 
-    const lines = str.split('<br>');
+    var lines = str.split('<br>');
 
-    let htmEl = '';
-    for (let i = 0, len = lines.length; i < len; i++) {
+    var htmEl = '';
+    for (var i = 0, len = lines.length; i < len; i++) {
       htmEl += `<span class="line-${i}">${lines[i]}</span>`;
       if (i !== lines.length - 1) { htmEl += '<br>'; }
     }
@@ -40,35 +40,35 @@ const lineWrap = (line) => {
   });
 };
 
-const shuffle = (array) => {
-  for (let i = 0; i < array.length; i++) {
-    const temp = array[i];
-    const j = Math.floor(Math.random() * i);
+var shuffle = (array) => {
+  for (var i = 0; i < array.length; i++) {
+    var temp = array[i];
+    var j = Math.floor(Math.random() * i);
     array[i] = array[j];
     array[j] = temp;
   }
   return array;
 };
 
-const fadeIn = (idx) => {
-  const letters = shuffle($('[class*="char"]', $intro[idx]));
+var fadeIn = (idx) => {
+  var varters = shuffle($('[class*="char"]', $intro[idx]));
   $($intro[idx]).show();
-  $.each(letters, (i, el) => {
+  $.each(varters, (i, el) => {
     setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
-      (500 / letters.length * i) + (500)
+      (500 / varters.length * i) + (500)
     );
   });
 };
 
-const fadeOut = (idx) => {
-  const letters = shuffle($('[class*="char"]', $intro[idx]));
-  $.each(letters, (i, el) => {
-    setTimeout(() => ($(el).animate({ opacity: 0 }, 100)), (500 / letters.length * i));
+var fadeOut = (idx) => {
+  var varters = shuffle($('[class*="char"]', $intro[idx]));
+  $.each(varters, (i, el) => {
+    setTimeout(() => ($(el).animate({ opacity: 0 }, 100)), (500 / varters.length * i));
   });
 };
 
-const next = () => {
-  const lastStep = currentStep;
+var next = () => {
+  var lastStep = currentStep;
   currentStep = ++currentStep % $intro.length;
   fadeOut(lastStep);
   fadeIn(currentStep);
@@ -78,7 +78,7 @@ $(document).ready(() => {
   $intro = $('.intro .step');
   $intro.each((i, step) => {
     lineWrap(spanWrap($(step)));
-    const opacity = (i === 0 ? '1' : '0');
+    var opacity = (i === 0 ? '1' : '0');
     $("[class*='char']", $intro[i]).css('opacity', opacity);
   });
   setInterval(next, 4000);
