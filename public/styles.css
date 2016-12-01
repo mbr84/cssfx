@@ -840,7 +840,9 @@ div[data-screen="two"] + .code-pane pre, div[data-screen="three"] + .code-pane p
 
 .menu-bar {
   display: flex;
+  font-weight: 600;
 }
+
 
 .code-pane {
   padding: 0 5px;
@@ -872,11 +874,11 @@ div[data-screen="two"] + .code-pane pre, div[data-screen="three"] + .code-pane p
 }
 
 .fall {
-  transition: transform .4s ease-in-out;
+  transition: transform .75s cubic-bezier(.38,-0.4,.25,1.3);
 }
 
 .down {
-  transform: translateY(100vh);
+  transform: translateY(95vh) scale(.1);
 }
 
 .hide-transition {
@@ -889,8 +891,15 @@ div[data-screen="two"] + .code-pane pre, div[data-screen="three"] + .code-pane p
 }
 
 .code-button {
-  position: relative;
+  color: white;
+}
+
+.section1 .code-button {
   color: #ffebc6;
+}
+
+.code-button {
+  position: relative;
   padding: 10px 0 10px 0;
   width: 25%;
   text-align: center;

@@ -19,11 +19,12 @@ $(document).ready(() => {
 
     if (!activePane) {
       code.toggleClass('out');
-      activePanes[e.currentTarget.dataset.screen] = code;;
+      activePanes[e.currentTarget.dataset.screen] = code;
       codePane.toggleClass('up');
+      setTimeout(() => codePane.toggleClass('fall'), 10)
     } else {
       codePane.toggleClass('down');
-      codePane.toggleClass('fall')
+      setTimeout(() => codePane.toggleClass('fall'), 10)
       if (!code.hasClass('out')) {
         setTimeout(() => {
           codePane.toggleClass('hide-transition swing');
@@ -36,8 +37,8 @@ $(document).ready(() => {
             codePane.toggleClass('hide-transition swing');
             setTimeout(() => {
               codePane.toggleClass('up')
-              codePane.toggleClass('fall');
-            }, 25)
+              setTimeout(() => codePane.toggleClass('fall'), 10)
+            }, 35)
           }, 25)
         }, 300);
       } else {
@@ -49,8 +50,8 @@ $(document).ready(() => {
             codePane.toggleClass('down');
             setTimeout(() => {
               codePane.toggleClass('hide-transition up');
-              codePane.toggleClass('fall');
-            }, 10)
+              // setTimeout(() => codePane.toggleClass('fall'), 10)
+            }, 35)
           }, 25)
         }, 300)
       }
@@ -60,7 +61,7 @@ $(document).ready(() => {
   $('.menu-bar').click((e) => {
     if (inTransition) return;
     inTransition = true;
-    setTimeout(() => inTransition = false, 1000)
+    setTimeout(() => inTransition = false, 700)
     showCode(e);
   })
 
