@@ -61,7 +61,7 @@ $(document).ready(() => {
   $('.menu-bar').click((e) => {
     if (inTransition) return;
     inTransition = true;
-    setTimeout(() => inTransition = false, 700)
+    setTimeout(() => inTransition = false, 1000)
     showCode(e);
   })
 
