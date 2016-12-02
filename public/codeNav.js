@@ -21,7 +21,7 @@ $(document).ready(() => {
       code.toggleClass('out');
       activePanes[e.currentTarget.dataset.screen] = code;
       codePane.toggleClass('up');
-      setTimeout(() => codePane.toggleClass('fall'), 10)
+      if (!codePane.hasClass('fall')) setTimeout(() => codePane.toggleClass('fall'), 10)
     } else {
       codePane.toggleClass('down');
       setTimeout(() => codePane.toggleClass('fall'), 10)
