@@ -21,11 +21,12 @@
     <div class="outer-container">
       <ul class="contents">
         <li data-position="0" class="active">Intro</li>
-        <li data-position="1">Spin Box</li>
-        <li data-position="2">Spinning Background</li>
-        <li data-position="3">3d Box</li>
-        <li data-position="4">FAB</li>
-        <li data-position="5">X-Wing</li>
+        <li data-position="1">Emojis</li>
+        <li data-position="2">Spin Box</li>
+        <li data-position="3">Spinning Background</li>
+        <li data-position="4">3d Box</li>
+        <li data-position="5">FAB</li>
+        <li data-position="6">X-Wing</li>
       </ul>
       <div class="left-container">
         <div class="left-scroll" id="left">
@@ -55,7 +56,19 @@
             </div>
           </div>
           <div class="section section2">
-            <figure class="rotating" id="1">
+            <figure id="1">
+              <span class="head">
+                <span class="one eye"></span>
+                <span class="two eye"></span>
+                <span class="left-cheek"></span>
+                <span class="right-cheek"></span>
+                <span class="upperlip"></span>
+                <span class="mouth"></span>
+              </span>
+            </figure>
+          </div>
+          <div class="section section3">
+            <figure class="rotating" id="2">
               <div class="container">
                 <div class="cube showbf">
                   <div class="face front"></div>
@@ -68,16 +81,16 @@
               </div>
             </figure>
           </div>
-          <div class="section section3">
-            <div class="spinner-container" id="2">
+          <div class="section section4">
+            <div class="spinner-container" id="3">
               <div class="spinner">
                 <img id="front" src="./public/images/css_purple2.png" alt="" />
                 <img id="back" src="./public/images/css.png" alt="" />
               </div>
             </div>
           </div>
-          <div class="section section4">
-            <figure class="box-figure" id="3">
+          <div class="section section5">
+            <figure class="box-figure" id="4">
               <div class="container">
                 <div class="box show-front">
                   <span class="rface rfront"><br/>1</span>
@@ -98,12 +111,12 @@
               </div>
             </figure>
           </div>
-          <div class="section section5">
+          <div class="section section6">
             <div class="goo-container">
               <h2 class="gooey-title">
                 GOOEY!
               </h2>
-              <nav class="nav-links" style="filter: url('#goo')" id="4">
+              <nav class="nav-links" style="filter: url('#goo')" id="5">
                 <input type="checkbox" class="open-menu" name="open-menu" id="open-menu" />
                 <label for="open-menu" class="open-menu-button">
                   <span class="minus"></span>
@@ -127,9 +140,9 @@
 
             </div>
           </div>
-          <div class="section section6">
+          <div class="section section7">
             <div class="section css3-basics">
-              <div class="space" id="5" style="background-position: center 150px, left top;"></div>
+              <div class="space" id="6" style="background-position: center 150px, left top;"></div>
             </div>
           </div>
         </div>
@@ -138,9 +151,9 @@
       <div class="right-container">
         <div class="right-scroll">
           <div class="section">
-            <div class="section6">
+            <div class="section7">
               <div class="code-container">
-                <div class="menu-bar" data-screen="six">
+                <div class="menu-bar" data-screen="seven">
                   <div class="code-button" data-lang="info">Info</div>
                   <div class="code-button" data-lang="html">HTML</div>
                   <div class="code-button" data-lang="css">CSS</div>
@@ -192,13 +205,13 @@
               </div>
             </div>
           </div>
-          <div class="section section5">
+          <div class="section section6">
 
           </div>
           <div class="section">
-            <div class="section4 rotating-box">
+            <div class="section5 rotating-box">
               <div class="code-container">
-                <div class="menu-bar" data-screen="four">
+                <div class="menu-bar" data-screen="five">
                   <div class="code-button" data-lang="info">Info</div>
                   <div class="code-button" data-lang="html">HTML</div>
                   <div class="code-button" data-lang="css">CSS</div>
@@ -336,7 +349,7 @@
           </div>
           <div class="section layered-spinner">
             <div class="code-container">
-              <div class="menu-bar" data-screen="three">
+              <div class="menu-bar" data-screen="four">
                 <div class="code-button" data-lang="info">Info</div>
                 <div class="code-button" data-lang="html">HTML</div>
                 <div class="code-button" data-lang="css">CSS</div>
@@ -416,9 +429,9 @@
             </div>
           </div>
           <div class="section">
-            <div class="section2 spinners-boxes">
+            <div class="section3 spinners-boxes">
               <div class="code-container">
-                <div class="menu-bar" data-screen="two">
+                <div class="menu-bar" data-screen="three">
                   <div class="code-button" data-lang="info">Info</div>
                   <div class="code-button" data-lang="html">HTML</div>
                   <div class="code-button" data-lang="css">CSS</div>
@@ -536,6 +549,36 @@
 
                       </code></pre>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section section2">
+            <div class="code-container">
+              <div class="menu-bar" data-screen="two">
+                <div class="code-button" data-lang="info">Info</div>
+                <div class="code-button" data-lang="html">HTML</div>
+                <div class="code-button" data-lang="css">CSS</div>
+                <div class="code-button" data-lang="js">JS</div>
+              </div>
+              <div class="code-pane up swing">
+                <div class="code-view">
+                  <div class="code-snip" data-lang="info"></div>
+                  <div class="code-snip" data-lang="html">
+                    <pre><code class="html">
+
+                    </code></pre>
+                  </div>
+                  <div class="code-snip" data-lang="css">
+                    <pre><code class="css">
+
+                    </code></pre>
+                  </div>
+                  <div class="code-snip" data-lang="js">
+                    <pre><code class="javascript">
+
+                    </code></pre>
                   </div>
                 </div>
               </div>
