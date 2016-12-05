@@ -220,7 +220,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 .head:hover::before {
   opacity: 1;
   width: 60%;
-  left: 22%;
+  left: 21%;
 }
 
 .head::after {
