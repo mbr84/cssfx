@@ -81,5 +81,12 @@ $(document).ready(() => {
     $('.layered-spinner').css({ 'background-image': `url('${space}')` })
     $('.section4').css({ 'background-image': `url('${space}')` })
     clickScroll($('.active').data().position);
+    if (window.innerWidth < 800) {
+      $('.right-container').css('width', '0');
+      $('.left-container').css('width', '100vw');
+    } else {
+      $('.right-container').css('width', '50vw');
+      $('.left-container').css('width', '50vw');
+    }
   });
 });
