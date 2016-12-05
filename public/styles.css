@@ -187,18 +187,36 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 
 .head {
   position: absolute;
-  top: 7%;
+  top: 30%;
   left: 45%;
   height: 150px;
   width: 150px;
   border-radius: 50%;
   background: radial-gradient(at 50% 50%, #ffe02d 30%, #e98442 95%);
   transform: scale(.65);
-  transition: 1.25s transform cubic-bezier(.87,-.41,.19,1.44)
+  transition: 1.25s transform cubic-bezier(.87,-.41,.19,1.44);
 }
 
 .head:hover {
   transform: scale(1.2);
+}
+
+.head::before {
+  content: "";
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 80%);
+  height: 10%;
+  width: 55%;
+  top: 116%;
+  position: absolute;
+  left: 24%;
+  opacity: .2;
+  transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
+}
+
+.head:hover::before {
+  opacity: 1;
+  width: 75%;
+  left: 15%;
 }
 
 .head::after {
@@ -1049,27 +1067,6 @@ figure {
 
 /* code snippets */
 
-
-code {
-  max-height: 350px;
-}
-
-pre {
-  margin-top: 0px;
-}
-
-div[data-screen="one"] + .code-pane pre {
-  border-bottom: 1px solid #ffebc6;
-}
-
-div[data-screen="five"] + .code-pane pre {
-  border-bottom: 2px solid #110221;
-}
-
-div[data-screen="three"] + .code-pane pre, div[data-screen="four"] + .code-pane pre, div[data-screen="seven"] + .code-pane pre {
-  border-bottom: 2px solid #110221;
-}
-
 .code-container {
   display: flex;
   flex-direction: column;
@@ -1146,10 +1143,17 @@ div[data-screen="three"] + .code-pane pre, div[data-screen="four"] + .code-pane 
   cursor: pointer;
 }
 
+code {
+  max-height: 350px;
+}
+
+pre {
+  margin-top: 0px;
+}
+
 div[data-screen="four"] .code-button {
   width: 33%;
 }
-
 
 div[data-screen="one"] .code-button {
   border-left: 2px solid #65320a;
