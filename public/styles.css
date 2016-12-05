@@ -116,6 +116,10 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   will-change: top, bottom, scroll-position;
 }
 
+.section2 {
+  background: #8b88ff;
+}
+
 .section3 {
   height: 100vh;
   width: 100%;
@@ -1176,6 +1180,34 @@ div[data-screen="one"] .code-button:active {
   box-shadow: 0px 2px 0px 0px #3e1d05, 1px 4px 3px #2d1818;
 }
 
+div[data-screen="two"] .code-button {
+    border-left: 2px solid #4d720e;
+    border-right: 2px solid #b7eb5d;
+    background: linear-gradient(#93d422 0%, #7bb31a 100%);
+    box-shadow: inset 0px 1px 0px #93d422, 0px 5px 0px 0px #456211, 3px 9px 3px #1f2f03;
+}
+
+div[data-screen="two"] .code-button:last-child {
+  box-shadow: 0px 5px 0px 0px #456211, 3px 9px 5px #1f2f03;
+}
+
+div[data-screen="two"] .code-button:active {
+  background-image: linear-gradient(#7bb31a 0%, #93d422 100%);
+  box-shadow: inset 7px 0px 5px -2px #4d720e, 0px 2px 0px 0px #456211, 1px 4px 3px #1f2f03;
+}
+
+div[data-screen="two"] .code-button:first-child {
+  border-left: none;
+}
+
+div[data-screen="two"] .code-button:first-child:active {
+  box-shadow: 0px 2px 0px 0px #4d720e, 1px 4px 3px #1f2f03;
+}
+
+div[data-screen="two"] .code-button:last-child:active {
+  box-shadow: inset 7px 0px 5px -2px #4d720e, 0px 2px 0px 0px #456211, 0px 4px 5px #1f2f03, 0px 4px 3px #1f2f03;
+}
+
 div[data-screen="three"] .code-button {
   border-left: 2px solid #08042d;
   border-right: 2px solid #1e0944;
@@ -1193,7 +1225,6 @@ div[data-screen="three"] .code-button:active {
 }
 
 div[data-screen="three"] .code-button:first-child:active {
-  background-image: linear-gradient(#0d0744 0%, #1e0944 100%);
   box-shadow: 0px 2px 0px 0px #02011b, 1px 4px 3px #03041b;
 }
 
@@ -1223,7 +1254,6 @@ div[data-screen="seven"] .code-button:active {
 }
 
 div[data-screen="four"] .code-button:first-child:active, div[data-screen="seven"] .code-button:first-child:active {
-  background-image: linear-gradient(rgba(13,7,68,.1) 0%, rgba(30,9,68,.1) 100%);
   box-shadow: 0px 2px 0px 0px #02011b, 1px 4px 3px #03041b, -4px 4px 3px #03041b;
 }
 
