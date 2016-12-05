@@ -76,6 +76,11 @@ $(document).ready(() => {
     if (Math.abs(e.originalEvent.deltaY) > 35) scroll(e);
   });
 
+  $('pre').on('wheel', function (e) {
+    console.log(parseInt($(this).height()));
+    if (parseInt($(this).height()) > 360) e.stopPropagation();
+  });
+
   const paneToggle = () => {
     if (window.innerWidth < 800) {
       $('.right-container').css('width', '0');
