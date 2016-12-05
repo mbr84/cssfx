@@ -76,17 +76,26 @@ $(document).ready(() => {
     if (Math.abs(e.originalEvent.deltaY) > 35) scroll(e);
   });
 
+  const paneToggle = () => {
+    if (window.innerWidth < 800) {
+      $('.right-container').css('width', '0');
+      $('.left-container').css('width', '100vw');
+      $('.goo-container').css('left', '10%')
+    } else {
+      $('.right-container').css('width', '50vw');
+      $('.left-container').css('width', '50vw');
+      $('.goo-container').css('left', '65%')
+    }
+  }
+
+  paneToggle()
+  $('body').css('display', 'block')
+
   $(window).resize(() => {
     var space = `https://res.cloudinary.com/dxbwq1eyw/image/upload/c_fill,h_${window.innerHeight},w_${window.innerWidth}/v1480305081/stars2_qiu9qm.jpg`
     $('.layered-spinner').css({ 'background-image': `url('${space}')` })
     $('.section4').css({ 'background-image': `url('${space}')` })
     clickScroll($('.active').data().position);
-    if (window.innerWidth < 800) {
-      $('.right-container').css('width', '0');
-      $('.left-container').css('width', '100vw');
-    } else {
-      $('.right-container').css('width', '50vw');
-      $('.left-container').css('width', '50vw');
-    }
+    paneToggle()
   });
 });

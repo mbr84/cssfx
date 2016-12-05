@@ -1,9 +1,11 @@
 html, body {
   height: 100%;
   overflow: hidden;
+  background-image: linear-gradient(#ffebc6 0%, #ad925f 100%);
 }
 
 body {
+  display: none;
   font-family: 'Catamaran', sans-serif;
 }
 
