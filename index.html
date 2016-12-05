@@ -161,7 +161,17 @@
                 </div>
                 <div class="code-pane up swing">
                   <div class="code-view">
-                    <div class="code-snip" data-lang="info"></div>
+                    <div class="code-snip" data-lang="info">
+                      <pre><code class="css">
+ Pretty cool feature in CSS3 - multiple backgrounds
+ with distinct transiions. This lets you serve up
+ some pretty cool animation with almost no work at
+ all. Without the javascript, the X-Wing would still
+ fly across the stars, it just wouldn't follow your
+ cursor
+
+                      </code></pre>
+                    </div>
                     <div class="code-snip" data-lang="html">
                       <pre><code class="html">
  &lt;div class="space"&gt;&lt;/div&gt;
@@ -219,7 +229,12 @@
                 </div>
                 <div class="code-pane up swing">
                   <div class="code-view">
-                    <div class="code-snip" data-lang="info"></div>
+                    <div class="code-snip" data-lang="info">
+                      <pre><code class="css">
+   Mmmm... such nice buttons...
+
+                      </code></pre>
+                    </div>
                     <div class="code-snip" data-lang="html">
                       <pre><code class="html">
  &lt;figure class="box-figure" id="3"&gt;
@@ -356,7 +371,19 @@
               </div>
               <div class="code-pane up swing">
                 <div class="code-view">
-                  <div class="code-snip" data-lang="info"></div>
+                  <div class="code-snip" data-lang="info">
+                    <pre><code class="css">
+ In addition to the spinning CSS3 logo, this screen demos
+ a very cool CSS effect called parallax scroll. Especially
+ cool here, because the left and right panes each display
+ separate backgrounds and have to line up perfectly in the
+ middle for the effect to work. CSSfx is a lot of work for
+ the browser, but this screen in particular forced me to use
+ some performace-enhancing CSS properties - 'contain' and
+ 'will change'
+
+                    </code></pre>
+                  </div>
                   <div class="code-snip" data-lang="html">
                     <pre><code class="html">
  &lt;div class="spinner-container" id="2"&gt;
@@ -439,7 +466,12 @@
                 </div>
                 <div class="code-pane up swing">
                   <div class="code-view">
-                    <div class="code-snip" data-lang="info"></div>
+                    <div class="code-snip" data-lang="info">
+                      <pre><code class="css">
+ Who doesn't like a good box full of stars?
+
+                      </code></pre>
+                    </div>
                     <div class="code-snip" data-lang="html">
                       <pre><code class="html">
  &lt;figure class="rotating" id="1"&gt;
@@ -563,7 +595,18 @@
               </div>
               <div class="code-pane up swing">
                 <div class="code-view">
-                  <div class="code-snip" data-lang="info"></div>
+                  <div class="code-snip" data-lang="info">
+                    <pre><code class="css">
+ Here and just about everywhere else, you can hover.
+ I'm particularly proud of these little emojis. Forget
+ the transition - the rounded corners of the smiley's
+ mouth and the upper curve of its teeth are already
+ outside the normal scope of CSS, better suited to
+ scalable vector graphics. But this site isn't about
+ being practical, it's about stretching CSS to its limits
+
+                    </code></pre>
+                  </div>
                   <div class="code-snip" data-lang="html">
                     <pre><code class="html">
 &lt;figure class="emoji" id="1"&gt;
@@ -853,7 +896,14 @@
               </div>
               <div class="code-pane up swing">
                 <div class="code-view">
-                  <div class="code-snip" data-lang="info"></div>
+                  <div class="code-snip" data-lang="info">
+                    <pre><code class="css">
+ Welcome to CSSfx, my JS and CSS demo site. All the effects
+ on this page were written with HTML, CSS and JavaScript.
+ Aside from jQuery, no external libraries were used.
+
+                    </code></pre>
+                  </div>
                   <div class="code-snip" data-lang="html">
                     <pre><code class="html"> &lt;div class="intro" id="0"&gt;
  &lt;div class="step"&gt;
@@ -903,20 +953,20 @@
                   <div class="code-snip" data-lang="js">
                     <pre><code class="javascript">
  var fadeIn = (idx) => {
-   var varters = shuffle($('[class*="char"]', $intro[idx]));
+   var letters = shuffle($('[class*="char"]', $intro[idx]));
    $($intro[idx]).show();
-   $.each(varters, (i, el) => {
+   $.each(letters, (i, el) => {
      setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
-       (500 / varters.length * i) + (500)
+       (500 / letters.length * i) + (500)
      );
    });
  };
 
  var fadeOut = (idx) => {
-   var varters = shuffle($('[class*="char"]', $intro[idx]));
-   $.each(varters, (i, el) => {
+   var letters = shuffle($('[class*="char"]', $intro[idx]));
+   $.each(letters, (i, el) => {
      setTimeout(() => (
-       $(el).animate({ opacity: 0 }, 100)), (500 / varters.length * i)
+       $(el).animate({ opacity: 0 }, 100)), (500 / letters.length * i)
      );
    });
  };
