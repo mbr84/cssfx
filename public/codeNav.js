@@ -24,7 +24,7 @@ $(document).ready(() => {
       if (!codePane.hasClass('fall')) setTimeout(() => codePane.toggleClass('fall'), 10)
     } else {
       codePane.toggleClass('down');
-      setTimeout(() => codePane.toggleClass('fall'), 10)
+      setTimeout(() => codePane.toggleClass('fall'), 50)
       if (!code.hasClass('out')) {
         setTimeout(() => {
           codePane.toggleClass('hide-transition swing');
