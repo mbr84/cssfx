@@ -80,7 +80,6 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   height: calc(100vh * 7);
   width: 100%;
   position: absolute;
-  will-change: scroll-position;
   -webkit-transition: .5s top ease-in, .5s bottom ease-in;
   transition: .5s top ease-in, .5s bottom ease-in;
   -webkit-transition-delay: .3s;
@@ -114,7 +113,6 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   background-image: -webkit-linear-gradient(#ffebc6 0%, #ad925f 100%);
   background-image: linear-gradient(#ffebc6 0%, #ad925f 100%);
   color: #4a3104;
-  will-change: top, bottom, scroll-position;
 }
 
 .section2 {
