@@ -51,19 +51,19 @@ var shuffle = (array) => {
 };
 
 var fadeIn = (idx) => {
-  var varters = shuffle($('[class*="char"]', $intro[idx]));
+  var letters = shuffle($('[class*="char"]', $intro[idx]));
   $($intro[idx]).show();
-  $.each(varters, (i, el) => {
+  $.each(letters, (i, el) => {
     setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
-      (500 / varters.length * i) + (500)
+      (500 / letters.length * i) + (500)
     );
   });
 };
 
 var fadeOut = (idx) => {
-  var varters = shuffle($('[class*="char"]', $intro[idx]));
-  $.each(varters, (i, el) => {
-    setTimeout(() => ($(el).animate({ opacity: 0 }, 100)), (500 / varters.length * i));
+  var letters = shuffle($('[class*="char"]', $intro[idx]));
+  $.each(letters, (i, el) => {
+    setTimeout(() => ($(el).animate({ opacity: 0 }, 100)), (500 / letters.length * i));
   });
 };
 

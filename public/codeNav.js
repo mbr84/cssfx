@@ -9,22 +9,22 @@ $(document).ready(() => {
     five: false,
     six: false,
   }
+
   var inTransition = false
 
   var showCode = (e) => {
     var code = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane div[data-lang='${e.target.dataset.lang}`);
     var codePane = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane`);
     var activePane = activePanes[e.currentTarget.dataset.screen]
-console.log(activePane)
-
 
     if (!activePane) {
       code.toggleClass('out');
-      activePanes[e.currentTarget.dataset.screen] = code;;
+      activePanes[e.currentTarget.dataset.screen] = code;
       codePane.toggleClass('up');
+      if (!codePane.hasClass('fall')) setTimeout(() => codePane.toggleClass('fall'), 10)
     } else {
       codePane.toggleClass('down');
-      codePane.toggleClass('fall')
+      setTimeout(() => codePane.toggleClass('fall'), 50)
       if (!code.hasClass('out')) {
         setTimeout(() => {
           codePane.toggleClass('hide-transition swing');
@@ -37,8 +37,8 @@ console.log(activePane)
             codePane.toggleClass('hide-transition swing');
             setTimeout(() => {
               codePane.toggleClass('up')
-              codePane.toggleClass('fall');
-            }, 25)
+              setTimeout(() => codePane.toggleClass('fall'), 10)
+            }, 35)
           }, 25)
         }, 300);
       } else {
@@ -50,8 +50,8 @@ console.log(activePane)
             codePane.toggleClass('down');
             setTimeout(() => {
               codePane.toggleClass('hide-transition up');
-              codePane.toggleClass('fall');
-            }, 10)
+              // setTimeout(() => codePane.toggleClass('fall'), 10)
+            }, 35)
           }, 25)
         }, 300)
       }
