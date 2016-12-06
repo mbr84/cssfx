@@ -1189,7 +1189,7 @@ figure {
     transform: scale(1.1) translateY(100vh);
   }
 
-  50% {
+  41% {
     transform: translateY(100vh);
     visibility: hidden;
   }
@@ -1197,6 +1197,10 @@ figure {
   100% {
     visibility: hidden;
   }
+}
+
+.fall {
+  animation: 1.5s fall-down;
 }
 
 .code-view {
@@ -1220,10 +1224,6 @@ figure {
 
 .show {
   transform: none;
-}
-
-.fall {
-  animation: 1.5s fall-down;
 }
 
 .code-button {

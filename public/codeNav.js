@@ -27,7 +27,7 @@ $(document).ready(() => {
           code.toggleClass('show');
           activePanes[e.currentTarget.dataset.screen] = false;
           code.toggleClass('fall');
-        }, 600);
+        }, 450);
       } else {
         activePane.toggleClass('fall');
         setTimeout(() => {
@@ -35,7 +35,7 @@ $(document).ready(() => {
           activePane.toggleClass('show');
           activePanes[e.currentTarget.dataset.screen] = code;
           activePane.toggleClass('fall');
-        }, 600)
+        }, 450)
       }
     }
   }
