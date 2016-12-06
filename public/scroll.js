@@ -11,6 +11,14 @@ $(document).ready(() => {
     }, delay);
   }
 
+  var handleGooey = () => {
+    if ($('.active').data('position') == 5) {
+      $('#5').parent().parent().css('contain', 'none')
+    } else {
+      setTimeout(() => $('#5').parent().parent().css('contain', 'all'), 700)
+    }
+  }
+
   var scroll = (e) => {
     if (!isMoving) {
       isMoving = true;
@@ -46,6 +54,7 @@ $(document).ready(() => {
       $([menuItems[activeNow]]).addClass('active').siblings()
         .removeClass('active');
       $(`#${$('.active').data('position')}`).css('display', 'block');
+      handleGooey();
 
       $('.left-scroll').css({ top: `calc(${top} ${op} 100%)` });
       $('.right-scroll').css({ bottom: `calc(${bottom} ${op} 100%)` });
@@ -53,6 +62,7 @@ $(document).ready(() => {
   };
 
   var clickScroll = (pos) => {
+    handleGooey();
     $('.left-scroll').css({ top: `calc(${pos} * -100%)` });
     $('.right-scroll').css({ bottom: `calc(${pos} * -100%)` });
   };
@@ -81,7 +91,7 @@ $(document).ready(() => {
     if (parseInt($(this).height()) > 360) e.stopPropagation();
   });
 
-  const paneToggle = () => {
+  var paneToggle = () => {
     if (window.innerWidth < 800) {
       $('.right-container').css('width', '0');
       $('.left-container').css('width', '100vw');
@@ -93,8 +103,8 @@ $(document).ready(() => {
     }
   }
 
-  paneToggle()
-  $('body').css('display', 'block')
+  paneToggle();
+  $('body').css('display', 'block');
 
   $(window).resize(() => {
     var space = `https://res.cloudinary.com/dxbwq1eyw/image/upload/c_fill,h_${window.innerHeight},w_${window.innerWidth}/v1480305081/stars2_qiu9qm.jpg`
