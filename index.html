@@ -165,7 +165,7 @@
                 <div class="code-pane up swing">
                   <div class="code-view">
                     <div class="code-snip" data-lang="info">
-                      <pre><code class="css">
+                      <pre><code class="markdown">
  Pretty cool feature in CSS3 - multiple backgrounds
  with distinct transiions. This lets you serve up
  some pretty cool animation with almost no work at
@@ -233,7 +233,7 @@
                 <div class="code-pane up swing">
                   <div class="code-view">
                     <div class="code-snip" data-lang="info">
-                      <pre><code class="css">
+                      <pre><code class="markdown">
    Mmmm... such nice buttons...
 
                       </code></pre>
@@ -375,7 +375,7 @@
               <div class="code-pane up swing">
                 <div class="code-view">
                   <div class="code-snip" data-lang="info">
-                    <pre><code class="css">
+                    <pre><code class="markdown">
  In addition to the spinning CSS3 logo, this screen demos
  a very cool CSS effect called parallax scroll. Especially
  cool here, because the left and right panes each display
@@ -469,8 +469,8 @@
                 <div class="code-pane up swing">
                   <div class="code-view">
                     <div class="code-snip" data-lang="info">
-                      <pre><code class="css">
- Who doesn't like a good box full of stars?
+                      <pre><code class="markdown">
+          Who doesn't like a good box full of stars?
 
                       </code></pre>
                     </div>
@@ -598,14 +598,15 @@
               <div class="code-pane up swing">
                 <div class="code-view">
                   <div class="code-snip" data-lang="info">
-                    <pre><code class="css">
- Here and just about everywhere else, you can hover.
+                    <pre><code class="markdown">
+ Here, and just about everywhere else, you can hover.
+
  I'm particularly proud of these little emojis. Forget
- the transition - the rounded corners of the smiley's
- mouth and the upper curve of its teeth are already
- outside the normal scope of CSS, better suited to
- scalable vector graphics. But this site isn't about
- being practical, it's about stretching CSS to its limits
+ the transition a minute - the rounded corners of the
+ smiley's mouth and the upper curve of its teeth are
+ already outside the normal scope of CSS, better suited
+ to scalable vector graphics. But this site isn't about
+ being practical, it's about pushing CSS to its limits!
 
                     </code></pre>
                   </div>
@@ -625,261 +626,261 @@
                   </div>
                   <div class="code-snip" data-lang="css">
                     <pre><code class="css">
-.head, .eye, .mouth {
-  display: block;
-}
+  .head, .eye, .mouth {
+    display: block;
+  }
 
-.head {
-  position: absolute;
-  top: 30%;
-  left: 45%;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  background: radial-gradient(at 50% 50%, #ffe02d 30%, #e98442 95%);
-  transform: scale(.65);
-  transition: 1.25s transform cubic-bezier(.87,-.41,.19,1.44);
-}
+  .head {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: radial-gradient(at 50% 50%, #ffe02d 30%, #e98442 95%);
+    transform: scale(.65);
+    transition: 1.25s transform cubic-bezier(.87,-.41,.19,1.44);
+  }
 
-.head:hover {
-  transform: scale(1.2);
-}
+  .head:hover {
+    transform: scale(1.2);
+  }
 
-.head::before {
-  content: "";
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 80%);
-  height: 10%;
-  width: 55%;
-  top: 116%;
-  position: absolute;
-  left: 23%;
-  opacity: .2;
-  transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
-}
+  .head::before {
+    content: "";
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 80%);
+    height: 10%;
+    width: 55%;
+    top: 116%;
+    position: absolute;
+    left: 23%;
+    opacity: .2;
+    transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
+  }
 
-.head:hover::before {
-  opacity: 1;
-  width: 75%;
-  left: 15%;
-}
+  .head:hover::before {
+    opacity: 1;
+    width: 75%;
+    left: 15%;
+  }
 
-.head::after {
-  content: "";
-  height: 65px;
-  width: 114px;
-  border-radius: 90px 90px 0 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.54) 0%, rgba(255, 224, 45, 0) 100%);
-  display: block;
-  top: 12px;
-  left: 18px;
-  position: absolute;
-}
+  .head::after {
+    content: "";
+    height: 65px;
+    width: 114px;
+    border-radius: 90px 90px 0 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.54) 0%, rgba(255, 224, 45, 0) 100%);
+    display: block;
+    top: 12px;
+    left: 18px;
+    position: absolute;
+  }
 
-.eye {
-  height: 34px;
-  width: 23px;
-  border-radius: 50%;
-  background: radial-gradient(at 50% 50%, saddlebrown 30%, #4d3017 100%);
-  z-index: 99;
-  box-shadow: 1px 1.5px 0px #ffff6f, -1px 1.5px 0px #ffff6f, inset -.5px -.5px 4px #331e0a,inset 0.5px 0.5px 4px #331e0a;
-  position: absolute;
-  transform: scale(.7);
-  transition: all 1s;
-  transition-delay: .25s;
-  top: 55px;
-}
+  .eye {
+    height: 34px;
+    width: 23px;
+    border-radius: 50%;
+    background: radial-gradient(at 50% 50%, saddlebrown 30%, #4d3017 100%);
+    z-index: 99;
+    box-shadow: 1px 1.5px 0px #ffff6f, -1px 1.5px 0px #ffff6f, inset -.5px -.5px 4px #331e0a,inset 0.5px 0.5px 4px #331e0a;
+    position: absolute;
+    transform: scale(.7);
+    transition: all 1s;
+    transition-delay: .25s;
+    top: 55px;
+  }
 
-.head:hover .eye {
-  transform: none;
-}
+  .head:hover .eye {
+    transform: none;
+  }
 
-.eye::after {
-  content: "";
-  height: 17px;
-  width: 17px;
-  position: absolute;
-  left: 3px;
-  border-radius: 7px 3px 11px 3px;
-  top: 40px;
-  transform: rotateZ(45deg) rotateX(90deg);
-  box-shadow: 0 0 0px #ffff6f, 0 0 0 #f9cc01, 0 0 0 rgb(255, 217, 0);
-  background: linear-gradient(#ffe02d, #ffcc01);
-  transition: all .75s linear;
-  transition-delay: .25s;
-  visibility: hidden;
-}
+  .eye::after {
+    content: "";
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    left: 3px;
+    border-radius: 7px 3px 11px 3px;
+    top: 40px;
+    transform: rotateZ(45deg) rotateX(90deg);
+    box-shadow: 0 0 0px #ffff6f, 0 0 0 #f9cc01, 0 0 0 rgb(255, 217, 0);
+    background: linear-gradient(#ffe02d, #ffcc01);
+    transition: all .75s linear;
+    transition-delay: .25s;
+    visibility: hidden;
+  }
 
-.head:hover .eye::after {
-  visibility: visible;
-  transition: all .25s;
-  transition-delay: .5s;
-  top: 20px;
-  transform: rotateZ(45deg);
-  box-shadow: -1px -1px 0px #ffff6f, 2px 5px 7px #f9cc01, 6px 1px 7px rgb(255, 217, 0);
-}
+  .head:hover .eye::after {
+    visibility: visible;
+    transition: all .25s;
+    transition-delay: .5s;
+    top: 20px;
+    transform: rotateZ(45deg);
+    box-shadow: -1px -1px 0px #ffff6f, 2px 5px 7px #f9cc01, 6px 1px 7px rgb(255, 217, 0);
+  }
 
-.two {
-  left: 28%;
-}
+  .two {
+    left: 28%;
+  }
 
-.one {
-  left: 59%;
-}
+  .one {
+    left: 59%;
+  }
 
-.right-cheek {
-  top: 66px;
-  left: 111px;
-}
-.left-cheek {
-  top: 66px;
-  left: 13px;
-}
+  .right-cheek {
+    top: 66px;
+    left: 111px;
+  }
+  .left-cheek {
+    top: 66px;
+    left: 13px;
+  }
 
-.right-cheek, .left-cheek {
-  width: 30px;
-  height: 30px;
-  background: radial-gradient(50% 50%, rgba(244,67,54,0.3), transparent);
-  position: absolute;
-  z-index: 6;
-  transform: scale(0);
-  transition: transform 1s cubic-bezier(.87,-0.41,.17,1.01);
-  transition-delay: .0s;
-}
+  .right-cheek, .left-cheek {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(50% 50%, rgba(244,67,54,0.3), transparent);
+    position: absolute;
+    z-index: 6;
+    transform: scale(0);
+    transition: transform 1s cubic-bezier(.87,-0.41,.17,1.01);
+    transition-delay: .0s;
+  }
 
-.head:hover .right-cheek, .head:hover .left-cheek {
-  transition-delay: .1s;
-  transform: scale(1);
-}
+  .head:hover .right-cheek, .head:hover .left-cheek {
+    transition-delay: .1s;
+    transform: scale(1);
+  }
 
-.upperlip {
-  display: block;
-  width: 56%;
-  height: 30px;
-  border-radius: 50%;
-  position: absolute;
-  top: 44%;
-  z-index: 5;
-  left: 23%;
-  background: linear-gradient(#ffe02d 30%, #f7bc01 100%);
-  box-shadow: 0px 4px 0 -3px transparent, -10px -3px 7px -6px #fee02d, 10px -2px 8px -6px #ffe02d;
-  transform: scale(.9) translateY(20px) rotateX(90deg);
-  transition: .8s all cubic-bezier(.87,-0.1,.17,1.01);
-  transition-delay: .1s;
-}
+  .upperlip {
+    display: block;
+    width: 56%;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 44%;
+    z-index: 5;
+    left: 23%;
+    background: linear-gradient(#ffe02d 30%, #f7bc01 100%);
+    box-shadow: 0px 4px 0 -3px transparent, -10px -3px 7px -6px #fee02d, 10px -2px 8px -6px #ffe02d;
+    transform: scale(.9) translateY(20px) rotateX(90deg);
+    transition: .8s all cubic-bezier(.87,-0.1,.17,1.01);
+    transition-delay: .1s;
+  }
 
-.head:hover .upperlip {
-  transform: scale(1.3) rotateX(0deg);
-  box-shadow: 0px 4px 0 -3px #ffff6f, -10px -3px 7px -6px #fee02d, 10px -2px 8px -6px #ffe02d;
-  background: linear-gradient(#ffe02d 30%, #ffc819 100%);
-}
+  .head:hover .upperlip {
+    transform: scale(1.3) rotateX(0deg);
+    box-shadow: 0px 4px 0 -3px #ffff6f, -10px -3px 7px -6px #fee02d, 10px -2px 8px -6px #ffe02d;
+    background: linear-gradient(#ffe02d 30%, #ffc819 100%);
+  }
 
-.upperlip::after {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  left: 76.75px;
-  background: transparent;
-  position: absolute;
-  content: "";
-  top: 23.7px;
-  box-shadow: 0.5px -1px 0px transparent, 0.5px -0.5px 0px transparent, 0.5px -0.5px 0px transparent, 1.25px -1.7px 0px transparent, 2px -4px 1px transparent, -1px 1px 2px transparent;
-  transform: scale(0) translateX(-8px);
-  transition: transform left .25s;
-  transition-delay: .5s;
-}
+  .upperlip::after {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    left: 76.75px;
+    background: transparent;
+    position: absolute;
+    content: "";
+    top: 23.7px;
+    box-shadow: 0.5px -1px 0px transparent, 0.5px -0.5px 0px transparent, 0.5px -0.5px 0px transparent, 1.25px -1.7px 0px transparent, 2px -4px 1px transparent, -1px 1px 2px transparent;
+    transform: scale(0) translateX(-8px);
+    transition: transform left .25s;
+    transition-delay: .5s;
+  }
 
-.head:hover .upperlip::after {
-  box-shadow: 0.5px -1px 0px #ffff6f, 0.5px -0.5px 0px #ffff6f, 0.5px -0.5px 0px #ffff6f,  2px -3px 1px 1px #FDD000, -1px 1px 2px #613d1e;
-  transform: none;
-  background: #613d1e;
-  transition-delay: .65s;
-}
+  .head:hover .upperlip::after {
+    box-shadow: 0.5px -1px 0px #ffff6f, 0.5px -0.5px 0px #ffff6f, 0.5px -0.5px 0px #ffff6f,  2px -3px 1px 1px #FDD000, -1px 1px 2px #613d1e;
+    transform: none;
+    background: #613d1e;
+    transition-delay: .65s;
+  }
 
-.upperlip::before {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  left: 4.32px;
-  background: transparent;
-  position: absolute;
-  content: "";
-  top: 23.8px;
-  box-shadow: -0.5px -1px 0px transparent, -0.5px -0.5px 0px transparent, -0.5px -0.5px 0px transparent, -1.4px -2px 0px transparent, -2px -4px 1px transparent, 1px 1px 2px transparent;
-  transform: scale(0) translateX(8px);
-  transition: transform left .25s;
-  transition-delay: .5s;
-}
+  .upperlip::before {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    left: 4.32px;
+    background: transparent;
+    position: absolute;
+    content: "";
+    top: 23.8px;
+    box-shadow: -0.5px -1px 0px transparent, -0.5px -0.5px 0px transparent, -0.5px -0.5px 0px transparent, -1.4px -2px 0px transparent, -2px -4px 1px transparent, 1px 1px 2px transparent;
+    transform: scale(0) translateX(8px);
+    transition: transform left .25s;
+    transition-delay: .5s;
+  }
 
-.head:hover .upperlip::before {
-  transform: none;
-  left: 4.32px;
-  background: #613d1e;
-  box-shadow: -0.5px -1px 0px #ffff6f, -0.5px -0.5px 0px #ffff6f, -0.5px -0.5px 0px #ffff6f, -1.5px -2px 0px 1px #fdd000, -2px -4px 1px #ffd000, 1px 1px 2px #613d1e;
-  transition-delay: .65s;
-}
+  .head:hover .upperlip::before {
+    transform: none;
+    left: 4.32px;
+    background: #613d1e;
+    box-shadow: -0.5px -1px 0px #ffff6f, -0.5px -0.5px 0px #ffff6f, -0.5px -0.5px 0px #ffff6f, -1.5px -2px 0px 1px #fdd000, -2px -4px 1px #ffd000, 1px 1px 2px #613d1e;
+    transition-delay: .65s;
+  }
 
-.mouth {
-  background: #ffff6f;
-  position: absolute;
-  border-radius: 5px;
-  width: 52%;
-  height: 10px;
-  top: 65%;
-  right: 23%;
-  transform: translateY(10px);
-  transition: all 1s cubic-bezier(.87,-.41,.19,1.44);
-  overflow: hidden;
-}
+  .mouth {
+    background: #ffff6f;
+    position: absolute;
+    border-radius: 5px;
+    width: 52%;
+    height: 10px;
+    top: 65%;
+    right: 23%;
+    transform: translateY(10px);
+    transition: all 1s cubic-bezier(.87,-.41,.19,1.44);
+    overflow: hidden;
+  }
 
-.head:hover .mouth {
-  background: #ffff6f;
-  position: absolute;
-  border-radius: 6px 6px 90px 90px;
-  height: 26%;
-  top: 59%;
-  transform: scale(1.3);
-  transition: all 1s cubic-bezier(.87,-0.41,.17,1.01);
-  overflow: hidden;
-}
+  .head:hover .mouth {
+    background: #ffff6f;
+    position: absolute;
+    border-radius: 6px 6px 90px 90px;
+    height: 26%;
+    top: 59%;
+    transform: scale(1.3);
+    transition: all 1s cubic-bezier(.87,-0.41,.17,1.01);
+    overflow: hidden;
+  }
 
-.mouth::after {
-  position: absolute;
-  content: "";
-  top: 9%;
-  right: 1.5%;
-  width: 97%;
-  height: 81%;
-  border-radius: 5px;
-  background: radial-gradient(at 50% 50%, saddlebrown 30%, #4d3017 88%);
-  transition: all 1s cubic-bezier(.87,-.41,.19,1.44);
-}
+  .mouth::after {
+    position: absolute;
+    content: "";
+    top: 9%;
+    right: 1.5%;
+    width: 97%;
+    height: 81%;
+    border-radius: 5px;
+    background: radial-gradient(at 50% 50%, saddlebrown 30%, #4d3017 88%);
+    transition: all 1s cubic-bezier(.87,-.41,.19,1.44);
+  }
 
-.head:hover .mouth::after {
-  top: 2%;
-  right: 1%;
-  border-radius: 6px 6px 90px 90px;
-  width: 98%;
-  height: 97%;
-}
+  .head:hover .mouth::after {
+    top: 2%;
+    right: 1%;
+    border-radius: 6px 6px 90px 90px;
+    width: 98%;
+    height: 97%;
+  }
 
-.mouth::before {
-  content: "";
-  width: 80%;
-  position: absolute;
-  height: 76%;
-  border-radius: 50%;
-  background: #613916;
-  top: -10px;
-  z-index: 4;
-  left: 8px;
-  box-shadow: inset 0px -47px 0px -37px white;
-  transition: top 1s;
-  transition-delay: .2s;
-}
+  .mouth::before {
+    content: "";
+    width: 80%;
+    position: absolute;
+    height: 76%;
+    border-radius: 50%;
+    background: #613916;
+    top: -10px;
+    z-index: 4;
+    left: 8px;
+    box-shadow: inset 0px -47px 0px -37px white;
+    transition: top 1s;
+    transition-delay: .2s;
+  }
 
-.head:hover .mouth::before {
-  top: -2px;
-}
+  .head:hover .mouth::before {
+    top: -2px;
+  }
 
                     </code></pre>
                   </div>
@@ -899,7 +900,7 @@
               <div class="code-pane up swing">
                 <div class="code-view">
                   <div class="code-snip" data-lang="info">
-                    <pre><code class="css">
+                    <pre><code class="markdown">
  Welcome to CSSfx, my JS and CSS demo site. All the effects
  on this page were written with HTML, CSS and JavaScript.
  Aside from jQuery, no external libraries were used.
