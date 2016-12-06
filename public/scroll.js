@@ -13,9 +13,7 @@ $(document).ready(() => {
 
   var handleGooey = () => {
     if ($('.active').data('position') == 5) {
-      $('#5').parent().parent().css('contain', 'none')
-    } else {
-      setTimeout(() => $('#5').parent().parent().css('contain', 'all'), 700)
+      setTimeout(() => $('#5').css('filter', "url('#goo')"), 600)
     }
   }
 

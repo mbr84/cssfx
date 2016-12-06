@@ -967,8 +967,6 @@ figure {
 .nav-links {
   margin-left: -59px;
   z-index: 99;
-  -webkit-filter: url("#goo");
-          filter: url("#goo");
 }
 
 .nav-link, .open-menu-button {
@@ -1078,7 +1076,7 @@ figure {
 
 .section6 {
   position: relative;
-  contain: paint;
+  contain: none;
   background-color: #a3dbf4;
 }
 
