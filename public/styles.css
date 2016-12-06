@@ -1245,6 +1245,10 @@ pre {
   margin-top: 0px;
 }
 
+pre a {
+  color: cornflowerblue;
+}
+
 div[data-screen="four"] .code-button,
 div[data-screen="two"] .code-button {
   width: 33%;
