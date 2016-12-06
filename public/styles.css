@@ -227,7 +227,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   top: 100%;
   position: absolute;
   left: 24%;
-  opacity: .3;
+  opacity: .5;
   -webkit-transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
   transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
 }
