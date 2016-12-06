@@ -199,6 +199,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   background: radial-gradient(at 50% 50%, #ffe02d 30%, #e98442 95%);
   -webkit-transform: scale(.65);
           transform: scale(.65);
+  transform-origin: center bottom;
   -webkit-transition: 1.25s -webkit-transform cubic-bezier(.87,-.41,.19,1.44);
   transition: 1.25s -webkit-transform cubic-bezier(.87,-.41,.19,1.44);
   transition: 1.25s transform cubic-bezier(.87,-.41,.19,1.44);
@@ -216,18 +217,19 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 80%);
   height: 10%;
   width: 55%;
-  top: 116%;
+  top: 100%;
   position: absolute;
   left: 24%;
-  opacity: .2;
+  opacity: 1;
   -webkit-transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
   transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
 }
 
 .head:hover::before {
-  opacity: 1;
+  opacity: .75;
   width: 60%;
   left: 21%;
+  top: 116%;
 }
 
 .head::after {
