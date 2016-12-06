@@ -1279,6 +1279,7 @@ div[data-screen="two"] .code-button:active {
   background-image: -webkit-linear-gradient(#7bb31a 0%, #93d422 100%);
   background-image: linear-gradient(#7bb31a 0%, #93d422 100%);
   box-shadow: inset 7px 0px 5px -2px #4d720e, 0px 2px 0px 0px #456211, 1px 4px 3px #1f2f03;
+  border-right: #93d422;
 }
 
 div[data-screen="two"] .code-button:first-child {
