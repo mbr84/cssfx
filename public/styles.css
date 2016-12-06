@@ -1208,7 +1208,7 @@ figure {
 .code-snip {
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 98%;
   transform: rotateX(-90deg);
   transform-origin: top;
   -webkit-transition: -webkit-transform .75s cubic-bezier(.24,1.61,.35,.89);
