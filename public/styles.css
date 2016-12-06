@@ -83,6 +83,17 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   }
 }
 
+@media (max-width: 415px) {
+  figure {
+    transform: scale(.6);
+  }
+
+  .goo-container {
+    transform: scale(.5);
+    left: -17%;
+  }
+}
+
 .left-scroll, .right-scroll {
   height: calc(100vh * 7);
   width: 100%;
@@ -940,9 +951,14 @@ figure {
 
 .goo-container {
   position: absolute;
-  left: 65%;
   z-index: 2;
   top: 25%;
+}
+
+@media (min-width: 450px) {
+  .goo-container {
+    left: 65%;
+  }
 }
 
 .gooey-title {
