@@ -103,8 +103,6 @@ $(document).ready(() => {
     }
   }
 
-  paneToggle();
-  $('body').css('display', 'block');
 
   $(window).resize(() => {
     var space = `https://res.cloudinary.com/dxbwq1eyw/image/upload/c_fill,h_${window.innerHeight},w_${window.innerWidth}/v1480305081/stars2_qiu9qm.jpg`
