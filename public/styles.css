@@ -1162,6 +1162,8 @@ figure {
   display: -ms-flexbox;
   display: flex;
   font-weight: 600;
+  margin-bottom: 16px;
+
 }
 
 
@@ -1203,18 +1205,11 @@ figure {
   animation: 1.5s fall-down;
 }
 
-.code-view {
-  height: 500px;
-  width: 100%;
-  margin-top: 16px;
-  position: relative;
-}
-
 .code-snip {
   position: absolute;
   top: 0;
   width: 100%;
-  transform: rotateX(-89deg);
+  transform: rotateX(-90deg);
   transform-origin: top;
   -webkit-transition: -webkit-transform .75s cubic-bezier(.24,1.61,.35,.89);
   transition: -webkit-transform .75s cubic-bezier(.24,1.61,.35,.89);
