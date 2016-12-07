@@ -46,6 +46,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 .mobile-buttons li {
   width: 30%;
   text-align: center;
+  z-index: 99;
 }
 .mobile-buttons {
   display: none;
