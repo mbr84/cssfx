@@ -81,19 +81,6 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   }
 }
 
-@media (max-width: 415px) {
-  figure {
-    -webkit-transform: scale(.6);
-            transform: scale(.6);
-  }
-
-  .goo-container {
-    -webkit-transform: scale(.5);
-            transform: scale(.5);
-    left: -17%;
-  }
-}
-
 .left-scroll, .right-scroll {
   height: calc(100vh * 7);
   width: 100%;
@@ -1459,4 +1446,73 @@ div[data-screen="five"] .code-button:last-child:active {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   border-left: none;
+}
+
+@media (max-width: 415px) {
+  figure {
+    -webkit-transform: scale(.6);
+            transform: scale(.6);
+  }
+
+  .contents {
+    display: none;
+  }
+
+  .head {
+    transform: scale(1);
+  }
+
+  .head:hover {
+    transform: scale(1.6)
+  }
+
+  .buttons {
+    margin-left: 0%;
+    transform: scale(1.4)
+  }
+
+  figure:not(.rotating) .container {
+    margin-left: 17%;
+  }
+
+  .goo-container {
+    left: -7%;
+    top: -5%;
+  }
+
+  .nav-links {
+    transform: translatey(95%) rotateZ(90deg);
+  }
+
+  .gooey-title {
+    transform: scale(.8);
+  }
+
+  .nav-links i.material-icons, .nav-links img {
+    transform: rotateZ(-90deg);
+  }
+}
+
+@media (max-width: 390px) {
+  .buttons {
+    transform: scale(1.25);
+  }
+
+  .goo-container {
+    left: -18%;
+    top: -5%;
+    transform: scale(.8);
+  }
+}
+
+@media (max-width: 350px) {
+  .buttons {
+    transform: scale(1.1);
+  }
+
+  .goo-container {
+    left: -24%;
+    top: -5%;
+    transform: scale(.8)
+  }
 }
