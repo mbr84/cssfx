@@ -13,7 +13,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 
 /* section scroll */
 
-.contents {
+.contents, .mobile-buttons {
   position: fixed;
   top: 0;
   left: 0;
@@ -28,7 +28,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   font-weight: 400;
 }
 
-.contents li {
+.contents li, .mobile-buttons li {
   display: inline-block;
   margin: 10px;
   background-color: rgba(255,255,255,.3);
@@ -41,6 +41,14 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   position: relative;
   -webkit-transition: linear 0.2s background-color;
           transition: linear 0.2s background-color;
+}
+
+.mobile-buttons li {
+  width: 30%;
+  text-align: center;
+}
+.mobile-buttons {
+  display: none;
 }
 
 .contents li:hover {
@@ -1449,6 +1457,11 @@ div[data-screen="five"] .code-button:last-child:active {
 }
 
 @media (max-width: 415px) {
+
+  .mobile-buttons {
+    display: block;
+  }
+
   figure {
     -webkit-transform: scale(.6);
             transform: scale(.6);
