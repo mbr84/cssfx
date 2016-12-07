@@ -101,15 +101,19 @@ $(document).ready(() => {
     }
   }
 
+  var mobileSection = 0;
+
   $('.mobile-buttons').on('click touch', (e) => {
-    var obj = { originalEvent: {} }
-    console.log(e.target.innerText)
-    if (e.target.innerText == "Next"){
-      obj.which = 40;
-    } else {
-      obj.which = 38;
+    var top = $('.left-scroll').css('top');
+    var sign = (e.target.innerText === "Next" ? -1 : 1)
+    if ((sign === -1 && top === (window.innerHeight * -6) + "px") || (sign === 1 && top === "0px")) {
+      return;
     }
-    scroll(obj);
+    setTimeout(() => $(`#${mobileSection}`).css('display', 'none'), 300)
+    mobileSection -= sign;
+    setTimeout(() => $(`#${mobileSection}`).css('display', 'block'), 300)
+
+    $('.left-scroll').css({ top: `calc(${top} + (${sign} * 100vh))` });
   })
 
 
