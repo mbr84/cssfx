@@ -18,7 +18,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   top: 0;
   left: 0;
   height: 40px;
-  z-index: 2;
+  z-index: 99;
   width: 100%;
   padding: 0;
   margin: 0;
