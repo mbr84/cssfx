@@ -101,12 +101,13 @@ $(document).ready(() => {
     }
   }
 
-  $('.mobile-buttons').on('touch', (e) => {
-    var obj;
-    if (e.target.text() == "Next" {
-      obj = { which: 40 }
+  $('.mobile-buttons').on('click touch', (e) => {
+    var obj = { originalEvent: {} }
+    console.log(e.target.innerText)
+    if (e.target.innerText == "Next"){
+      obj.which = 40;
     } else {
-      obj = { which: 38 }
+      obj.which = 38;
     }
     scroll(obj);
   })
