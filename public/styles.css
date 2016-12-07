@@ -1459,6 +1459,14 @@ div[data-screen="five"] .code-button:last-child:active {
 
 @media (max-width: 415px) {
 
+  .right-container {
+    display: none;
+  }
+
+  .section {
+    contain: all;
+  }
+
   .mobile-buttons {
     display: block;
   }
@@ -1473,11 +1481,11 @@ div[data-screen="five"] .code-button:last-child:active {
   }
 
   .head {
-    transform: scale(1);
+    transform: scale(1) translateX(-80px);
   }
 
   .head:hover {
-    transform: scale(1.6)
+    transform: scale(1.6) translateX(-55px);
   }
 
   .buttons {
@@ -1504,6 +1512,38 @@ div[data-screen="five"] .code-button:last-child:active {
 
   .nav-links i.material-icons, .nav-links img {
     transform: rotateZ(-90deg);
+  }
+
+  .open-menu:checked ~ .nav-link:nth-child(3) {
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    transition-delay: 0s;
+    -webkit-transform:translateX(30%) translateY(-125%);
+    transform: translateX(30%) translateY(-125%);
+  }
+
+  .open-menu:checked ~ .nav-link:nth-child(4) {
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    transition-delay: 150ms;
+    -webkit-transform: translateX(150%) translateY(-70%);
+    transform: translateX(150%) translateY(-70%);
+  }
+
+  .open-menu:checked ~ .nav-link:nth-child(5) {
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    transition-delay: 300ms;
+    -webkit-transform: translateX(150%) translateY(70%);
+    transform: translateX(150%) translateY(70%);
+  }
+
+  .open-menu:checked ~ .nav-link:nth-child(6) {
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    transition-delay: 450ms;
+    -webkit-transform: translateX(30%) translateY(125%);
+    transform: translateX(30%) translateY(125%);
   }
 }
 
