@@ -101,7 +101,7 @@ $(document).ready(() => {
     }
   }
 
-  $('.mobile-buttons').click((e) => {
+  $('.mobile-buttons').on('touch', (e) => {
     var obj;
     if (e.target.text() == "Next" {
       obj = { which: 40 }
