@@ -116,7 +116,6 @@ $(document).ready(() => {
     $('.left-scroll').css({ top: `calc(${top} + (${sign} * 100vh))` });
   })
 
-
   $(window).resize(() => {
     var space = `https://res.cloudinary.com/dxbwq1eyw/image/upload/c_fill,h_${window.innerHeight},w_${window.innerWidth}/v1480305081/stars2_qiu9qm.jpg`
     $('.layered-spinner').css({ 'background-image': `url('${space}')` })

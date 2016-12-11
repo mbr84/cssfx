@@ -1458,7 +1458,6 @@ div[data-screen="five"] .code-button:last-child:active {
 }
 
 @media (max-width: 415px) {
-
   .right-container {
     display: none;
   }
