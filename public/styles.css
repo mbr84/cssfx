@@ -1135,7 +1135,7 @@ figure {
 }
 
 .space:hover {
-  background-position: 400px 350px, bottom left;
+  background-position: 400px 125%, bottom left;
 }
 
 /* code snippets */
