@@ -16,7 +16,7 @@ $(document).ready(() => {
     console.log(relativeX)
 
     $('.space').hover(() => {
-      $(this).css({ 'background-position': `${relativeX}px 115%, bottom left`, transition: '6s' });
+      $(this).css({ 'background-position': `${relativeX}px 135%, bottom left`, transition: '8s' });
     }, () => {
       $(this).css('background-position', 'center -150px, top left');
     });
