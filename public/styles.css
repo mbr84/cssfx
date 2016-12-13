@@ -203,9 +203,6 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 }
 
 .head {
-  position: absolute;
-  top: 30%;
-  left: 45%;
   height: 150px;
   width: 150px;
   border-radius: 50%;
@@ -1174,30 +1171,39 @@ figure {
           transform-origin: top;
 }
 
+.fall {
+  -webkit-animation: 1.5s fall-down;
+          animation: 1.5s fall-down;
+}
 
 @-webkit-keyframes fall-down  {
   0% {
     -webkit-transform: none;
-            transform: none;
+    transform: none;
+    visibility: visible;
   }
 
   20% {
     -webkit-transform: scale(1.1) translateY(-30px);
-            transform: scale(1.1) translateY(-30px);
+    transform: scale(1.1) translateY(-30px);
+    visibility: visible;
   }
 
   40% {
     -webkit-transform: scale(1.1) translateY(100vh);
-            transform: scale(1.1) translateY(100vh);
+    transform: scale(1.1) translateY(100vh);
+    visibility: visible;
   }
 
   41% {
     -webkit-transform: translateY(100vh);
-            transform: translateY(100vh);
+    transform: translateY(100vh);
     visibility: hidden;
   }
 
   100% {
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
     visibility: hidden;
   }
 }
@@ -1206,39 +1212,40 @@ figure {
 @keyframes fall-down  {
   0% {
     -webkit-transform: none;
-            transform: none;
+    transform: none;
+    visibility: visible;
   }
 
   20% {
     -webkit-transform: scale(1.1) translateY(-30px);
-            transform: scale(1.1) translateY(-30px);
+    transform: scale(1.1) translateY(-30px);
+    visibility: visible;
   }
 
   40% {
     -webkit-transform: scale(1.1) translateY(100vh);
-            transform: scale(1.1) translateY(100vh);
+    transform: scale(1.1) translateY(100vh);
+    visibility: visible;
   }
 
   41% {
     -webkit-transform: translateY(100vh);
-            transform: translateY(100vh);
+    transform: translateY(100vh);
     visibility: hidden;
   }
 
   100% {
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
     visibility: hidden;
   }
-}
-
-.fall {
-  -webkit-animation: 1.5s fall-down;
-          animation: 1.5s fall-down;
 }
 
 .code-snip {
   position: absolute;
   top: 0;
   width: 98%;
+  opacity: 0;
   -webkit-transform: rotateX(-90deg);
           transform: rotateX(-90deg);
   -webkit-transform-origin: top;
@@ -1250,6 +1257,7 @@ figure {
 }
 
 .show {
+  opacity: 1;
   -webkit-transform: none;
           transform: none;
 }
@@ -1475,16 +1483,19 @@ div[data-screen="five"] .code-button:last-child:active {
   }
 
   .head {
-    transform: scale(1) translateX(-80px);
+    -webkit-transform: scale(1) translateX(-80px);
+            transform: scale(1) translateX(-80px);
   }
 
   .head:hover {
-    transform: scale(1.6) translateX(-55px);
+    -webkit-transform: scale(1.6) translateX(-55px);
+            transform: scale(1.6) translateX(-55px);
   }
 
   .buttons {
     margin-left: 0%;
-    transform: scale(1.4)
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4)
   }
 
   figure:not(.rotating) .container {
@@ -1497,21 +1508,25 @@ div[data-screen="five"] .code-button:last-child:active {
   }
 
   .nav-links {
-    transform: translatey(95%) rotateZ(90deg);
+    -webkit-transform: translatey(95%) rotateZ(90deg);
+            transform: translatey(95%) rotateZ(90deg);
   }
 
   .gooey-title {
-    transform: scale(.8);
+    -webkit-transform: scale(.8);
+            transform: scale(.8);
   }
 
   .nav-links i.material-icons, .nav-links img {
-    transform: rotateZ(-90deg);
+    -webkit-transform: rotateZ(-90deg);
+            transform: rotateZ(-90deg);
   }
 
   .open-menu:checked ~ .nav-link:nth-child(3) {
     -webkit-transition-duration: 150ms;
     transition-duration: 150ms;
-    transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
     -webkit-transform:translateX(30%) translateY(-125%);
     transform: translateX(30%) translateY(-125%);
   }
@@ -1519,7 +1534,8 @@ div[data-screen="five"] .code-button:last-child:active {
   .open-menu:checked ~ .nav-link:nth-child(4) {
     -webkit-transition-duration: 150ms;
     transition-duration: 150ms;
-    transition-delay: 150ms;
+    -webkit-transition-delay: 150ms;
+            transition-delay: 150ms;
     -webkit-transform: translateX(150%) translateY(-70%);
     transform: translateX(150%) translateY(-70%);
   }
@@ -1527,7 +1543,8 @@ div[data-screen="five"] .code-button:last-child:active {
   .open-menu:checked ~ .nav-link:nth-child(5) {
     -webkit-transition-duration: 150ms;
     transition-duration: 150ms;
-    transition-delay: 300ms;
+    -webkit-transition-delay: 300ms;
+            transition-delay: 300ms;
     -webkit-transform: translateX(150%) translateY(70%);
     transform: translateX(150%) translateY(70%);
   }
@@ -1535,7 +1552,8 @@ div[data-screen="five"] .code-button:last-child:active {
   .open-menu:checked ~ .nav-link:nth-child(6) {
     -webkit-transition-duration: 150ms;
     transition-duration: 150ms;
-    transition-delay: 450ms;
+    -webkit-transition-delay: 450ms;
+            transition-delay: 450ms;
     -webkit-transform: translateX(30%) translateY(125%);
     transform: translateX(30%) translateY(125%);
   }
@@ -1543,24 +1561,28 @@ div[data-screen="five"] .code-button:last-child:active {
 
 @media (max-width: 390px) {
   .buttons {
-    transform: scale(1.25);
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
   }
 
   .goo-container {
     left: -18%;
     top: -5%;
-    transform: scale(.8);
+    -webkit-transform: scale(.8);
+            transform: scale(.8);
   }
 }
 
 @media (max-width: 350px) {
   .buttons {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 
   .goo-container {
     left: -24%;
     top: -5%;
-    transform: scale(.8)
+    -webkit-transform: scale(.8);
+            transform: scale(.8)
   }
 }
