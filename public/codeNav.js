@@ -18,42 +18,24 @@ $(document).ready(() => {
     var activePane = activePanes[e.currentTarget.dataset.screen]
 
     if (!activePane) {
-      code.toggleClass('out');
+      code.toggleClass('show');
       activePanes[e.currentTarget.dataset.screen] = code;
-      codePane.toggleClass('up');
-      if (!codePane.hasClass('fall')) setTimeout(() => codePane.toggleClass('fall'), 10)
     } else {
-      codePane.toggleClass('down');
-      setTimeout(() => codePane.toggleClass('fall'), 50)
-      if (!code.hasClass('out')) {
+      if (code.hasClass('show')) {
+        code.toggleClass('fall');
         setTimeout(() => {
-          codePane.toggleClass('hide-transition swing');
-          setTimeout(() => {
-            activePane.toggleClass('out');
-            code.toggleClass('out');
-            activePanes[e.currentTarget.dataset.screen] = code;
-
-            codePane.toggleClass('down up');
-            codePane.toggleClass('hide-transition swing');
-            setTimeout(() => {
-              codePane.toggleClass('up')
-              setTimeout(() => codePane.toggleClass('fall'), 10)
-            }, 35)
-          }, 25)
-        }, 300);
-      } else {
-        setTimeout(() => {
-          code.toggleClass('out');
+          code.toggleClass('show');
           activePanes[e.currentTarget.dataset.screen] = false;
-          setTimeout(() => {
-            codePane.toggleClass('hide-transition');
-            codePane.toggleClass('down');
-            setTimeout(() => {
-              codePane.toggleClass('hide-transition up');
-              // setTimeout(() => codePane.toggleClass('fall'), 10)
-            }, 35)
-          }, 25)
-        }, 300)
+          code.toggleClass('fall');
+        }, 450);
+      } else {
+        activePane.toggleClass('fall');
+        setTimeout(() => {
+          code.toggleClass('show');
+          activePane.toggleClass('show');
+          activePanes[e.currentTarget.dataset.screen] = code;
+          activePane.toggleClass('fall');
+        }, 450)
       }
     }
   }

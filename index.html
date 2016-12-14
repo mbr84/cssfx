@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CSSFx</title>
     <link rel="stylesheet" href="./public/styles.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:400.600,900" rel="stylesheet">
@@ -28,6 +29,12 @@
         <li data-position="5">FAB</li>
         <li data-position="6">X-Wing</li>
       </ul>
+      <div class="mobile">
+        <ul class=mobile-buttons>
+          <li class="prev">Prev</li>
+          <li class="next">Next</li>
+        </ul>
+      </div>
       <div class="left-container">
         <div class="left-scroll" id="left">
           <div class="section section1">
@@ -36,13 +43,13 @@
                 Hey there! Thanks for checking out my site, CSSfx
               </div>
               <div class="step">
-                Navigation is easy, but let me walk you through it
+                Navigation is easy, but let me walk you through it.
               </div>
               <div class="step">
                 The site is divided into a handful of sections
               </div>
               <div class="step">
-                Each section has a CSS demo on the left, code on the right
+                Each section has a CSS demo on the left, code on the right.
               </div>
               <div class="step">
                 Code will only appear if your browser window is wider than 800px
@@ -51,7 +58,7 @@
                 To navigate between sections, use the up and down arrows,
               </div>
               <div class="step">
-                click on section titles in the menu above, or scroll like you normally would
+                click the buttons on the menu above, or scroll like you normally would
               </div>
               <div class="step">
                 Alright -  that about covers it! Thanks for coming, have fun!
@@ -119,7 +126,7 @@
               <h2 class="gooey-title">
                 GOOEY!
               </h2>
-              <nav class="nav-links" style="filter: url('#goo')" id="5">
+              <nav class="nav-links"  id="5">
                 <input type="checkbox" class="open-menu" name="open-menu" id="open-menu" />
                 <label for="open-menu" class="open-menu-button">
                   <span class="minus"></span>
@@ -162,8 +169,8 @@
                   <div class="code-button" data-lang="css">CSS</div>
                   <div class="code-button" data-lang="js">JS</div>
                 </div>
-                <div class="code-pane up swing">
-                  <div class="code-view">
+                <div class="code-pane">
+
                     <div class="code-snip" data-lang="info">
                       <pre><code class="markdown">
  Pretty cool feature in CSS3 - multiple backgrounds
@@ -214,7 +221,7 @@
                       </code></pre>
                     </div>
                   </div>
-                </div>
+
               </div>
             </div>
           </div>
@@ -230,12 +237,12 @@
                   <div class="code-button" data-lang="css">CSS</div>
                   <div class="code-button" data-lang="js">JS</div>
                 </div>
-                <div class="code-pane up swing">
-                  <div class="code-view">
+                <div class="code-pane">
+
                     <div class="code-snip" data-lang="info">
                       <pre><code class="markdown">
                   Mmmm... such nice buttons...
- For an extra fun time, use the 1-6 keys to make the box dance
+ For extra fun, use the 1-6 keys to make the box dance
 
                       </code></pre>
                     </div>
@@ -361,7 +368,7 @@
  });
                       </code></pre>
                     </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -373,8 +380,8 @@
                 <div class="code-button" data-lang="html">HTML</div>
                 <div class="code-button" data-lang="css">CSS</div>
               </div>
-              <div class="code-pane up swing">
-                <div class="code-view">
+              <div class="code-pane">
+
                   <div class="code-snip" data-lang="info">
                     <pre><code class="markdown">
  In addition to the spinning CSS3 logo, this screen demos
@@ -454,7 +461,6 @@
 
                     </code></pre>
                   </div>
-                </div>
               </div>
             </div>
           </div>
@@ -467,8 +473,8 @@
                   <div class="code-button" data-lang="css">CSS</div>
                   <div class="code-button" data-lang="js">JS</div>
                 </div>
-                <div class="code-pane up swing">
-                  <div class="code-view">
+                <div class="code-pane">
+
                     <div class="code-snip" data-lang="info">
                       <pre><code class="markdown">
           Who doesn't like a good box full of stars?
@@ -579,12 +585,12 @@
                       <pre><code class="javascript">
 
 
-      You mean to tell me you did this with NO JAVASCRIPT!?!
+  You mean to tell me you did this with NO JAVASCRIPT!?!
 
 
                       </code></pre>
                     </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -596,8 +602,8 @@
                 <div class="code-button" data-lang="html">HTML</div>
                 <div class="code-button" data-lang="css">CSS</div>
               </div>
-              <div class="code-pane up swing">
-                <div class="code-view">
+              <div class="code-pane">
+
                   <div class="code-snip" data-lang="info">
                     <pre><code class="markdown">
  Here, and just about everywhere else, you can hover.
@@ -887,7 +893,7 @@
 
                     </code></pre>
                   </div>
-                </div>
+
               </div>
             </div>
           </div>
@@ -900,13 +906,17 @@
                 <div class="code-button" data-lang="css">CSS</div>
                 <div class="code-button" data-lang="js">JS</div>
               </div>
-              <div class="code-pane up swing">
-                <div class="code-view">
+              <div class="code-pane">
+
                   <div class="code-snip" data-lang="info">
                     <pre><code class="markdown">
  Welcome to CSSfx, my JS and CSS demo site. All the effects
  on this page were written with HTML, CSS and JavaScript.
  Aside from jQuery, no external libraries were used.
+
+ Code snippets have been abbreviated, for brevity. For complete
+ versions, as well as the code animating these code snippets
+ and the code behind the scroll effects, see the <a href="http://github.com/mbr84/cssfx">repo</a>
 
                     </code></pre>
                   </div>
@@ -978,7 +988,7 @@
  };
                     </code></pre>
                   </div>
-                </div>
+
               </div>
             </div>
           </div>

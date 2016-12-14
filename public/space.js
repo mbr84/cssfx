@@ -8,11 +8,17 @@ $(document).ready(() => {
   $('.space').mousemove(function (e) {
     var offset = $(this).offset();
     var relativeX = (e.pageX - offset.left);
+    if (relativeX > $(this).width() / 2) {
+      relativeX *= 1.5;
+    } else {
+      relativeX -=  ($(this).width() - relativeX) / 2 ;
+    }
+    console.log(relativeX)
 
     $('.space').hover(() => {
-      $(this).css({ 'background-position': `${relativeX}px 350px, bottom left` });
+      $(this).css({ 'background-position': `${relativeX}px 135%, bottom left`, transition: '8s' });
     }, () => {
-      $(this).css('background-position', 'center 150px, top left');
+      $(this).css('background-position', 'center -150px, top left');
     });
     $('.space').trigger('mouseleave').trigger('mouseenter');
   });

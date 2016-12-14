@@ -13,9 +13,7 @@ $(document).ready(() => {
 
   var handleGooey = () => {
     if ($('.active').data('position') == 5) {
-      $('#5').parent().parent().css('contain', 'none')
-    } else {
-      setTimeout(() => $('#5').parent().parent().css('contain', 'all'), 700)
+      setTimeout(() => $('#5').css('filter', "url('#goo')"), 600)
     }
   }
 
@@ -103,8 +101,20 @@ $(document).ready(() => {
     }
   }
 
-  paneToggle();
-  $('body').css('display', 'block');
+  var mobileSection = 0;
+
+  $('.mobile-buttons').on('click touch', (e) => {
+    var top = $('.left-scroll').css('top');
+    var sign = (e.target.innerText === "Next" ? -1 : 1)
+    if ((sign === -1 && top === (window.innerHeight * -6) + "px") || (sign === 1 && top === "0px")) {
+      return;
+    }
+    setTimeout(() => $(`#${mobileSection}`).css('display', 'none'), 300)
+    mobileSection -= sign;
+    setTimeout(() => $(`#${mobileSection}`).css('display', 'block'), 300)
+
+    $('.left-scroll').css({ top: `calc(${top} + (${sign} * 100vh))` });
+  })
 
   $(window).resize(() => {
     var space = `https://res.cloudinary.com/dxbwq1eyw/image/upload/c_fill,h_${window.innerHeight},w_${window.innerWidth}/v1480305081/stars2_qiu9qm.jpg`
