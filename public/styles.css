@@ -290,39 +290,6 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   left: 59%;
 }
 
-.right-cheek {
-  top: 66px;
-  left: 111px;
-}
-.left-cheek {
-  top: 66px;
-  left: 13px;
-}
-
-.right-cheek, .left-cheek {
-  width: 30px;
-  height: 30px;
-  background: -webkit-radial-gradient(50% 50%, rgba(244,67,54,0.3), transparent);
-  background: radial-gradient(50% 50%, rgba(244,67,54,0.3), transparent);
-  position: absolute;
-  z-index: 6;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: -webkit-transform 1s cubic-bezier(.87,-0.41,.17,1.01);
-  transition: -webkit-transform 1s cubic-bezier(.87,-0.41,.17,1.01);
-  transition: transform 1s cubic-bezier(.87,-0.41,.17,1.01);
-  transition: transform 1s cubic-bezier(.87,-0.41,.17,1.01), -webkit-transform 1s cubic-bezier(.87,-0.41,.17,1.01);
-  -webkit-transition-delay: .0s;
-          transition-delay: .0s;
-}
-
-.head:hover .right-cheek, .head:hover .left-cheek {
-  -webkit-transition-delay: .1s;
-          transition-delay: .1s;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
 .mouth {
   height: 38px;
   width: 76px;
