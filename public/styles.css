@@ -271,15 +271,15 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   -webkit-transition-delay: .25s;
           transition-delay: .25s;
   top: 55px;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 45% 100%, 50% 100%, 55% 100%, 0% 100%);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 45% 100%, 50% 100%, 55% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 100%, 45% 100%, 50% 100%, 55% 100%, 60% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 100%, 45% 100%, 50% 100%, 55% 100%, 60% 100%, 0% 100%);
 }
 
 .head:hover .eye {
   -webkit-transform: none;
           transform: none;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 55% 53%, 50% 52%, 45% 53%, 0% 80%);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 55% 53%, 50% 52%, 45% 53%, 0% 80%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 60% 56%, 55% 55%, 50% 54%, 45% 55%, 40% 56%, 0% 80%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 60% 56%, 55% 55%, 50% 54%, 45% 55%, 40% 56%, 0% 80%);
 }
 
 .two {
@@ -366,8 +366,8 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   box-shadow: inset 0px -47px 0px -37px white;
   -webkit-clip-path: polygon(0% 44%, 40% 55%,60% 55%, 100% 44%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 44%, 40% 55%,60% 55%, 100% 44%, 100% 100%, 0% 100%);
-  -webkit-transition: top 1s;
-  transition: top 1s;
+  -webkit-transition: top .85s;
+  transition: top .85s;
   -webkit-transition-delay: .2s;
           transition-delay: .2s;
 }
