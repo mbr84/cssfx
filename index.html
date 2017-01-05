@@ -613,14 +613,19 @@
  smiley's mouth and the upper curve of its teeth are
  already outside the normal scope of CSS, better suited
  to scalable vector graphics. But this is CSSfx - 'normal
- scope' is not its concern! This site's about extremes!
+ scope' does not apply! This site is about extremes!
 
  I was a little sad to leave behind version 1.0 of these
  little guys. The first time around I built them with
  smoke and mirrors. But a seldom-used CSS property called
- 'clip-path' let me delete about 500 lines of code while
- dramatically impoving the quality of the transitions.
+ 'clip-path' let me delete about 500 lines of code, while
+ dramatically impoving the quality of the smiley.
  Hooray!
+ There are some drawbacks to "clip-path" though - for one,
+ clip-path transitions don't play nicely with background-
+ gradients; and they don't play at all with Firefox, unless
+ they're written inline in the HTML as SVG filters. Very
+ lame, Firefox. 
 
                     </code></pre>
                   </div>
