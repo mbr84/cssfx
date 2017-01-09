@@ -266,15 +266,15 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   position: absolute;
   -webkit-transform: scale(.7);
           transform: scale(.7);
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  -webkit-transition-delay: .25s;
-          transition-delay: .25s;
   top: 55px;
   pointer-events: none;
   clip-path: url("https://mbr84.github.io/cssfx/index.html#eyes");
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 55% 100%, 50% 100%, 45% 100%, 40% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 55% 100%, 50% 100%, 45% 100%, 40% 100%, 0% 100%);
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
 .head:hover .eye {
