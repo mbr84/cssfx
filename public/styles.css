@@ -272,7 +272,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
           transition-delay: .25s;
   top: 55px;
   pointer-events: none;
-  clip-path: url("https://mbr84.github.io/cssfx#eyes");
+  clip-path: url("https://mbr84.github.io/cssfx/index.html#eyes");
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 55% 100%, 50% 100%, 45% 100%, 40% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 55% 100%, 50% 100%, 45% 100%, 40% 100%, 0% 100%);
 }
@@ -300,7 +300,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   top: 70%;
   right: 24%;
   pointer-events: none;
-  clip-path: url("https://mbr84.github.io/cssfx#neutral-mouth");
+  clip-path: url("https://mbr84.github.io/cssfx/index.html#neutral-mouth");
   -webkit-clip-path: polygon(14.0px 15.0px, 13.38197px 14.90211px, 12.82443px 14.61803px, 12.38197px 14.17557px, 12.09789px 13.61803px, 12.0px 13.0px, 12.09789px 12.38197px, 12.38197px 11.82443px, 12.82443px 11.38197px, 13.38197px 11.09789px, 14.0px 11.0px, 13px 11px, 14px 11px, 14.5px 11px, 15px 11px, 16px 11px, 17px 11px, 18px 11px, 19px 11px, 20px 11px, 21px 11px, 22px 11px, 23px 11px, 24px 11px, 25px 11px, 26px 11px,26px 11px,26px 11px,26px 11px,26px 11px,26px 11px, 27px 11px, 27.5px 11px, 28px 11px, 29px 11px, 30px 11px,30px 11px, 31px 11px, 32px 11px, 40px 11px, 41px 11px, 42px 11px, 43px 11px, 44px 11px,44px 11px,44px 11px,44px 11px,44px 11px, 45px 11px, 46px 11px, 47px 11px, 48px 11px, 49px 11px, 50px 11px, 51px 11px, 52px 11px, 53px 11px, 60.0px 11.0px, 60.61803px 11.09789px, 61.17557px 11.38197px, 61.61803px 11.82443px, 61.90211px 12.38197px, 62.0px 13.0px, 61.90211px 13.61803px, 61.61803px 14.17557px, 61.17557px 14.61803px, 60.61803px 14.90211px, 60px 15px);
           clip-path: polygon(14.0px 15.0px, 13.38197px 14.90211px, 12.82443px 14.61803px, 12.38197px 14.17557px, 12.09789px 13.61803px, 12.0px 13.0px, 12.09789px 12.38197px, 12.38197px 11.82443px, 12.82443px 11.38197px, 13.38197px 11.09789px, 14.0px 11.0px, 13px 11px, 14px 11px, 14.5px 11px, 15px 11px, 16px 11px, 17px 11px, 18px 11px, 19px 11px, 20px 11px, 21px 11px, 22px 11px, 23px 11px, 24px 11px, 25px 11px, 26px 11px,26px 11px,26px 11px,26px 11px,26px 11px,26px 11px, 27px 11px, 27.5px 11px, 28px 11px, 29px 11px, 30px 11px,30px 11px, 31px 11px, 32px 11px, 40px 11px, 41px 11px, 42px 11px, 43px 11px, 44px 11px,44px 11px,44px 11px,44px 11px,44px 11px, 45px 11px, 46px 11px, 47px 11px, 48px 11px, 49px 11px, 50px 11px, 51px 11px, 52px 11px, 53px 11px, 60.0px 11.0px, 60.61803px 11.09789px, 61.17557px 11.38197px, 61.61803px 11.82443px, 61.90211px 12.38197px, 62.0px 13.0px, 61.90211px 13.61803px, 61.61803px 14.17557px, 61.17557px 14.61803px, 60.61803px 14.90211px, 60px 15px);
   background: #ffff6f;
@@ -319,7 +319,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   width: 100%;
   border-radius: 0 0 90px 90px;
   background: radial-gradient(at 50% 50%, saddlebrown 30%, #4d3017 88%);
-  clip-path: url("../index.html#neutral-mouth");
+  clip-path: url("https://mbr84.github.io/cssfx/index.html#neutral-mouth");
   -webkit-clip-path: polygon(14.0px 15.0px, 13.38197px 14.90211px, 12.82443px 14.61803px, 12.38197px 14.17557px, 12.09789px 13.61803px, 12.0px 13.0px, 12.09789px 12.38197px, 12.38197px 11.82443px, 12.82443px 11.38197px, 13.38197px 11.09789px, 14.0px 11.0px, 13px 11px, 14px 11px, 14.5px 11px, 15px 11px, 16px 11px, 17px 11px, 18px 11px, 19px 11px, 20px 11px, 21px 11px, 22px 11px, 23px 11px, 24px 11px, 25px 11px, 26px 11px,26px 11px,26px 11px,26px 11px,26px 11px,26px 11px, 27px 11px, 27.5px 11px, 28px 11px, 29px 11px, 30px 11px,30px 11px, 31px 11px, 32px 11px, 40px 11px, 41px 11px, 42px 11px, 43px 11px, 44px 11px,44px 11px,44px 11px,44px 11px,44px 11px, 45px 11px, 46px 11px, 47px 11px, 48px 11px, 49px 11px, 50px 11px, 51px 11px, 52px 11px, 53px 11px, 60.0px 11.0px, 60.61803px 11.09789px, 61.17557px 11.38197px, 61.61803px 11.82443px, 61.90211px 12.38197px, 62.0px 13.0px, 61.90211px 13.61803px, 61.61803px 14.17557px, 61.17557px 14.61803px, 60.61803px 14.90211px, 60px 15px);
           clip-path: polygon(14.0px 15.0px, 13.38197px 14.90211px, 12.82443px 14.61803px, 12.38197px 14.17557px, 12.09789px 13.61803px, 12.0px 13.0px, 12.09789px 12.38197px, 12.38197px 11.82443px, 12.82443px 11.38197px, 13.38197px 11.09789px, 14.0px 11.0px, 13px 11px, 14px 11px, 14.5px 11px, 15px 11px, 16px 11px, 17px 11px, 18px 11px, 19px 11px, 20px 11px, 21px 11px, 22px 11px, 23px 11px, 24px 11px, 25px 11px, 26px 11px,26px 11px,26px 11px,26px 11px,26px 11px,26px 11px, 27px 11px, 27.5px 11px, 28px 11px, 29px 11px, 30px 11px,30px 11px, 31px 11px, 32px 11px, 40px 11px, 41px 11px, 42px 11px, 43px 11px, 44px 11px,44px 11px,44px 11px,44px 11px,44px 11px, 45px 11px, 46px 11px, 47px 11px, 48px 11px, 49px 11px, 50px 11px, 51px 11px, 52px 11px, 53px 11px, 60.0px 11.0px, 60.61803px 11.09789px, 61.17557px 11.38197px, 61.61803px 11.82443px, 61.90211px 12.38197px, 62.0px 13.0px, 61.90211px 13.61803px, 61.61803px 14.17557px, 61.17557px 14.61803px, 60.61803px 14.90211px, 60px 15px);
 
