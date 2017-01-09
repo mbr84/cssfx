@@ -11,12 +11,6 @@ $(document).ready(() => {
     }, delay);
   }
 
-  var handleGooey = () => {
-    if ($('.active').data('position') == 5) {
-      setTimeout(() => $('#5').css('filter', "url('#goo')"), 600)
-    }
-  }
-
   var scroll = (e) => {
     if (!isMoving) {
       isMoving = true;
@@ -85,8 +79,7 @@ $(document).ready(() => {
   });
 
   $('pre').on('wheel', function (e) {
-    console.log(parseInt($(this).height()));
-    if (parseInt($(this).height()) > 360) e.stopPropagation();
+    e.stopPropagation();
   });
 
   var paneToggle = () => {
@@ -123,4 +116,11 @@ $(document).ready(() => {
     clickScroll($('.active').data().position);
     paneToggle()
   });
+
+
+  var handleGooey = () => {
+    if ($('.active').data('position') == 5) {
+      setTimeout(() => $('#5').css('filter', "url('#goo')"), 600)
+    }
+  }
 });
