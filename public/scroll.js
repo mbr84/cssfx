@@ -38,7 +38,7 @@ $(document).ready(() => {
         }
 
         activeNow = currentIndex - 1;
-        op = '+';
+        operand = '+';
       }
 
       timer(850);
@@ -48,8 +48,8 @@ $(document).ready(() => {
       $(`#${$('.active').data('position')}`).css('display', 'block');
       handleGooey();
 
-      $('.left-scroll').css({ top: `calc(${top} ${op} 100%)` });
-      $('.right-scroll').css({ bottom: `calc(${bottom} ${op} 100%)` });
+      $('.left-scroll').css({ top: `calc(${top} ${operand} 100%)` });
+      $('.right-scroll').css({ bottom: `calc(${bottom} ${operand} 100%)` });
     }
   };
 
