@@ -28,7 +28,7 @@ $(document).ready(() => {
       var menuItems = Array.from(document.querySelectorAll('[data-position]'));
       var currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
       var deltaY = e.originalEvent.deltaY || 0;
-      var op, activeNow;
+      var operand, activeNow;
       if (e.which === 40 || deltaY > 0) {
         if (atBottom) {
           isMoving = false;
@@ -36,7 +36,7 @@ $(document).ready(() => {
         }
 
         activeNow = currentIndex + 1;
-        op = '-';
+        operand = '-';
       } else if (e.which === 38 || deltaY < 0) {
         if (atTop) {
           isMoving = false;
@@ -54,8 +54,8 @@ $(document).ready(() => {
       $(`#${$('.active').data('position')}`).css('display', 'block');
       handleGooey();
 
-      $('.left-scroll').css({ top: `calc(${top} ${op} 100%)` });
-      $('.right-scroll').css({ bottom: `calc(${bottom} ${op} 100%)` });
+      $('.left-scroll').css({ top: `calc(${top} ${operand} 100%)` });
+      $('.right-scroll').css({ bottom: `calc(${bottom} ${operand} 100%)` });
     }
   };
 
