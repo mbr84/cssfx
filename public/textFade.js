@@ -51,12 +51,10 @@ var fadeOut = (idx) => {
   });
 };
 
-var next = () => {
+var next = (skip) => {
   var lastStep = currentStep;
   currentStep = ++currentStep % $intro.length;
-  if (lastStep !== -1) {
-    fadeOut(lastStep);
-  }
+  fadeOut(lastStep);
   fadeIn(currentStep);
 };
 
