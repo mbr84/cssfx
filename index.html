@@ -710,12 +710,12 @@
     background: -webkit-radial-gradient(50% 50%, circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
     background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
     z-index: -1;
-    transform: rotateX(80deg) translateZ(-100px);
+    transform: rotateX(80deg) translateZ(-100px) scale(1.2);
     transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
   }
 
   .head:hover::before {
-            transform: rotateX(80deg) translateZ(-130px) scale(1.2);
+    transform: rotateX(80deg) translateZ(-130px) scale(1.2);
   }
 
   .head::after {
