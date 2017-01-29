@@ -977,7 +977,7 @@
           while (strArr[i++] !== '>');
           htmEl += str.slice(j, i + 1);
         } else {
-          htmEl += `<span class="char-${i}">${strArr[i]}</span>`;
+          htmEl += `&lt;span class="char-${i}"&gt;${strArr[i]}&lt;/span&gt;`;
         }
       }
 
