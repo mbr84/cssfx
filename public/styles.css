@@ -371,8 +371,8 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   box-shadow: inset 0px -47px 0px -37px white;
   -webkit-clip-path: polygon(0% 44%, 40% 55%,60% 55%, 100% 44%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 44%, 40% 55%,60% 55%, 100% 44%, 100% 100%, 0% 100%);
-  -webkit-transition: top 1s;
-          transition: top 1s;
+  -webkit-transition: top .85s;
+          transition: top .85s;
   -webkit-transition-delay: .25s;
           transition-delay: .25s;
 }
