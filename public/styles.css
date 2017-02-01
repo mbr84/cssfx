@@ -94,18 +94,20 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   height: calc(100vh * 7);
   width: 100%;
   position: absolute;
-  -webkit-transition: .5s top ease-in, .5s bottom ease-in;
-  transition: .5s top ease-in, .5s bottom ease-in;
+  -webkit-transition: .5s all ease-in;
+  transition: .5s all ease-in;
   -webkit-transition-delay: .3s;
           transition-delay: .3s;
 }
 
 .left-scroll {
-  top: 0%;
+  transform: translateY(0vh);
+  top: 0;
 }
 
 .right-scroll {
-  bottom: 0%;
+  transform: translateY(0vh);
+  bottom: 0;
 }
 
 .section {
@@ -193,7 +195,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 }
 
 .step:first-child {
-  display: block;
+  display: none;
 }
 
 /* Emojis */
