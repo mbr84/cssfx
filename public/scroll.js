@@ -88,7 +88,7 @@ $(document).ready(() => {
     } else {
       $('.right-container').css('width', '50vw');
       $('.left-container').css('width', '50vw');
-      $('.goo-container').css('right', '70%')
+      $('.goo-container').css({right: '38%', width: '100%'})
     }
   }
 
