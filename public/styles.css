@@ -814,6 +814,13 @@ figure {
 
 /* nav bars */
 
+#mobile {
+  display: none;
+}
+
+#desktop {
+  display: block;
+}
 
 .goo-container {
   position: absolute;
@@ -1342,6 +1349,14 @@ div[data-screen="five"] .code-button:last-child:active {
 
 @media (max-width: 415px) {
   .right-container {
+    display: none;
+  }
+
+  #mobile {
+    display: block;
+  }
+
+  #desktop {
     display: none;
   }
 
