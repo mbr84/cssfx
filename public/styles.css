@@ -514,7 +514,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 }
 
 .top {
-  background: url('./images/darkstarry.png');
+  background: url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486074541/darkstarry_dnjmwy.png');
   background-size: cover;
   -webkit-transform:rotateX(-270deg) translateZ(100px);
           transform: rotateX(-270deg) translateZ(100px);
@@ -587,7 +587,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   background-blend-mode: luminosity;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  background-image: url('./images/css_darkblue.png');
+  background-image: url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486074784/css_darkblue_tvfbza.png');
   background-size: cover;
  }
 
