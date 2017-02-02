@@ -93,19 +93,22 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 .left-scroll, .right-scroll {
   height: calc(100vh * 7);
   width: 100%;
+  will-change: transform;
   position: absolute;
-  -webkit-transition: .5s top ease-in, .5s bottom ease-in;
-  transition: .5s top ease-in, .5s bottom ease-in;
+  -webkit-transition: .5s all ease-in;
+  transition: .5s all ease-in;
   -webkit-transition-delay: .3s;
           transition-delay: .3s;
 }
 
 .left-scroll {
-  top: 0%;
+  transform: translateY(0vh);
+  top: 0;
 }
 
 .right-scroll {
-  bottom: 0%;
+  transform: translateY(0vh);
+  bottom: 0;
 }
 
 .section {
@@ -193,7 +196,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 }
 
 .step:first-child {
-  display: block;
+  display: none;
 }
 
 /* Emojis */
@@ -230,8 +233,8 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   height: 100%;
   background: -webkit-radial-gradient(50% 50%, circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
   background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
-  -webkit-transform: rotateX(80deg) translateZ(-100px);
-          transform: rotateX(80deg) translateZ(-100px);
+  -webkit-transform: rotateX(80deg) translateZ(-100px) scale(1.2);
+          transform: rotateX(80deg) translateZ(-100px) scale(1.2);
   z-index: -1;
   -webkit-transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
   transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
@@ -266,15 +269,15 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   position: absolute;
   -webkit-transform: scale(.7);
           transform: scale(.7);
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  -webkit-transition-delay: .25s;
-          transition-delay: .25s;
   top: 55px;
   pointer-events: none;
   clip-path: url("https://mbr84.github.io/cssfx/index.html#eyes");
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 55% 100%, 50% 100%, 45% 100%, 40% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 55% 100%, 50% 100%, 45% 100%, 40% 100%, 0% 100%);
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
 .head:hover .eye {
@@ -319,7 +322,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   width: 100%;
   border-radius: 0 0 90px 90px;
   background: radial-gradient(at 50% 50%, saddlebrown 30%, #4d3017 88%);
-  clip-path: url("https://mbr84.github.io/cssfx/index.html#neutral-mouth");
+          clip-path: url("https://mbr84.github.io/cssfx/index.html#neutral-mouth");
   -webkit-clip-path: polygon(14.0px 15.0px, 13.38197px 14.90211px, 12.82443px 14.61803px, 12.38197px 14.17557px, 12.09789px 13.61803px, 12.0px 13.0px, 12.09789px 12.38197px, 12.38197px 11.82443px, 12.82443px 11.38197px, 13.38197px 11.09789px, 14.0px 11.0px, 13px 11px, 14px 11px, 14.5px 11px, 15px 11px, 16px 11px, 17px 11px, 18px 11px, 19px 11px, 20px 11px, 21px 11px, 22px 11px, 23px 11px, 24px 11px, 25px 11px, 26px 11px,26px 11px,26px 11px,26px 11px,26px 11px,26px 11px, 27px 11px, 27.5px 11px, 28px 11px, 29px 11px, 30px 11px,30px 11px, 31px 11px, 32px 11px, 40px 11px, 41px 11px, 42px 11px, 43px 11px, 44px 11px,44px 11px,44px 11px,44px 11px,44px 11px, 45px 11px, 46px 11px, 47px 11px, 48px 11px, 49px 11px, 50px 11px, 51px 11px, 52px 11px, 53px 11px, 60.0px 11.0px, 60.61803px 11.09789px, 61.17557px 11.38197px, 61.61803px 11.82443px, 61.90211px 12.38197px, 62.0px 13.0px, 61.90211px 13.61803px, 61.61803px 14.17557px, 61.17557px 14.61803px, 60.61803px 14.90211px, 60px 15px);
           clip-path: polygon(14.0px 15.0px, 13.38197px 14.90211px, 12.82443px 14.61803px, 12.38197px 14.17557px, 12.09789px 13.61803px, 12.0px 13.0px, 12.09789px 12.38197px, 12.38197px 11.82443px, 12.82443px 11.38197px, 13.38197px 11.09789px, 14.0px 11.0px, 13px 11px, 14px 11px, 14.5px 11px, 15px 11px, 16px 11px, 17px 11px, 18px 11px, 19px 11px, 20px 11px, 21px 11px, 22px 11px, 23px 11px, 24px 11px, 25px 11px, 26px 11px,26px 11px,26px 11px,26px 11px,26px 11px,26px 11px, 27px 11px, 27.5px 11px, 28px 11px, 29px 11px, 30px 11px,30px 11px, 31px 11px, 32px 11px, 40px 11px, 41px 11px, 42px 11px, 43px 11px, 44px 11px,44px 11px,44px 11px,44px 11px,44px 11px, 45px 11px, 46px 11px, 47px 11px, 48px 11px, 49px 11px, 50px 11px, 51px 11px, 52px 11px, 53px 11px, 60.0px 11.0px, 60.61803px 11.09789px, 61.17557px 11.38197px, 61.61803px 11.82443px, 61.90211px 12.38197px, 62.0px 13.0px, 61.90211px 13.61803px, 61.61803px 14.17557px, 61.17557px 14.61803px, 60.61803px 14.90211px, 60px 15px);
 
@@ -372,13 +375,17 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   -webkit-clip-path: polygon(0% 44%, 40% 55%,60% 55%, 100% 44%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 44%, 40% 55%,60% 55%, 100% 44%, 100% 100%, 0% 100%);
   -webkit-transition: top .85s;
-  transition: top .85s;
-  -webkit-transition-delay: .2s;
-          transition-delay: .2s;
+          transition: top .85s;
+  -webkit-transition-delay: .25s;
+          transition-delay: .25s;
 }
 
 .head:hover .mouth::after {
   top: -2px;
+  -webkit-transition: top .7s;
+          transition: top .7s;
+  -webkit-transition-delay: .25s;
+          transition-delay: .25s;
 }
 
 /* Spinners */
@@ -807,6 +814,13 @@ figure {
 
 /* nav bars */
 
+#mobile {
+  display: none;
+}
+
+#desktop {
+  display: block;
+}
 
 .goo-container {
   position: absolute;
@@ -816,7 +830,8 @@ figure {
 
 @media (min-width: 450px) {
   .goo-container {
-    left: 65%;
+    width: 100%;
+    right: 38%;
   }
 }
 
@@ -1334,6 +1349,14 @@ div[data-screen="five"] .code-button:last-child:active {
 
 @media (max-width: 415px) {
   .right-container {
+    display: none;
+  }
+
+  #mobile {
+    display: block;
+  }
+
+  #desktop {
     display: none;
   }
 

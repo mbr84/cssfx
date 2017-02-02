@@ -1,6 +1,6 @@
 /* eslint-disable no-undef, func-names, one-var, one-var-declaration-per-line, no-param-reassign */
 var $intro;
-var currentStep = 0;
+var currentStep = -1;
 
 var spanWrap = (string) => {
   $(string).each(function () {
@@ -21,22 +21,6 @@ var spanWrap = (string) => {
 
     $(this).html(htmEl);
     return $(this);
-  });
-};
-
-var lineWrap = (line) => {
-  $(line).each(function () {
-    var str = $(this).html();
-
-    var lines = str.split('<br>');
-
-    var htmEl = '';
-    for (var i = 0, len = lines.length; i < len; i++) {
-      htmEl += `<span class="line-${i}">${lines[i]}</span>`;
-      if (i !== lines.length - 1) { htmEl += '<br>'; }
-    }
-
-    $(this).html(htmEl);
   });
 };
 
@@ -67,7 +51,7 @@ var fadeOut = (idx) => {
   });
 };
 
-var next = () => {
+var next = (skip) => {
   var lastStep = currentStep;
   currentStep = ++currentStep % $intro.length;
   fadeOut(lastStep);
@@ -75,11 +59,11 @@ var next = () => {
 };
 
 $(document).ready(() => {
+  setTimeout(next, 200)
   $intro = $('.intro .step');
   $intro.each((i, step) => {
-    lineWrap(spanWrap($(step)));
-    var opacity = (i === 0 ? '1' : '0');
-    $("[class*='char']", $intro[i]).css('opacity', opacity);
+    spanWrap($(step));
+    $("[class*='char']", $intro[i]).css('opacity', "0");
   });
   setInterval(next, 4000);
 });

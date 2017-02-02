@@ -162,33 +162,7 @@
             </figure>
           </div>
           <div class="section section6">
-            <div class="goo-container">
-              <h2 class="gooey-title">
-                GOOEY!
-              </h2>
-              <nav class="nav-links"  id="5">
-                <input type="checkbox" class="open-menu" name="open-menu" id="open-menu" />
-                <label for="open-menu" class="open-menu-button">
-                  <span class="minus"></span>
-                  <span class="plus"></span>
-                </label>
-                <a class="nav-link" href="mailto:matthew.bramfeld@gmail.com"><i class="material-icons">mail</i></a>
-                <a class="nav-link" href="http://linkedin.com/in/matthew-bramfeld"><i class="material-icons">info</i></a>
-                <a class="nav-link" href="http://github.com/mbr84"><img src="./public/images/github.png"></a>
-                <a class="nav-link" href="#"><i class="material-icons">golf_course</i></a>
-
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                  <defs>
-                    <filter id="goo">
-                      <feGaussianBlur in="SourceGraphic" stdDeviation="13" result="blur" />
-                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                      <feBlend in="SourceGraphic" in2="goo" />
-                    </filter>
-                  </defs>
-                </svg>
-              </nav>
-
-            </div>
+            
           </div>
           <div class="section section7">
             <div class="section css3-basics">
@@ -266,7 +240,33 @@
             </div>
           </div>
           <div class="section section6">
+            <div class="goo-container" id="desktop">
+              <h2 class="gooey-title">
+                GOOEY!
+              </h2>
+              <nav class="nav-links"  id="5">
+                <input type="checkbox" class="open-menu" name="open-menu" id="open-menu" />
+                <label for="open-menu" class="open-menu-button">
+                  <span class="minus"></span>
+                  <span class="plus"></span>
+                </label>
+                <a class="nav-link" href="mailto:matthew.bramfeld@gmail.com"><i class="material-icons">mail</i></a>
+                <a class="nav-link" href="http://linkedin.com/in/matthew-bramfeld"><i class="material-icons">info</i></a>
+                <a class="nav-link" href="http://github.com/mbr84"><img src="./public/images/github.png"></a>
+                <a class="nav-link" href="#"><i class="material-icons">golf_course</i></a>
 
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                  <defs>
+                    <filter id="goo">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="13" result="blur" />
+                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                      <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                  </defs>
+                </svg>
+              </nav>
+
+            </div>
           </div>
           <div class="section">
             <div class="section5 rotating-box">
@@ -428,9 +428,10 @@
  a very cool CSS effect called parallax scroll. Especially
  cool here, because the left and right panes each display
  separate backgrounds and have to line up perfectly in the
- middle for the effect to work. CSSfx is a lot of work for
- the browser, but this screen in particular forced me to use
- a performace-enhancing CSS property - 'contain.'
+ middle for the effect to work.
+ This site, CSSfx, puts a heavy strain on the browser, but
+ this screen in particular forced me to use a performace-
+ enhancing CSS property - 'contain: paint'.
 
                     </code></pre>
                   </div>
@@ -656,7 +657,7 @@
  scope' does not apply! This site is about extremes!
 
  I was a little sad to leave behind version 1.0 of these
- little guys. The first time around I built them with
+ little fellas. The first time around I built them with
  smoke and mirrors. But a seldom-used CSS property called
  'clip-path' let me delete about 500 lines of code, while
  dramatically impoving the quality of the smiley.
@@ -664,8 +665,10 @@
  There are some drawbacks to "clip-path" though - for one,
  clip-path transitions don't play nicely with background-
  gradients; and they don't play at all with Firefox, unless
- they're written inline in the HTML as SVG filters. Very
- lame, Firefox.
+ they're written inline in the HTML as SVG filters. Not
+ cool, Firefox. Not cool. That being said, the transitions
+ actually look better on Firefox, because they aren't
+ CSS transitions - they're pure SVG.
 
                     </code></pre>
                   </div>
@@ -708,12 +711,12 @@
     background: -webkit-radial-gradient(50% 50%, circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
     background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
     z-index: -1;
-    transform: rotateX(80deg) translateZ(-100px);
+    transform: rotateX(80deg) translateZ(-100px) scale(1.2);
     transition: all 1.25s cubic-bezier(.87,-.41,.19,1.44);
   }
 
   .head:hover::before {
-            transform: rotateX(80deg) translateZ(-130px) scale(1.2);
+    transform: rotateX(80deg) translateZ(-130px) scale(1.2);
   }
 
   .head::after {
@@ -959,24 +962,74 @@
                   </div>
                   <div class="code-snip" data-lang="js">
                     <pre><code class="javascript">
- var fadeIn = (idx) => {
-   var letters = shuffle($('[class*="char"]', $intro[idx]));
-   $($intro[idx]).show();
-   $.each(letters, (i, el) => {
-     setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
-       (500 / letters.length * i) + (500)
-     );
-   });
- };
+  var $intro;
+  var currentStep = -1;
 
- var fadeOut = (idx) => {
-   var letters = shuffle($('[class*="char"]', $intro[idx]));
-   $.each(letters, (i, el) => {
-     setTimeout(() => (
-       $(el).animate({ opacity: 0 }, 100)), (500 / letters.length * i)
-     );
-   });
- };
+  var spanWrap = (string) => {
+    $(string).each(function () {
+      var str = $(this).html();
+
+      var strArr = str.split('');
+
+      var htmEl = '';
+      for (var i = 0, len = strArr.length; i < len; i++) {
+        if (strArr[i] === '<') {
+          var j = i;
+          while (strArr[i++] !== '>');
+          htmEl += str.slice(j, i + 1);
+        } else {
+          htmEl += `&lt;span class="char-${i}"&gt;${strArr[i]}&lt;/span&gt;`;
+        }
+      }
+
+      $(this).html(htmEl);
+      return $(this);
+    });
+  };
+
+  var shuffle = (array) => {
+    for (var i = 0; i < array.length; i++) {
+      var temp = array[i];
+      var j = Math.floor(Math.random() * i);
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
+
+  var fadeIn = (idx) => {
+    var letters = shuffle($('[class*="char"]', $intro[idx]));
+    $($intro[idx]).show();
+    $.each(letters, (i, el) => {
+      setTimeout(() => ($(el).animate({ opacity: 1 }, 100)),
+        (500 / letters.length * i) + (500)
+      );
+    });
+  };
+
+  var fadeOut = (idx) => {
+    var letters = shuffle($('[class*="char"]', $intro[idx]));
+    $.each(letters, (i, el) => {
+      setTimeout(() => ($(el).animate({ opacity: 0 }, 100)), (500 / letters.length * i));
+    });
+  };
+
+  var next = (skip) => {
+    var lastStep = currentStep;
+    currentStep = ++currentStep % $intro.length;
+    fadeOut(lastStep);
+    fadeIn(currentStep);
+  };
+
+  $(document).ready(() => {
+    setTimeout(next, 250)
+    $intro = $('.intro .step');
+    $intro.each((i, step) => {
+      spanWrap($(step));
+      $("[class*='char']", $intro[i]).css('opacity', "0");
+    });
+    setInterval(next, 4000);
+  });
                     </code></pre>
                   </div>
 
