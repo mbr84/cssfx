@@ -168,7 +168,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 }
 
 .right-container .section7 {
-  background-image: url('./images/stars_right.jpg');
+  background-image: url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486074351/stars_right_zmp4p5.jpg');
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -479,7 +479,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 }
 
 .right {
-  background: url("./images/1purple_starry_sky.png");
+  background: url("http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486073723/1purple_starry_sky_zlngs5.png");
   background-size: cover;
   -webkit-transform: rotateY(-270deg) translateZ(100px);
           transform: rotateY(-270deg) translateZ(100px);
@@ -569,7 +569,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-image: url('./images/stars4.jpg');
+  background-image: url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486073964/stars4_m2rbwi.jpg');
 }
 
 .spinner-container {
@@ -1013,7 +1013,7 @@ figure {
   margin: auto;
   width: 100%;
   height: 100vh;
-  background: url('./images/x-wing.png') no-repeat center 150px, url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:eco/v1486073223/stars2_lfqywg.jpg'), no-repeat top left;
+  background: url('./images/x-wing.png') no-repeat center 150px, url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486073223/stars2_lfqywg.jpg'), no-repeat top left;
   -webkit-transition: background-position 8s;
   transition: background-position 8s;
 }
