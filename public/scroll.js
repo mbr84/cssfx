@@ -17,31 +17,11 @@ $(document).ready(() => {
     }, delay);
   }
 
-  var matrixAndY = (currentMatrix) => {
-    var newMatrix = currentMatrix.split(" ");
-    var newMatrixY = newMatrix[newMatrix.length - 1];
-    newMatrixY = newMatrixY.slice(0, newMatrixY.length - 1);
-    return [parseInt(newMatrixY), newMatrix]
-  }
-
-  var newTransformMatrix = (values, direction) => {
-    newY = values[0];
-    matrix = values[1];
-    newY = window.innerHeight * activeNow * direction;
-    newY += ")"
-    matrix[matrix.length - 1] = newY
-    return matrix
-  }
-
   var scroll = (e) => {
     if (!isMoving) {
       isMoving = true;
       then = (new Date).getTime();
       var atTop = $('.active').data('position') === 0;
-
-      leftMatrixAndY = matrixAndY($('.left-scroll').css('transform'));
-      rightMatrixAndY = matrixAndY($('.right-scroll').css('transform'));
-
       var atBottom = $('.active').data('position') === 6;
       var currentIndex = activeNow = menuItems.indexOf(document.getElementsByClassName('active')[0]);
       var deltaY = e.originalEvent.deltaY || 0;
@@ -60,8 +40,8 @@ $(document).ready(() => {
         activeNow = currentIndex - screensToTraverse;
       }
 
-      var rightTransform = newTransformMatrix(rightMatrixAndY, 1)
-      var leftTransform = newTransformMatrix(leftMatrixAndY, -1)
+      var rightTransform = `translateY(${100 * activeNow}vh)`
+      var leftTransform = `translateY(${-100 * activeNow}vh)`
 
       timer(850);
 
@@ -70,8 +50,8 @@ $(document).ready(() => {
       $(`#${$('.active').data('position')}`).css('display', 'block');
       handleGooey();
 
-      $('.left-scroll').css({ transform: `${leftTransform.join(" ")}` });
-      $('.right-scroll').css({ transform: `${rightTransform.join(" ")}` });
+      $('.left-scroll').css({ transform: leftTransform });
+      $('.right-scroll').css({ transform: rightTransform });
     }
   };
 
@@ -107,7 +87,7 @@ $(document).ready(() => {
     } else {
       $('.right-container').css('width', '50vw');
       $('.left-container').css('width', '50vw');
-      $('.goo-container').css('right', '65%')
+      $('.goo-container').css('right', '70%')
     }
   }
 

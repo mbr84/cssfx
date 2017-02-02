@@ -93,6 +93,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 .left-scroll, .right-scroll {
   height: calc(100vh * 7);
   width: 100%;
+  will-change: transform;
   position: absolute;
   -webkit-transition: .5s all ease-in;
   transition: .5s all ease-in;
@@ -822,7 +823,8 @@ figure {
 
 @media (min-width: 450px) {
   .goo-container {
-    right: 70%;
+    width: 100%;
+    right: 38%;
   }
 }
 
