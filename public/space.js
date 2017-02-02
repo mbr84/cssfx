@@ -2,7 +2,7 @@
 
 $(document).ready(() => {
   var space = `https://res.cloudinary.com/dxbwq1eyw/image/upload/c_fill,h_${window.innerHeight},w_${window.innerWidth}/v1480305081/stars2_qiu9qm.jpg`
-  $('.layered-spinner').css({ 'background': `url('${space}')` })
+  $('.layered-spinner').css({ 'background': `url('${space}')`, 'background-position': '100%'  })
   $('.section4').css({ 'background': `url('${space}')` })
 
   $('.space').mousemove(function (e) {

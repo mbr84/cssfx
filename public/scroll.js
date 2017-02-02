@@ -3,10 +3,14 @@
 $(document).ready(() => {
   var isMoving = false;
   var menuItems = Array.from(document.querySelectorAll('[data-position]'));
-  var screensToTraverse;
+  var screensToTraverse, activeNow;
 
   var timer = (delay) => {
     var lastActive = $('.active').data('position');
+    if (screensToTraverse === 0) {
+      isMoving = false;
+      return ;
+    }
     setTimeout(() => {
       isMoving = false;
       $(`#${lastActive}`).css('display', 'none')
@@ -23,7 +27,7 @@ $(document).ready(() => {
   var newTransformMatrix = (values, direction) => {
     newY = values[0];
     matrix = values[1];
-    newY += window.innerHeight * screensToTraverse * direction;
+    newY = window.innerHeight * activeNow * direction;
     newY += ")"
     matrix[matrix.length - 1] = newY
     return matrix
@@ -39,30 +43,25 @@ $(document).ready(() => {
       rightMatrixAndY = matrixAndY($('.right-scroll').css('transform'));
 
       var atBottom = $('.active').data('position') === 6;
-      var currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
+      var currentIndex = activeNow = menuItems.indexOf(document.getElementsByClassName('active')[0]);
       var deltaY = e.originalEvent.deltaY || 0;
-      var activeNow, rightTransform, leftTransform;
 
       if (e.which === 40 || deltaY > 0) {
         if (atBottom) {
           isMoving = false;
           return;
         }
-
         activeNow = currentIndex + screensToTraverse;
-        rightTransform = newTransformMatrix(rightMatrixAndY, 1)
-        leftTransform = newTransformMatrix(leftMatrixAndY, -1)
       } else if (e.which === 38 || deltaY < 0) {
         if (atTop) {
           isMoving = false;
           return;
         }
-        console.log(deltaY)
-
         activeNow = currentIndex - screensToTraverse;
-        rightTransform = newTransformMatrix(rightMatrixAndY, -1)
-        leftTransform = newTransformMatrix(leftMatrixAndY, 1)
       }
+
+      var rightTransform = newTransformMatrix(rightMatrixAndY, 1)
+      var leftTransform = newTransformMatrix(leftMatrixAndY, -1)
 
       timer(850);
 
@@ -76,26 +75,19 @@ $(document).ready(() => {
     }
   };
 
-  var clickScroll = (pos) => {
-    handleGooey();
-    $('.left-scroll').css({ top: `calc(${pos} * -100%)` });
-    $('.right-scroll').css({ bottom: `calc(${pos} * -100%)` });
-  };
-
   $('.contents').click((e) => {
     if (e.target.tagName === 'LI') {
       var currentIndex = menuItems.indexOf(document.getElementsByClassName('active')[0]);
       var direction = e.target.dataset.position - currentIndex;
       screensToTraverse = Math.abs(direction)
-      console.log(screensToTraverse)
       $(`#${$('.active').data('position')}`).css('display', 'block');
-      scroll({ which: e.target.dataset.position, originalEvent: { deltaY: direction } });
+      scroll({ which: {}, originalEvent: { deltaY: direction } });
     }
   });
 
   $(document).on('keydown', (e) => {
-    screensToTraverse === 1;
-    if (e.which === 40 || e.which === 38) scroll(e)
+    screensToTraverse = 1;
+    if (e.which === 40 || e.which === 38) { scroll(e) }
   });
 
   $(document).on('wheel', (e) => {
@@ -111,11 +103,11 @@ $(document).ready(() => {
     if (window.innerWidth < 800) {
       $('.right-container').css('width', '0');
       $('.left-container').css('width', '100vw');
-      $('.goo-container').css('left', '10%')
+      $('.goo-container').css('right', '10%')
     } else {
       $('.right-container').css('width', '50vw');
       $('.left-container').css('width', '50vw');
-      $('.goo-container').css('left', '65%')
+      $('.goo-container').css('right', '65%')
     }
   }
 
@@ -136,10 +128,11 @@ $(document).ready(() => {
 
   $(window).resize(() => {
     var space = `https://res.cloudinary.com/dxbwq1eyw/image/upload/c_fill,h_${window.innerHeight},w_${window.innerWidth}/v1480305081/stars2_qiu9qm.jpg`
-    $('.layered-spinner').css({ 'background': `url('${space}')` })
-    $('.section4').css({ 'background': `url('${space}')` })
-    clickScroll($('.active').data().position);
-    paneToggle()
+    $('.layered-spinner').css({ 'background': `url('${space}')`, 'background-position': '100%'  })
+    $('.section4').css({ 'background': `url('${space}')`})
+    screensToTraverse = 0;
+    scroll({ which: {}, originalEvent: { deltaY: 1 } });
+    paneToggle();
   });
 
 
