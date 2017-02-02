@@ -25,23 +25,14 @@ $(document).ready(() => {
       var atBottom = $('.active').data('position') === 6;
       var currentIndex = activeNow = menuItems.indexOf(document.getElementsByClassName('active')[0]);
       var deltaY = e.originalEvent.deltaY || 0;
-<<<<<<< HEAD
-      var operand, activeNow;
-=======
 
->>>>>>> tranform-transition
       if (e.which === 40 || deltaY > 0) {
         if (atBottom) {
           isMoving = false;
           return;
         }
-<<<<<<< HEAD
-
-        activeNow = currentIndex + 1;
-        operand = '-';
-=======
         activeNow = currentIndex + screensToTraverse;
->>>>>>> tranform-transition
+
       } else if (e.which === 38 || deltaY < 0) {
         if (atTop) {
           isMoving = false;
@@ -60,13 +51,8 @@ $(document).ready(() => {
       $(`#${$('.active').data('position')}`).css('display', 'block');
       handleGooey();
 
-<<<<<<< HEAD
-      $('.left-scroll').css({ top: `calc(${top} ${operand} 100%)` });
-      $('.right-scroll').css({ bottom: `calc(${bottom} ${operand} 100%)` });
-=======
       $('.left-scroll').css({ transform: leftTransform });
       $('.right-scroll').css({ transform: rightTransform });
->>>>>>> tranform-transition
     }
   };
 
