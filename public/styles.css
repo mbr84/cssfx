@@ -82,15 +82,6 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   position: relative;
 }
 
-@media (max-width: 800px) {
-  .left-container {
-    width: 100vw;
-  }
-  .right-container {
-    width: 0;
-  }
-}
-
 .left-scroll, .right-scroll {
   height: calc(100vh * 7);
   width: 100%;
@@ -1480,5 +1471,21 @@ div[data-screen="five"] .code-button:last-child:active {
     top: -5%;
     -webkit-transform: scale(.8);
             transform: scale(.8)
+  }
+}
+
+@media (max-width: 800px) {
+  .left-container {
+    width: 100vw;
+  }
+  .right-container {
+    width: 0;
+  }
+  .gooey-title {
+    margin: 0px 0 0 -80vw;
+  }
+
+  .nav-links {
+    margin-left: -90vw;
   }
 }
