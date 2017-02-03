@@ -5,6 +5,7 @@ html, body {
 
 body {
   font-family: 'Catamaran', sans-serif;
+  background: black;
 }
 
 figure[id="1"], nav[id="4"], div[id="5"] {
@@ -168,7 +169,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 }
 
 .right-container .section7 {
-  background-image: url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486074351/stars_right_zmp4p5.jpg');
+  background-image: url('https://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486074351/stars_right_zmp4p5.jpg');
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -479,7 +480,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 }
 
 .right {
-  background: url("http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486073723/1purple_starry_sky_zlngs5.png");
+  background: url("https://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486073723/1purple_starry_sky_zlngs5.png");
   background-size: cover;
   -webkit-transform: rotateY(-270deg) translateZ(100px);
           transform: rotateY(-270deg) translateZ(100px);
@@ -514,7 +515,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 }
 
 .top {
-  background: url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486074541/darkstarry_dnjmwy.png');
+  background: url('https://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486074541/darkstarry_dnjmwy.png');
   background-size: cover;
   -webkit-transform:rotateX(-270deg) translateZ(100px);
           transform: rotateX(-270deg) translateZ(100px);
@@ -569,7 +570,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-image: url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486073964/stars4_m2rbwi.jpg');
+  background-image: url('https://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486073964/stars4_m2rbwi.jpg');
 }
 
 .spinner-container {
@@ -587,7 +588,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
   background-blend-mode: luminosity;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  background-image: url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486074784/css_darkblue_tvfbza.png');
+  background-image: url('https://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486074784/css_darkblue_tvfbza.png');
   background-size: cover;
  }
 
@@ -1013,7 +1014,7 @@ figure {
   margin: auto;
   width: 100%;
   height: 100vh;
-  background: url('./images/x-wing.png') no-repeat center 150px, url('http://res.cloudinary.com/dxbwq1eyw/image/upload/q_75/v1486073223/stars2_lfqywg.jpg'), no-repeat top left;
+  background: url('./images/x-wing.png') no-repeat center 150px, url('https://res.cloudinary.com/dxbwq1eyw/image/upload/q_75/v1486073223/stars2_lfqywg.jpg'), no-repeat top left;
   -webkit-transition: background-position 8s;
   transition: background-position 8s;
 }
