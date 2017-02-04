@@ -806,14 +806,6 @@ figure {
 
 /* nav bars */
 
-#mobile {
-  display: none;
-}
-
-#desktop {
-  display: block;
-}
-
 .goo-container {
   position: absolute;
   z-index: 2;
@@ -1344,14 +1336,6 @@ div[data-screen="five"] .code-button:last-child:active {
     display: none;
   }
 
-  #mobile {
-    display: block;
-  }
-
-  #desktop {
-    display: none;
-  }
-
   .section {
     contain: all;
   }
@@ -1392,6 +1376,7 @@ div[data-screen="five"] .code-button:last-child:active {
   .goo-container {
     left: -7%;
     top: -5%;
+    contain: paint;
   }
 
   .nav-links {
