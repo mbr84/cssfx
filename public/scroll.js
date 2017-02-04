@@ -84,11 +84,11 @@ $(document).ready(() => {
     if (window.innerWidth < 800) {
       $('.right-container').css('width', '0');
       $('.left-container').css('width', '100vw');
-      $('.goo-container').css('right', '10%')
+      // $('.goo-container').css('right', '10%')
     } else {
       $('.right-container').css('width', '50vw');
       $('.left-container').css('width', '50vw');
-      $('.goo-container').css({right: '38%', width: '100%'})
+      // $('.goo-container').css({right: '38%', width: '100%'})
     }
   }
 
