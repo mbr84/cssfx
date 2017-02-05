@@ -22,5 +22,5 @@ $(document).ready(() => {
     $('.space').trigger('mouseleave').trigger('mouseenter');
   });
 
-  setTimeout(() => $(body).css("background-color", "black"), 1000);
+  setTimeout(() => $('body').css("background-color", "black"), 1000);
 });
