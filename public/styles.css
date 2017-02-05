@@ -104,7 +104,7 @@ figure[id="1"], nav[id="4"], div[id="5"] {
 }
 
 .section {
-  contain: content;
+  contain: strict;
   height: 100vh;
   width: 100%;
   display: -webkit-box;
@@ -1337,7 +1337,7 @@ div[data-screen="five"] .code-button:last-child:active {
   }
 
   .section {
-    contain: content;
+    contain: strict;
   }
 
   .mobile-buttons {
