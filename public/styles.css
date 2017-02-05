@@ -279,12 +279,12 @@ figure[id="1"], nav[id="4"], div[id="5"] {
           clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 60% 56%, 55% 55%, 50% 54%, 45% 55%, 40% 56%, 0% 80%);
 }
 
-.two {
-  left: 28%;
+.left-eye {
+  left: 58%;
 }
 
-.one {
-  left: 58%;
+.right-eye {
+  left: 28%;
 }
 
 .mouth {
