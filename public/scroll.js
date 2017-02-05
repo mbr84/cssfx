@@ -49,7 +49,6 @@ $(document).ready(() => {
       $([menuItems[activeNow]]).addClass('active').siblings()
         .removeClass('active');
       $(`#${$('.active').data('position')}`).css('display', 'block');
-      handleGooey();
 
       $('.left-scroll').css({ transform: leftTransform });
       $('.right-scroll').css({ transform: rightTransform });
@@ -116,10 +115,4 @@ $(document).ready(() => {
     paneToggle();
   });
 
-
-  var handleGooey = () => {
-    if ($('.active').data('position') == 5) {
-      setTimeout(() => $('#5').css('filter', "url('#goo')"), 600)
-    }
-  }
 });
