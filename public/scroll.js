@@ -32,7 +32,6 @@ $(document).ready(() => {
           return;
         }
         activeNow = currentIndex + screensToTraverse;
-
       } else if (e.which === 38 || deltaY < 0) {
         if (atTop) {
           isMoving = false;
@@ -41,8 +40,8 @@ $(document).ready(() => {
         activeNow = currentIndex - screensToTraverse;
       }
 
-      var rightTransform = `translateY(${100 * activeNow}vh)`
       var leftTransform = `translateY(${-100 * activeNow}vh)`
+      var rightTransform = `translateY(${100 * activeNow}vh)`
 
       timer(850);
 
@@ -96,9 +95,7 @@ $(document).ready(() => {
   $('.mobile-buttons').on('click touch', (e) => {
     var top = $('.left-scroll').css('top');
     var sign = (e.target.innerText === "Next" ? -1 : 1)
-    if ((sign === -1 && top === (window.innerHeight * -6) + "px") || (sign === 1 && top === "0px")) {
-      return;
-    }
+    if ((sign === -1 && top === (window.innerHeight * -6) + "px") || (sign === 1 && top === "0px")) { return; }
     setTimeout(() => $(`#${mobileSection}`).css('display', 'none'), 300)
     mobileSection -= sign;
     setTimeout(() => $(`#${mobileSection}`).css('display', 'block'), 300)

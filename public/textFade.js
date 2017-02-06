@@ -59,7 +59,7 @@ var next = (skip) => {
 };
 
 $(document).ready(() => {
-  setTimeout(next, 200)
+  setTimeout(next, 100)
   $intro = $('.intro .step');
   $intro.each((i, step) => {
     spanWrap($(step));
