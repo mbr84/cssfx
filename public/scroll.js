@@ -5,7 +5,7 @@ $(document).ready(() => {
   var menuItems = Array.from(document.querySelectorAll('[data-position]'));
   var screensToTraverse, activeNow;
 
-  var timer = (delay) => {
+  var debounceScrolling = (delay) => {
     var lastActive = $('.active').data('position');
     if (screensToTraverse === 0) {
       isMoving = false;
@@ -43,7 +43,7 @@ $(document).ready(() => {
       var leftTransform = `translateY(${-100 * activeNow}vh)`
       var rightTransform = `translateY(${100 * activeNow}vh)`
 
-      timer(850);
+      debounceScrolling(850);
 
       $([menuItems[activeNow]]).addClass('active').siblings()
         .removeClass('active');

@@ -14,9 +14,9 @@ $(document).ready(() => {
     var newId = 'code-snip' + "_" + index
     $(this).attr('id', newId)
     if ($(this).height() > 300) {
-      $(`#${newId}`).css('transition', "transform .95s cubic-bezier(.24,1.61,.35,.89), -webkit-transform .95s cubic-bezier(.24,1.61,.35,.89)")
+      $(`#${newId}`).css({ transition: "transform .95s cubic-bezier(.24,1.61,.35,.89), -webkit-transform .95s cubic-bezier(.24,1.61,.35,.89)", "-webkit-transition": "-webkit-transform .95s cubic-bezier(.24,1.61,.35,.89)", "-webkit-transition": "transform .95s cubic-bezier(.24,1.61,.35,.89)" })
     } else if ($(this).height() > 200) {
-      $(`#${newId}`).css("transition", "transform .85s cubic-bezier(.24,1.61,.35,.89), -webkit-transform .85s cubic-bezier(.24,1.61,.35,.89)")
+      $(`#${newId}`).css({ transition: "transform .85s cubic-bezier(.24,1.61,.35,.89), -webkit-transform .85s cubic-bezier(.24,1.61,.35,.89)", "-webkit-transition": "-webkit-transform .85s cubic-bezier(.24,1.61,.35,.89)", "-webkit-transition": "transform .95s cubic-bezier(.24,1.61,.35,.89)" })
     }
   })
 
