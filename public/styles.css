@@ -1120,10 +1120,10 @@ figure {
           transform: rotateX(-90deg);
   -webkit-transform-origin: top;
           transform-origin: top;
-  -webkit-transition: -webkit-transform .75s cubic-bezier(.24,1.61,.35,.89);
-  transition: -webkit-transform .75s cubic-bezier(.24,1.61,.35,.89);
-  transition: transform .75s cubic-bezier(.24,1.61,.35,.89);
-  transition: transform .75s cubic-bezier(.24,1.61,.35,.89), -webkit-transform .75s cubic-bezier(.24,1.61,.35,.89);
+  -webkit-transition: -webkit-transform .8s cubic-bezier(.24,1.61,.35,.89);
+  transition: -webkit-transform .8s cubic-bezier(.24,1.61,.35,.89);
+  transition: transform .8s cubic-bezier(.24,1.61,.35,.89);
+  transition: transform .8s cubic-bezier(.24,1.61,.35,.89), -webkit-transform .8s cubic-bezier(.24,1.61,.35,.89);
 }
 
 .show {
