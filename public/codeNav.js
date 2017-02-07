@@ -23,7 +23,7 @@ $(document).ready(() => {
   var inTransition = false
 
   var showCode = (e) => {
-    var code = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane div[data-lang='${e.target.dataset.lang}`);
+    var code = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane div[data-lang='${e.target.dataset.lang}']`);
     var codePane = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane`);
     var activePane = activePanes[e.currentTarget.dataset.screen]
 
@@ -52,9 +52,11 @@ $(document).ready(() => {
 
   $('.menu-bar').click((e) => {
     if (inTransition) return;
-    inTransition = true;
-    setTimeout(() => inTransition = false, 1000)
-    showCode(e);
+    if (e.target.classList[0] === "code-button") {
+      inTransition = true;
+      setTimeout(() => inTransition = false, 1000)
+      showCode(e);
+    }
   })
 
 })
