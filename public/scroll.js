@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     keyScrolls.filter(key => key.which === 40 || key.which === 38)
 
       // Up and down arrows move us up or down one one screen
-      // Mousewheels do the same.
+      // Mousewheels do the same (line 41).
 
       .map(key => key.which === 40 ? 1 : -1),
     wheels.map(wheel => wheel.deltaY)
