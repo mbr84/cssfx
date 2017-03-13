@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   var wheels      = Rx.Observable.fromEvent(document, 'wheel');
   var keyScrolls  = Rx.Observable.fromEvent(document, 'keydown');
-  var menuClicks  = Rx.Observable.fromEvent(document.querySelectorAll('.contents'), 'click');
+  var menuClicks  = Rx.Observable.fromEvent(document.querySelector('.contents'), 'click');
 
   // Each nav button has an HTML attribute 'data-position.' Anything
   // with a 'data position' attribute is a button on the nav bar
