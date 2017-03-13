@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .throttleTime(700)
       .map(dY => dY / Math.abs(dY))
     )
-    .scan((currentScreen, screensToTraverse) => currentScreen + screensToTraverse, 0) // start on 0th screen
+    .scan((currentScreen, screensToTraverse) => currentScreen + screensToTraverse, 0) // Start on 0th screen
     .distinctUntilChanged() // Ignore click if screen is already active
     .filter(screenIdx => screenIdx >= 0 && screenIdx <= 6)
 
