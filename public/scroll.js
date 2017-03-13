@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Get the number of screens between the screen we're navigating to
       // and the screen we're currently on
 
-      .map(click => indexOf(click) - activeNow())
+      .map(clickedButton => indexOf(clickedButton) - activeNow())
       .distinctUntilChanged(), // Ignore click if screen is already active
     keyScrolls.filter(key => key.which === 40 || key.which === 38)
 
