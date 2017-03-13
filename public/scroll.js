@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     $('.right-scroll').css({ transform: `translateY(${100 * idx}vh)` });
   }
 
+  // Merge wheels, keyscrolls, and menuClicks into a single stream
+
   var screens     = Rx.Observable.merge(
     menuClicks.filter(click => click.target.tagName === 'LI')
 
@@ -40,12 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .throttleTime(700)
       .map(dY => dY / Math.abs(dY))
     )
-
-    //could provide 0 as start value for scan, but parameters are in opposite order of
-    //reduce, so I'm using this startWith(0) to make it a little more readable
-    
-    .startWith(0)
-    .scan((currentScreen, screensToTraverse) => currentScreen + screensToTraverse)
+    .scan((currentScreen, screensToTraverse) => currentScreen + screensToTraverse, 0) //start on 0th screen
     .filter(screen => screen >= 0 && screen <= 6)
     .distinctUntilChanged()
 
