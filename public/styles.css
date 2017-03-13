@@ -7,10 +7,6 @@ body {
   font-family: 'Catamaran', sans-serif;
 }
 
-figure[id="1"], nav[id="4"], div[id="5"] {
-  display: none;
-}
-
 /* section scroll */
 
 .contents, .mobile-buttons {
@@ -1011,7 +1007,7 @@ figure {
 .space {
   margin: auto;
   width: 100%;
-  height: 100vh;  
+  height: 100vh;
   background: url('./images/x-wing.png') no-repeat center 150px, url('https://res.cloudinary.com/dxbwq1eyw/image/upload/q_75/v1486073223/stars2_lfqywg.jpg'), no-repeat top left;
   -webkit-transition: background-position 8s;
   transition: background-position 8s;

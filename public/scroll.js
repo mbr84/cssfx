@@ -6,19 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Each nav button has an HTML attribute, 'data-position.' Anything
   // with a 'data position' attribute is a button on the nav bar
 
-  var navBtns    = Array.from(document.querySelectorAll('[data-position]'));
+  var navBtns     = Array.from(document.querySelectorAll('[data-position]'));
 
   // 'data-position' gives the index of the corresponding screen in the order of screens
 
-  var activeNow  = () => parseInt(document.querySelector('.active').getAttribute('data-position'))
-  var updateMenu = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
+  var activeNow   = () => parseInt(document.querySelector('.active').getAttribute('data-position'))
+  var updateMenu  = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
 
-  var scroll     = (idx) => {
+  var scroll      = (idx) => {
     $('.left-scroll').css({ transform: `translateY(${-100 * idx}vh)` });
     $('.right-scroll').css({ transform: `translateY(${100 * idx}vh)` });
   }
 
-  var activeScreens = Rx.Observable.merge(
+  var screens     = Rx.Observable.merge(
     menuClicks.filter(click => click.target.tagName === 'LI')
 
       // get the number of screens between the clicked screen we're navigating to
@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .filter(screen => screen >= 0 && screen <= 6)
     .distinctUntilChanged()
 
-  activeScreens.forEach(screenNumber => {
-    updateMenu(screenNumber);
-    scroll(screenNumber);
+  screens.forEach(screen => {
+    updateMenu(screen);
+    scroll(screen);
   })
 })
