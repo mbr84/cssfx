@@ -23,19 +23,19 @@ document.addEventListener("DOMContentLoaded", () => {
   var screens     = Rx.Observable.merge(
     menuClicks.filter(click => click.target.tagName === 'LI')
 
-      // get the number of screens between the clicked screen we're navigating to
+      // Get the number of screens between the clicked screen we're navigating to
       // and the screen we're currently on
 
       .map(click => click.target.dataset.position - activeNow()),
     keyScrolls.filter(key => key.which === 40 || key.which === 38)
 
-      // Up and down arrows move us up or down one one screen
-      // Mousewheels do the same (line 43).
+      // Up and down arrows move us up or down by one screen.
+      // Wheel events do the same (line 43).
 
       .map(key => key.which === 40 ? 1 : -1),
     wheels.map(wheel => wheel.deltaY)
 
-      // ignore lingering mousewheel events with very low deltaY properties,
+      // Ignore lingering mousewheel events with very low deltaY properties,
       // so we can set throttleTime as low as possible and keep the page responsive
 
       .filter(dY => Math.abs(dY) > 75)
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scroll(screenIdx);
   })
 
-  // stop scroll propagation on scrollable child elements
+  // Stop scroll propagation on scrollable child elements. In our case they're all <pre>'s
 
   $('pre').on('wheel', function (e) {
     e.stopPropagation();
