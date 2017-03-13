@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // and the screen we're currently on
 
       .map(click => indexOf(click) - activeNow())
-      .distinctUntilChanged(), // Ignore click if screen is already active 
+      .distinctUntilChanged(), // Ignore click if screen is already active
     keyScrolls.filter(key => key.which === 40 || key.which === 38)
 
       // Up and down arrows move us up or down by one screen.
-      // Wheel events do the same (line 43).
+      // Wheel events do the same (line 45).
 
       .map(key => key.which === 40 ? 1 : -1),
     wheels.map(wheel => wheel.deltaY)
