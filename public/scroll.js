@@ -49,4 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
     updateMenu(screen);
     scroll(screen);
   })
+
+  // stop scroll propagation on scrollable child nodes
+
+  $('pre').on('wheel', function (e) {
+    e.stopPropagation();
+  });
+
 })
