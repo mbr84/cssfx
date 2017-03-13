@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(dY => dY / Math.abs(dY))
     )
     .startWith(0)
-    .scan((lastActive, screensToTraverse) => lastActive + screensToTraverse)
+    .scan((currentScreen, screensToTraverse) => currentScreen + screensToTraverse)
     .filter(screen => screen >= 0 && screen <= 6)
     .distinctUntilChanged()
 
