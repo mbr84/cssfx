@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Each button's 'data-position' attribute gives the 'index' of the screen it links to
 
+  var indexOf     = (e) => e.target.dataset.position
   var activeNow   = () => parseInt(document.querySelector('.active').getAttribute('data-position'))
   var updateMenu  = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
 
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Get the number of screens between the screen we're navigating to
       // and the screen we're currently on
 
-      .map(click => click.target.dataset.position - activeNow()),
+      .map(click => indexOf(click) - activeNow()),
     keyScrolls.filter(key => key.which === 40 || key.which === 38)
 
       // Up and down arrows move us up or down by one screen.
