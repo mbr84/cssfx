@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   var navBtns     = Array.from(document.querySelectorAll('[data-position]'));
 
-  // 'data-position' gives the index of the corresponding screen in the order of screens
+  // 'data-position' gives the index of the button's corresponding screen
 
   var activeNow   = () => parseInt(document.querySelector('.active').getAttribute('data-position'))
   var updateMenu  = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
