@@ -43,12 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(dY => dY / Math.abs(dY))
     )
     .scan((currentScreen, screensToTraverse) => currentScreen + screensToTraverse, 0) //start on 0th screen
-    .filter(screen => screen >= 0 && screen <= 6)
+    .filter(screenIdx => screenIdx >= 0 && screenIdx <= 6)
     .distinctUntilChanged()
 
-  screens.forEach(screen => {
-    updateMenu(screen);
-    scroll(screen);
+  screens.forEach(screenIdx => {
+    updateMenu(screenIdx);
+    scroll(screenIdx);
   })
 
   // stop scroll propagation on scrollable child elements
