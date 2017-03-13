@@ -8,7 +8,9 @@ A static site showcasing just a few of the amazing things you can do with HTML5,
 
 ###Bi-Directional Scrolling
 
-Maybe the coolest - and definitely the flashiest - part of the CSSfx is it's bi-directional scrolling, activated by scrolling, pressing the arrows, or clicking the nav buttons at the top of the screen.
+Maybe the coolest - and definitely the flashiest - part of the CSSfx is it's bi-directional scrolling, activated by scrolling, pressing the arrows, or clicking the nav buttons at the top of the screen. 
+
+V2.0 is now up and running - written with RxJs, what was a rather complicated and difficult to read web of interdependent events and callbacks, is now a remarkably simple, even elegant and readable peice of reactive programming. [Check out the code here](https://github.com/mbr84/cssfx/blob/master/public/rxjsScroll.js).
 
 ![scroll effect](/public/images/scroll.gif)
 
@@ -24,12 +26,12 @@ When you scroll with you fingers on a trackpad, the browser doesn't just render 
 
  ...
 
- $(document).on('wheel', (e) => {
-   if (Math.abs(e.originalEvent.deltaY) > 35) scroll(e);
- });
+wheels.map(wheel => wheel.deltaY)
+        .filter(dY => Math.abs(dY) > 75)
+        .throttleTime(700)
  ~~~~
 
-The natural thing to do here is debounce the scroll events, and that I did; but it wasn't quite enough, as the neither a throttle nor a debouncer can distinguish between the lingering effects of a completed scroll and the first effects of a new one. What's more, setting the debouncer to wait until the very last effects of an aggressive track-pad scroll were finished made the feature very slow and the site clunky and unresponsive. To solve this, I noticed that scroll events lingering at the end of the chain of scroll events tend to have very low delta properties (the measure of the scroll's vertical displacement). Instead of sending every scroll event through the debouncer, I only sent those with a deltY property of greater than 35.
+The natural thing to do here is throttle or debounce the scroll events, and that I did; but it wasn't quite enough, as the neither a throttle nor a debouncer can distinguish between the lingering effects of a completed scroll and the first effects of a new one. What's more, setting the debouncer to wait until the very last effects of an aggressive track-pad scroll were finished made the feature very slow and the site clunky and unresponsive. To solve this, I noticed that scroll events lingering at the end of the chain of scroll events tend to have very low delta properties (the measure of the scroll's vertical displacement). Instead of sending every scroll event through the debouncer, I only sent those with a deltY property of greater than 75.
 
 ####Optimizing CSS
 
