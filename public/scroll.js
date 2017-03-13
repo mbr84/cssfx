@@ -9,9 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
   var navBtns     = Array.from(document.querySelectorAll('[data-position]'));
 
   // 'data-position' gives the index of the corresponding screen in the order of screens
-  // the screen itself has an id= it's index
 
   var activeNow   = () => parseInt(document.querySelector('.active').getAttribute('data-position'))
+
+  // the screen itself has an id= it's index
+
   var updateMenu  = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
 
   var scroll      = (idx) => {
