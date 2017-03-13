@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(key => key.which === 40 ? 1 : -1),
     wheels.map(wheel => wheel.deltaY)
 
-      //ignore trailing mousewheel events with very low deltaY properties
+      // ignore lingering mousewheel events with very low deltaY properties,
+      // so we can keep the throttleTime as lower and the and the page responsive
 
       .filter(dY => Math.abs(dY) > 75)
       .throttleTime(700)
