@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   var keyScrolls  = Rx.Observable.fromEvent(document, 'keydown');
   var menuClicks  = Rx.Observable.fromEvent(document.querySelectorAll('.contents'), 'click');
 
-  // Each nav button has an HTML attribute, 'data-position.' Anything
+  // Each nav button has an HTML attribute 'data-position.' Anything
   // with a 'data position' attribute is a button on the nav bar
 
   var navBtns     = Array.from(document.querySelectorAll('[data-position]'));
 
-  // 'data-position' gives the index of the button's corresponding screen
+  // Each button's 'data-position' attribute gives the 'index' of the screen it links to
 
   var activeNow   = () => parseInt(document.querySelector('.active').getAttribute('data-position'))
   var updateMenu  = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
