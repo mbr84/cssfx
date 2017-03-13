@@ -10,7 +10,7 @@ A static site showcasing just a few of the amazing things you can do with HTML5,
 
 Maybe the coolest - and definitely the flashiest - part of the CSSfx is it's bi-directional scrolling, activated by scrolling, pressing the arrows, or clicking the nav buttons at the top of the screen. 
 
-V2.0 is now up and running - written with RxJs, what was a rather complicated and difficult to read web of interdependent events and callbacks, is now a remarkably simple, even elegant and readable peice of reactive programming. [Check out the code here](https://github.com/mbr84/cssfx/blob/master/public/rxjsScroll.js).
+V2.0 is now up and running - written with RxJS, what was a hairy, complicated and difficult to read web of interdependent events and callbacks, is now a remarkably simple, readable, even elegant piece of reactive programming. [Check out the code here](https://github.com/mbr84/cssfx/blob/master/public/rxjsScroll.js).
 
 ![scroll effect](/public/images/scroll.gif)
 
@@ -43,7 +43,7 @@ The thing to know here, without delving to deeply, is that the browser renders a
 
 On a site like CSSfx, with a ~1500 line stylesheet, recalculating the entire layout, paint, and composition of the site whenever we scroll isn't just a bad plan, it's one that would cripple performance. Thus, all the scroll effects are accomplished with transforms, and the left and right scroll panes each have a `will-change: transfrom;` property set, to ensure the transform transitions are performed without even triggering recalculations on other properties in the same (composite) tier of the critical rendering path as transform.
 
-Check out ![CSStriggers](https://csstriggers.com/) for a great glossary of CSS properties and their place in the Critical Rendering Path.
+Check out [CSStriggers](https://csstriggers.com/) for a great glossary of CSS properties and their place in the Critical Rendering Path.
 
 ###Other Features
 
