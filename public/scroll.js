@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   var activeNow  = () => parseInt(document.querySelector('.active').getAttribute('data-position'))
   var updateMenu = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
 
-  var scroll      = (idx) => {
+  var scroll     = (idx) => {
     $('.left-scroll').css({ transform: `translateY(${-100 * idx}vh)` });
     $('.right-scroll').css({ transform: `translateY(${100 * idx}vh)` });
   }
