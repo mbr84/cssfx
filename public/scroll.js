@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   var screens     = Rx.Observable.merge(
     menuClicks.filter(click => click.target.tagName === 'LI')
 
-      // Get the number of screens between the clicked screen we're navigating to
+      // Get the number of screens between the screen we're navigating to
       // and the screen we're currently on
 
       .map(click => click.target.dataset.position - activeNow()),
