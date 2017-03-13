@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scroll(screen);
   })
 
-  // stop scroll propagation on scrollable child nodes
+  // stop scroll propagation on scrollable child elements
 
   $('pre').on('wheel', function (e) {
     e.stopPropagation();
