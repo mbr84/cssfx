@@ -40,7 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
       .throttleTime(700)
       .map(dY => dY / Math.abs(dY))
     )
-    .startWith(0)  //could provide 0 as start value for scan, but parameter are in opposite order of reduce, so I'm using this startWith(0) to make it a little more readable
+    //could provide 0 as start value for scan, but parameter are in opposite order of
+    //reduce, so I'm using this startWith(0) to make it a little more readable
+    .startWith(0)
     .scan((currentScreen, screensToTraverse) => currentScreen + screensToTraverse)
     .filter(screen => screen >= 0 && screen <= 6)
     .distinctUntilChanged()
