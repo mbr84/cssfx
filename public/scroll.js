@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Each button's 'data-position' attribute gives the 'index' of the screen it links to
 
   var indexOf     = (e) => e.target.dataset.position
-  var activeIdx   = () => parseInt(document.querySelector('.active').getAttribute('data-position'))
+  var activeIdx   = () => navBtns.reduce((active, el, i) => el.classList.contains('active') ? i : active, 0)
   var updateMenu  = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
 
   var scroll      = (idx) => {
