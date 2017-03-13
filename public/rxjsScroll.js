@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .scan((lastActive, screensToTraverse) => lastActive + screensToTraverse)
     .filter(screen => 0 <= screen && screen <= 6)
     .distinctUntilChanged()
-    .throttleTime(() => Rx.Observable.interval(300))
 
   activeScreens.forEach(screenNumber => {
     updateMenu(screenNumber);
