@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $('.right-scroll').css({ transform: `translateY(${100 * idx}vh)` });
   }
 
-  // Merge wheels, keyscrolls, and menuClicks into a single stream
+  // Merge menuClicks, keyscrolls, and wheels into a single stream
 
   var screens     = Rx.Observable.merge(
     menuClicks.filter(click => click.target.tagName === 'LI')
@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(key => key.which === 40 ? 1 : -1),
     wheels.map(wheel => wheel.deltaY)
 
-      // Ignore lingering mousewheel events with very low deltaY properties,
-      // so we can set throttleTime as low as possible and keep the page responsive
+      // Ignore lingering mousewheel events with low deltaY properties, so we
+      // can set throttleTime as low as possible and keep the page responsive
 
       .filter(dY => Math.abs(dY) > 75)
       .throttleTime(700)
@@ -51,10 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
     scroll(screenIdx);
   })
 
-  // Stop scroll propagation on scrollable child elements. In our case they're all <pre>'s
+  // Stop scroll propagation on scrollable child elements. (In our case they're all <pre>'s)
 
   $('pre').on('wheel', function (e) {
     e.stopPropagation();
   });
-
 })
