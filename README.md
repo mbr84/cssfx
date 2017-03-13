@@ -8,9 +8,9 @@ A static site showcasing just a few of the amazing things you can do with HTML5,
 
 ###Bi-Directional Scrolling
 
-Maybe the coolest - and definitely the flashiest - part of the CSSfx is it's bi-directional scrolling, activated by scrolling, pressing the arrows, or clicking the nav buttons at the top of the screen. 
+Maybe the coolest - and definitely the flashiest - part of the CSSfx is it's bi-directional scrolling, activated by scrolling, pressing the arrows, or clicking the nav buttons at the top of the screen.
 
-V2.0 is now up and running - written with RxJS, what was a hairy, complicated and difficult to read web of interdependent events and callbacks, is now a remarkably simple, readable, even elegant piece of reactive programming. [Check out the code here](https://github.com/mbr84/cssfx/blob/master/public/rxjsScroll.js).
+V2.0 is now up and running - written with RxJS, what was a hairy, complicated and difficult to read web of interdependent events and callbacks, is now a remarkably simple, readable, even elegant piece of reactive programming. [Check out the code here](https://github.com/mbr84/cssfx/blob/master/public/scroll.js).
 
 ![scroll effect](/public/images/scroll.gif)
 
