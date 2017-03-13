@@ -3,11 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   var keyScrolls  = Rx.Observable.fromEvent(document, 'keydown');
   var menuClicks  = Rx.Observable.fromEvent(document.querySelectorAll('.contents'), 'click');
 
-  var menuItems   = Array.from(document.querySelectorAll('[data-position]'));
+  // Each nav button has an HTML attribute, 'data-position.' Anything
+  // with a 'data position' attribute is a button on the nav bar
 
-  var activeNow   = () => parseInt(document.querySelector('.active').getAttribute('data-position'))
-  var updateMenu  = (idx) => $([menuItems[idx]]).addClass('active').siblings().removeClass('active')
-  var displayDemo = () => $(`#${$('.active').data('position')}`).css('display', 'block')
+  var navBtns    = Array.from(document.querySelectorAll('[data-position]'));
+
+  // 'data-position' gives the index of the corresponding screen in the order of screens
+
+  var activeNow  = () => parseInt(document.querySelector('.active').getAttribute('data-position'))
+  var updateMenu = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
 
   var scroll      = (idx) => {
     $('.left-scroll').css({ transform: `translateY(${-100 * idx}vh)` });
@@ -16,10 +20,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   var activeScreens = Rx.Observable.merge(
     menuClicks.filter(click => click.target.tagName === 'LI')
+
+      // get the number of screens between the clicked screen we're navigating to
+      // and the screen we're currently on
+
       .map(click => click.target.dataset.position - activeNow()),
     keyScrolls.filter(key => key.which === 40 || key.which === 38)
+
+      // Up and down arrows move us up or down one one screen
+      // Mousewheels do the same.
+
       .map(key => key.which === 40 ? 1 : -1),
     wheels.map(wheel => wheel.deltaY)
+
+      //ignore trailing mousewheel events with very low deltaY properties
+
       .filter(dY => Math.abs(dY) > 75)
       .throttleTime(700)
       .map(dY => dY / Math.abs(dY))
@@ -31,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   activeScreens.forEach(screenNumber => {
     updateMenu(screenNumber);
-    displayDemo();
     scroll(screenNumber);
   })
 })
