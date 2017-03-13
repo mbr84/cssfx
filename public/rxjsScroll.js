@@ -17,14 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
   var activeScreens = Rx.Observable.merge(
     menuClicks.filter(click => click.target.tagName === 'LI')
       .map(click => click.target.dataset.position - activeNow()),
-    Rx.Observable.merge(
-      keyScrolls.filter(key => key.which === 40 || key.which === 38)
-        .map(key => key.which === 40 ? 1 : -1),
-      wheels.map(wheel => wheel.deltaY)
-        .filter(dY => Math.abs(dY) > 75)
-        .throttleTime(700)
-        .map(dY => dY / Math.abs(dY))
-      )
+    keyScrolls.filter(key => key.which === 40 || key.which === 38)
+      .map(key => key.which === 40 ? 1 : -1),
+    wheels.map(wheel => wheel.deltaY)
+      .filter(dY => Math.abs(dY) > 75)
+      .throttleTime(700)
+      .map(dY => dY / Math.abs(dY))
     )
     .startWith(0)
     .scan((lastActive, screensToTraverse) => lastActive + screensToTraverse)
