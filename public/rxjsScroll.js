@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     )
     .startWith(0)
     .scan((lastActive, screensToTraverse) => lastActive + screensToTraverse)
-    .filter(screen => 0 <= screen && screen <= 6)
+    .filter(screen => screen >= 0 && screen <= 6)
     .distinctUntilChanged()
 
   activeScreens.forEach(screenNumber => {
