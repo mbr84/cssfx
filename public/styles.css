@@ -841,6 +841,8 @@ figure {
 .nav-links {
   margin-left: -59px;
   z-index: 99;
+  -webkit-filter: url("#goo");
+          filter: url("#goo");
 }
 
 .nav-link, .open-menu-button {
