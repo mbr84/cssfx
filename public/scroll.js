@@ -24,24 +24,23 @@ $(document).ready(() => {
   var screens     = Rx.Observable.merge(
     menuClicks.filter(click => click.target.tagName === 'LI')
 
-      // Get the number of screens between the screen we're navigating to
-      // and the screen we're currently on
+  // Get the number of screens between the screen we're navigating to
+  // and the screen we're currently on
 
       .map(clickedButton => indexOf(clickedButton) - activeIdx()),
     keyScrolls.filter(key => key.which === 40 || key.which === 38)
 
-      // Up and down arrows move us up or down by one screen.
-      // Wheel events do the same (line 44).
+  // Up and down arrows move us up or down by one screen.
+  // Wheel events do the same (line 43).
 
       .map(key => key.which === 40 ? 1 : -1),
-    wheels.map(wheel => wheel.deltaY)
 
-      // Ignore lingering mousewheel events with low deltaY properties, so we
-      // can set throttleTime as low as possible and keep the page responsive
+  // Ignore lingering mousewheel events with low deltaY properties, so we
+  // can set throttleTime as low as possible and keep the page responsive
 
-      .filter(dY => Math.abs(dY) > 75)
+    wheels.filter(wheel => Math.abs(wheel.deltaY) > 75)
       .throttleTime(700)
-      .map(dY => dY / Math.abs(dY))
+      .map(wheel => wheel.deltaY / Math.abs(wheel.deltaY))
     )
     .scan((currentScreen, screensToTraverse) => currentScreen + screensToTraverse, 0)
     .distinctUntilChanged() // Ignore click if screen is already active
