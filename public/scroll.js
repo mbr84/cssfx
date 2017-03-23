@@ -40,7 +40,7 @@ $(document).ready(()  => {
 
 // Merge menuClicks, keyscrolls, and wheels into a single stream, map them to computation fn's,
 // then scan them to get the stream of active screens
-  var screens = Rx.Observable.merge(clickOps, arrowAndWheelOps)
+  var screens = Rx.Observable.merge(clickOps, arrowAndWheelActions)
     .startWith(0)
     .scan((acc, curr) => curr(acc))
     .distinctUntilChanged()
