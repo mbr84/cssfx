@@ -2,6 +2,7 @@ $(document).ready(()  => {
   var wheel$ = Rx.Observable.fromEvent(document, 'wheel');
   var keyDown$ = Rx.Observable.fromEvent(document, 'keydown');
   var menuClick$ = Rx.Observable.fromEvent($('.contents'), 'click');
+  var mobileButton$ = Rx.Observable.fromEvent($('.mobile-buttons'), 'click touch');
 
   var navBtns = Array.from($('[data-position]'));
   var indexOf = (e) => Number(e.target.dataset.position)
@@ -30,12 +31,15 @@ $(document).ready(()  => {
     .filter(key => key.which === 40 || key.which === 38)
     .map(key => key.which === 40 ? 1 : -1)
 
+  var mobileButtonDeltas = mobileButton$
+    .map(e => e.target.innerText === "Next" ? 1 : -1)
+
   var wheelDeltas = wheel$
     .filter(wheel => Math.abs(wheel.deltaY) > 75) // Ignore tiny, lingering mousewheel events
     .throttleTime(700)
     .map(wheel => wheel.deltaY / Math.abs(wheel.deltaY))
 
-  var arrowAndWheelActions = Rx.Observable.merge(arrowDeltas, wheelDeltas)
+  var arrowAndWheelActions = Rx.Observable.merge(arrowDeltas, wheelDeltas, mobileButtonDeltas)
     .map(delta => currentScreen => nextScreen(currentScreen + delta))
 
 // Merge menuClicks, keyscrolls, and wheels into a single stream, map them to computation fn's,

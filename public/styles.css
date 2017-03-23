@@ -1366,6 +1366,26 @@ div[data-screen="five"] .code-button:last-child:active {
   border-left: none;
 }
 
+@media (max-width: 800px) {
+  .left-container {
+    width: 100vw;
+  }
+  .right-container {
+    display: none;
+  }
+
+
+  #mobile {
+    display: block;
+    height: 100vh;
+    left: 18%;
+  }
+
+  #desktop {
+    display: none;
+  }
+}
+
 @media (max-width: 415px) {
   .right-container {
     display: none;
@@ -1376,12 +1396,23 @@ div[data-screen="five"] .code-button:last-child:active {
   }
 
   .mobile-buttons {
-    display: block;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+  }
+
+  #mobile {
+    left: -13%;
   }
 
   figure {
     -webkit-transform: scale(.6);
             transform: scale(.6);
+  }
+
+  .emoji {
+    -webkit-transform: translatex(40px) scale(.6);
+            transform: translatex(40px) scale(.6);
   }
 
   .contents {
@@ -1415,22 +1446,13 @@ div[data-screen="five"] .code-button:last-child:active {
   }
 
   .nav-links {
-    -webkit-transform: translatex(13%) translatey(32vh) rotateZ(90deg);
-            transform: translatex(13%) translatey(32vh) rotateZ(90deg);
+    -webkit-transform: translatey(32vh) rotateZ(90deg);
+            transform: translatey(32vh) rotateZ(90deg);
 }
 
   .gooey-title {
     -webkit-transform: scale(.8);
             transform: scale(.8);
-  }
-
-  #mobile {
-    display: block;
-    height: 100vh;
-  }
-
-  #desktop {
-    display: none;
   }
 
   .nav-links i.material-icons, .nav-links img {
@@ -1495,19 +1517,14 @@ div[data-screen="five"] .code-button:last-child:active {
             transform: scale(1.1);
   }
 
+  #mobile {
+    left: -23%;
+  }
+
   .goo-container {
     left: -24%;
     top: -5%;
     -webkit-transform: scale(.8);
             transform: scale(.8)
-  }
-}
-
-@media (max-width: 800px) {
-  .left-container {
-    width: 100vw;
-  }
-  .right-container {
-    width: 0;
   }
 }
