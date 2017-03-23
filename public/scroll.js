@@ -23,6 +23,9 @@ $(document).ready(()  => {
     return (screen + 7) % 7  // -1 => 6, 7 => 0
   }
 
+  // Map menuClicks, keyscrolls, and wheels to computation fn's, merge them
+  //  into a single stream, then scan them to get the stream of active screens
+
   var clickActions = menuClick$
     .filter(click => click.target.tagName === 'LI')
     .map(click => (__) => indexOf(click))
@@ -42,8 +45,6 @@ $(document).ready(()  => {
   var scrollActions = Rx.Observable.merge(arrowDeltas, wheelDeltas, mobileButtonDeltas)
     .map(delta => currentScreen => nextScreen(currentScreen + delta))
 
-// Merge menuClicks, keyscrolls, and wheels into a single stream, map them to computation fn's,
-// then scan them to get the stream of active screens
   var screens = Rx.Observable.merge(clickActions, scrollActions)
     .startWith(0)
     .scan((acc, curr) => curr(acc))
