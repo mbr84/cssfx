@@ -84,8 +84,13 @@ body {
   position: absolute;
   -webkit-transition: .5s all ease-in;
   transition: .5s all ease-in;
-  -webkit-transition-delay: .3s;
-          transition-delay: .3s;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+
+.end-to-end {
+  -webkit-transition: .85s all cubic-bezier(.53,-0.11,.74,-0.05);
+  transition: .85s all cubic-bezier(.53,-0.11,.74,-0.05);
 }
 
 .left-scroll {
