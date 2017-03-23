@@ -26,24 +26,24 @@ $(document).ready(()  => {
   // Map menuClicks, keyscrolls, and wheels to computation fn's, merge them
   //  into a single stream, then scan them to get the stream of active screens
 
-  var clickActions = menuClick$
-    .filter(click => click.target.tagName === 'LI')
-    .map(click => (__) => indexOf(click))
-
-  var arrowDeltas = keyDown$
+  var arrowDelta$ = keyDown$
     .filter(key => key.which === 40 || key.which === 38)
     .map(key => key.which === 40 ? 1 : -1)
 
-  var mobileButtonDeltas = mobileButton$
+  var mobileButtonDelta$ = mobileButton$
     .map(e => e.target.innerText === "Next" ? 1 : -1)
 
-  var wheelDeltas = wheel$
+  var wheelDelta$ = wheel$
     .filter(wheel => Math.abs(wheel.deltaY) > 75) // Ignore tiny, lingering mousewheel events
     .throttleTime(700)
     .map(wheel => wheel.deltaY / Math.abs(wheel.deltaY))
 
-  var scrollActions = Rx.Observable.merge(arrowDeltas, wheelDeltas, mobileButtonDeltas)
+  var scrollActions = Rx.Observable.merge(arrowDelta$, wheelDelta$, mobileButtonDelta$)
     .map(delta => currentScreen => nextScreen(currentScreen + delta))
+
+  var clickActions = menuClick$
+    .filter(click => click.target.tagName === 'LI')
+    .map(click => (__) => indexOf(click))
 
   var screens = Rx.Observable.merge(clickActions, scrollActions)
     .startWith(0)
