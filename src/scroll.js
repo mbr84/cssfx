@@ -1,8 +1,8 @@
 $(document).ready(()  => {
-  const wheel$ = Rx.Observable.fromEvent(document, 'wheel');
-  const keyDown$ = Rx.Observable.fromEvent(document, 'keydown');
-  const menuClick$ = Rx.Observable.fromEvent($('.contents'), 'click');
-  const mobileButton$ = Rx.Observable.fromEvent($('.mobile-buttons'), 'click touch');
+  const wheels$ = Rx.Observable.fromEvent(document, 'wheel');
+  const keyDowns$ = Rx.Observable.fromEvent(document, 'keydown');
+  const menuClicks$ = Rx.Observable.fromEvent($('.contents'), 'click');
+  const mobileButtons$ = Rx.Observable.fromEvent($('.mobile-buttons'), 'click touch');
 
   const navBtns = Array.from($('[data-position]'));
   const indexOf = (e) => Number(e.target.dataset.position)
@@ -27,22 +27,22 @@ $(document).ready(()  => {
   // Map menuClicks, keyscrolls, and wheels to computation fn's, merge them
   //  into a single stream, then scan them to get the stream of active screens
 
-  const arrowDelta$ = keyDown$
+  const arrowDeltas$ = keyDowns$
     .filter(key => key.which === 40 || key.which === 38)
     .map(key => key.which === 40 ? 1 : -1)
 
-  const mobileButtonDelta$ = mobileButton$
+  const mobileButtonDeltas$ = mobileButtons$
     .map(e => e.target.innerText === "Next" ? 1 : -1)
 
-  const wheelDelta$ = wheel$
+  const wheelDeltas$ = wheels$
     .filter(wheel => Math.abs(wheel.deltaY) > 75) // Ignore tiny, lingering mousewheel events
     .throttleTime(700)
     .map(wheel => wheel.deltaY / Math.abs(wheel.deltaY))
 
-  const scrollActions = Rx.Observable.merge(arrowDelta$, wheelDelta$, mobileButtonDelta$)
+  const scrollActions = Rx.Observable.merge(arrowDeltas$, wheelDeltas$, mobileButtonDeltas$)
     .map(delta => currentScreen => nextScreen(currentScreen + delta))
 
-  const clickActions = menuClick$
+  const clickActions = menuClicks$
     .filter(click => click.target.tagName === 'LI')
     .map(click => (__) => indexOf(click))
 
