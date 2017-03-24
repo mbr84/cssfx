@@ -7,10 +7,7 @@ $(document).ready(()  => {
   const navBtns = Array.from($('[data-position]'));
   const indexOf = (e) => Number(e.target.dataset.position)
   const activeIdx = () => navBtns.reduce((active, el, i) => el.classList.contains('active') ? i : active, 0)
-  const updateMenu = (idx) => {
-    navBtns[activeIdx()].classList.remove('active')
-    navBtns[idx].classList.add('active')
-  }
+  const updateMenu = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
 
   const scroll = (screenIdx) => {
     $('.left-scroll').css({ transform: `translateY(${-100 * screenIdx}vh)` });
