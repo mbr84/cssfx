@@ -22,12 +22,12 @@ $(document).ready(() => {
     }
   })
 
-  var inTransition = false
+  let inTransition = false
 
-  var showCode = (e) => {
-    var code = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane div[data-lang='${e.target.dataset.lang}']`);
-    var codePane = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane`);
-    var activePane = activePanes[e.currentTarget.dataset.screen]
+  const showCode = (e) => {
+    const code = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane div[data-lang='${e.target.dataset.lang}']`);
+    const codePane = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane`);
+    const activePane = activePanes[e.currentTarget.dataset.screen]
 
     if (!activePane) {
       code.toggleClass('show');

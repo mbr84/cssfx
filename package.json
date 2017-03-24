@@ -1,0 +1,28 @@
+{
+  "name": "cssfx",
+  "version": "1.0.0",
+  "description": "A treasure trove of CSS demos. [Live Site](https://mbr84.github.io/cssfx/index.html \"Live\")",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbr84/cssfx.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbr84/cssfx/issues"
+  },
+  "homepage": "https://github.com/mbr84/cssfx#readme",
+  "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-env": "^1.2.2"
+  }
+}
