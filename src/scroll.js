@@ -6,13 +6,16 @@ $(document).ready(()  => {
   const transitions = Rx.Observable.fromEvent($('.left-scroll, .right-scroll'), 'transitionend')
 
   const navBtns = Array.from($('[data-position]'));
-  const indexOf = (e) => Number(e.target.dataset.position)
   const activeIdx = () => navBtns.reduce((active, el, i) => el.classList.contains('active') ? i : active, 0)
+  const goToIndexOf = e => {
+    readyScroll()
+    return Number(e.target.dataset.position)
+  }
 
   const leftScroll = document.querySelector('.left-scroll')
   const rightScroll = document.querySelector('.right-scroll')
 
-  const updateMenu = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
+  const updateMenu = idx => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
   const scroll = (nextScreenIdx) => {
     leftScroll.classList.remove(`screen${activeIdx()}`)
     rightScroll.classList.remove(`screen${activeIdx()}`)
@@ -50,7 +53,7 @@ $(document).ready(()  => {
         .map(wheel => wheel.deltaY / Math.abs(wheel.deltaY))
     )
     .map(delta => currentScreen => nextScreen(currentScreen + delta))
-    .merge(menuClicks.map(click => (__) => indexOf(click)))
+    .merge(menuClicks.map(click => (__) => goToIndexOf(click)))
     .startWith(0)
     .scan((acc, curr) => curr(acc))
     .distinctUntilChanged()
@@ -63,7 +66,7 @@ $(document).ready(()  => {
 
 // Stop scroll propagation on scrollable child elements. (In our case they're all <pre>'s)
 
-  $('pre').on('wheel', (e) => {
+  $('pre').on('wheel', e => {
     e.stopPropagation();
   });
 })
