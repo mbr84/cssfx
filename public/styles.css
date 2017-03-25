@@ -79,30 +79,94 @@ body {
 
 .left-scroll, .right-scroll {
   height: calc(100vh * 7);
-  width: 100%;
+  width: 50%;
   will-change: transform;
   position: absolute;
-  -webkit-transition: .5s all ease-in;
-  transition: .5s all ease-in;
-  -webkit-transition-delay: .2s;
-          transition-delay: .2s;
+}
+
+.left-scroll {
+  top: 0;
+  left: 0;
+}
+
+.right-scroll {
+  bottom: 0;
+  right: 0;
 }
 
 .end-to-end {
   -webkit-transition: .85s all cubic-bezier(.53,-0.11,.74,-0.05);
-  transition: .85s all cubic-bezier(.53,-0.11,.74,-0.05);
+          transition: .85s all cubic-bezier(.53,-0.11,.74,-0.05);
 }
 
-.left-scroll {
-  -webkit-transform: translateY(0vh);
-          transform: translateY(0vh);
-  top: 0;
+.ready--scroll {
+  -webkit-transition: .5s all ease-in;
+          transition: .5s all ease-in;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
 }
 
-.right-scroll {
+.left-scroll.screen0 {
   -webkit-transform: translateY(0vh);
           transform: translateY(0vh);
-  bottom: 0;
+}
+.right-scroll.screen0 {
+  -webkit-transform: translateY(0vh);
+          transform: translateY(0vh);
+}
+
+.left-scroll.screen1 {
+  -webkit-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+}
+.right-scroll.screen1 {
+  -webkit-transform: translateY(100vh);
+          transform: translateY(100vh);
+}
+
+.left-scroll.screen2 {
+  -webkit-transform: translateY(-200vh);
+          transform: translateY(-200vh);
+}
+.right-scroll.screen2 {
+  -webkit-transform: translateY(200vh);
+          transform: translateY(200vh);
+}
+
+.left-scroll.screen3 {
+  -webkit-transform: translateY(-300vh);
+          transform: translateY(-300vh);
+}
+.right-scroll.screen3 {
+  -webkit-transform: translateY(300vh);
+          transform: translateY(300vh);
+}
+
+.left-scroll.screen4 {
+  -webkit-transform: translateY(-400vh);
+          transform: translateY(-400vh);
+}
+.right-scroll.screen4 {
+  -webkit-transform: translateY(400vh);
+          transform: translateY(400vh);
+}
+
+.left-scroll.screen5 {
+  -webkit-transform: translateY(-500vh);
+          transform: translateY(-500vh);
+}
+.right-scroll.screen5 {
+  -webkit-transform: translateY(500vh);
+          transform: translateY(500vh);
+}
+
+.left-scroll.screen6 {
+  -webkit-transform: translateY(-600vh);
+          transform: translateY(-600vh);
+}
+.right-scroll.screen6 {
+  -webkit-transform: translateY(600vh);
+          transform: translateY(600vh);
 }
 
 .section {
@@ -135,33 +199,33 @@ body {
   width: 100%;
 }
 
-.left-container .section3 {
+.left-scroll .section3 {
   background-image: -webkit-radial-gradient(at 100% 50%, black, #16032b);
   background-image: radial-gradient(at 100% 50%, black, #16032b);
   height: 100vh;
   width: 100%;
 }
 
-.right-container .section3 {
+.right-scroll .section3 {
   background-image: -webkit-radial-gradient(at 0% 50%, black, #16032b);
   background-image: radial-gradient(at 0% 50%, black, #16032b);
   height: 100vh;
   width: 100%;
 }
 
-.left-container .section5 {
+.left-scroll .section5 {
   background-image: -webkit-radial-gradient(at 100% 50%, #428098, #110221);
   background-image: radial-gradient(at 100% 50%, #428098, #110221);
 }
 
-.right-container .section5 {
+.right-scroll .section5 {
   height: 100%;
   width: 100%;
   background-image: -webkit-radial-gradient(at 0% 50%, #428098, #110221);
   background-image: radial-gradient(at 0% 50%, #428098, #110221);
 }
 
-.right-container .section7 {
+.right-scroll .section7 {
   background-image: url('https://res.cloudinary.com/dxbwq1eyw/image/upload/q_auto:low/v1486074351/stars_right_zmp4p5.jpg');
   height: 100%;
   width: 100%;
@@ -551,7 +615,7 @@ body {
   to {-webkit-transform: rotateX(360deg) rotateY(360deg);transform: rotateX(360deg) rotateY(360deg);}
 }
 
-.rotating .container .cube {
+.rotating .scroll .cube {
   -webkit-transform: rotate 20s infinite linear;
           transform: rotate 20s infinite linear;
   -webkit-animation: rotate 20s infinite linear;
@@ -1367,10 +1431,10 @@ div[data-screen="five"] .code-button:last-child:active {
 }
 
 @media (max-width: 800px) {
-  .left-container {
+  .left-scroll {
     width: 100vw;
   }
-  .right-container {
+  .right-scroll {
     display: none;
   }
 
@@ -1387,7 +1451,7 @@ div[data-screen="five"] .code-button:last-child:active {
 }
 
 @media (max-width: 415px) {
-  .right-container {
+  .right-scroll {
     display: none;
   }
 
