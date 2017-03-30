@@ -1,59 +1,42 @@
-$(document).ready(() => {
-  var wheels      = Rx.Observable.fromEvent(document, 'wheel');
-  var keyScrolls  = Rx.Observable.fromEvent(document, 'keydown');
-  var menuClicks  = Rx.Observable.fromEvent($('.contents'), 'click');
+$(document).ready(()  => {
+  const wheels = Rx.Observable.fromEvent(document, 'wheel');
+  const keyDowns = Rx.Observable.fromEvent(document, 'keydown');
+  const menuClicks = Rx.Observable.fromEvent($('[data-position]'), 'click');
+  const mobileButtons = Rx.Observable.fromEvent($('.mobile-buttons'), 'click touch');
 
-  // Each nav button has an HTML attribute 'data-position.' Anything
-  // with a 'data position' attribute is a button on the nav bar
+  const panes = $('.left-scroll, .right-scroll')
+  const navBtns = Array.from($('[data-position]'));
+  const activeIdx = () => navBtns.reduce((acc, el, i) => $(el).hasClass('active') ? i : acc, 0)
 
-  var navBtns     = Array.from($('[data-position]'));
+  const updateMenu = idx => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
+  const scroll = (next) => panes.removeClass(`screen${activeIdx()}`).addClass(`screen${next}`)
 
-  // Each button's 'data-position' attribute gives the 'index' of the screen it links to
-
-  var indexOf     = (e) => e.target.dataset.position
-  var activeIdx   = () => navBtns.reduce((active, el, i) => el.classList.contains('active') ? i : active, 0)
-  var updateMenu  = (idx) => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
-
-  var scroll      = (idx) => {
-    $('.left-scroll').css({ transform: `translateY(${-100 * idx}vh)` });
-    $('.right-scroll').css({ transform: `translateY(${100 * idx}vh)` });
+  const readyScroll = (screen) => {
+    screen < 0 || screen > 6 ?  panes.removeClass('ready-scroll').addClass('end-to-end') : panes.removeClass('end-to-end').addClass('ready-scroll')
+    return screen
   }
 
-  // Merge menuClicks, keyscrolls, and wheels into a single stream
+  const nextScreen = (screen) => (screen + 7) % 7  // -1 => 6, 7 => 0
+  const indexOfClick = e => Number(e.target.dataset.position)
 
-  var screens     = Rx.Observable.merge(
-    menuClicks.filter(click => click.target.tagName === 'LI')
-
-  // Get the number of screens between the screen we're navigating to
-  // and the screen we're currently on
-
-      .map(clickedButton => indexOf(clickedButton) - activeIdx()),
-    keyScrolls.filter(key => key.which === 40 || key.which === 38)
-
-  // Up and down arrows move us up or down by one screen.
-  // Wheel events do the same (line 43).
-
-      .map(key => key.which === 40 ? 1 : -1),
-
-  // Ignore lingering mousewheel events with low deltaY properties, so we
-  // can set throttleTime as low as possible and keep the page responsive
-
-    wheels.filter(wheel => Math.abs(wheel.deltaY) > 75)
-      .throttleTime(700)
-      .map(wheel => wheel.deltaY / Math.abs(wheel.deltaY))
+  // Map keydowns, mobile button clicks, mousewheels, and menu clicks to computation fn's,
+  // merge them into a single stream, then scan them to get the stream of focused screens
+  const screens = keyDowns.filter(key => key.which === 40 || key.which === 38)
+    .map(key => key.which === 40 ? 1 : -1)  // keypress moves us -/+ 1 screen (see lines 30)
+    .merge(
+      mobileButtons.map(e => e.target.innerText === "Next" ? 1 : -1),
+      wheels.filter(wheel => Math.abs(wheel.deltaY) > 75) // Ignore lingering mousewheel events
+        .throttleTime(700)
+        .map(wheel => wheel.deltaY / Math.abs(wheel.deltaY))
     )
-    .scan((currentScreen, screensToTraverse) => currentScreen + screensToTraverse, 0)
-    .distinctUntilChanged() // Ignore click if screen is already active
-    .filter(screenIdx => screenIdx >= 0 && screenIdx <= 6)
+    .map(delta => fn => currentScreen => nextScreen(fn(currentScreen + delta)))
+    .merge(menuClicks.map(click => fn => (__) => indexOfClick(fn(click))))
+    .startWith(0)
+    .scan((acc, curr) => curr(readyScroll)(acc))
+    .distinctUntilChanged()
 
   screens.forEach(screenIdx => {
-    updateMenu(screenIdx);
     scroll(screenIdx);
+    updateMenu(screenIdx);
   })
-
-  // Stop scroll propagation on scrollable child elements. (In our case they're all <pre>'s)
-
-  $('pre').on('wheel', function (e) {
-    e.stopPropagation();
-  });
 })
