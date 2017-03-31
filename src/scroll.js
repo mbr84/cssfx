@@ -12,7 +12,11 @@ $(document).ready(()  => {
   const scroll = (next) => panes.removeClass(`screen${activeIdx()}`).addClass(`screen${next}`)
 
   const readyScroll = (screen) => {
-    screen < 0 || screen > 6 ?  panes.removeClass('ready-scroll').addClass('end-to-end') : panes.removeClass('end-to-end').addClass('ready-scroll')
+    if (screen < 0 || screen > 6) {
+      panes.removeClass('ready-scroll').addClass('end-to-end')
+    } else {
+      panes.removeClass('end-to-end').addClass('ready-scroll')
+    }
     return screen
   }
 
