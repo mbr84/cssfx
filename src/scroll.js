@@ -39,4 +39,10 @@ $(document).ready(()  => {
     scroll(screenIdx);
     updateMenu(screenIdx);
   })
+
+   // Stop scroll propagation on scrollable child elements. (In our case they're all <pre>'s)
+
+  $('pre').on('wheel', function (e) {
+    e.stopPropagation();
+  });
 })
