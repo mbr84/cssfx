@@ -619,7 +619,7 @@ body {
   to {-webkit-transform: rotateX(360deg) rotateY(360deg);transform: rotateX(360deg) rotateY(360deg);}
 }
 
-.rotating .scroll .cube {
+.rotating .cube {
   -webkit-transform: rotate 20s infinite linear;
           transform: rotate 20s infinite linear;
   -webkit-animation: rotate 20s infinite linear;
