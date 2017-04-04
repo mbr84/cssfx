@@ -6,7 +6,6 @@ $(document).ready(()  => {
 
   const panes = $('.left-scroll, .right-scroll')
   const navBtns = Array.from($('[data-position]'));
-  const activeIdx = () => navBtns.reduce((acc, el, i) => $(el).hasClass('active') ? i : acc, 0)
 
   const updateMenu = idx => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
   var scroll      = (idx) => {
@@ -14,7 +13,7 @@ $(document).ready(()  => {
     $('.right-scroll').css({ transform: `translateY(${100 * idx}vh)` });
   }
 
-  const readyScroll = (screen) => {
+  const updateScrollClasses = (screen) => {
     if (screen < 0 || screen > 6) {
       panes.removeClass('ready-scroll').addClass('end-to-end')
     } else {
@@ -23,13 +22,13 @@ $(document).ready(()  => {
     return screen
   }
 
-  const nextScreen = (screen) => (screen + 7) % 7  // -1 => 6, 7 => 0
+  const nextScreen = screen => (screen + 7) % 7  // -1 => 6, 7 => 0
   const indexOfClick = e => Number(e.target.dataset.position)
 
   // Map keydowns, mobile button clicks, mousewheels, and menu clicks to computation fn's,
   // merge them into a single stream, then scan them to get the stream of focused screens
   const screens = keyDowns.filter(key => key.which === 40 || key.which === 38)
-    .map(key => key.which === 40 ? 1 : -1)  // keypress moves us -/+ 1 screen (see lines 30)
+    .map(key => key.which === 40 ? 1 : -1)  // keypress moves us -/+ 1 screen (see line 36)
     .merge(
       mobileButtons.map(e => e.target.innerText === "Next" ? 1 : -1),
       wheels.filter(wheel => Math.abs(wheel.deltaY) > 75) // Ignore lingering mousewheel events
@@ -38,9 +37,7 @@ $(document).ready(()  => {
     )
     .map(delta => fn => currentScreen => nextScreen(fn(currentScreen + delta)))
     .merge(menuClicks.map(click => fn => (__) => indexOfClick(fn(click))))
-    .startWith(0)
-    .scan((acc, curr) => curr(readyScroll)(acc))
-    .distinctUntilChanged()
+    .scan((acc, curr) => curr(updateScrollClasses)(acc), 0)
 
   screens.forEach(screenIdx => {
     scroll(screenIdx);
