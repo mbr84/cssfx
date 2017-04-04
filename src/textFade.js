@@ -8,7 +8,7 @@ const spanWrap = (string) => {
 
     const strArr = str.split('');
 
-    var htmEl = '';
+    let htmEl = '';
     for (let i = 0, len = strArr.length; i < len; i++) {
       if (strArr[i] === '<') {
         const j = i;
