@@ -103,14 +103,6 @@ body {
           transition: .85s all cubic-bezier(.53,-0.11,.74,-0.05);
 }
 
-.ready--scroll {
-  -webkit-transition: .5s all ease-in;
-          transition: .5s all ease-in;
-  -webkit-transition-delay: .2s;
-          transition-delay: .2s;
-}
-
-
 .section {
   contain: strict;
   height: 100vh;
