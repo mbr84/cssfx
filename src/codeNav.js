@@ -1,14 +1,13 @@
-/* eslint-disable no-undef */
 $(document).ready(() => {
   const codeButtonClicks = Rx.Observable.fromEvent($('.code-button'), 'click');
   const animationEnds = Rx.Observable.fromEvent($('.code-snip'), 'animationend');
 
-  const assignIds = (klass) => $(`.${klass}`).each(index => $(this).attr('id', `${klass}-${index}`))
-  const getIdNum = (e) => e.target.id.split('-')[2]
+  const assignIds = klass => $(`.${klass}`).each(idx => $(this).attr('id', `${klass}-${idx}`))
+  const getIdNum = e => e.target.id.split('-')[2]
   assignIds('code-button')
   assignIds('code-snip')
 
-  const updateTransitionClasses = (el)  => {
+  const updateTransitionClasses = el  => {
     const shown =  el.parent().children()
       .filter(() => $(this).hasClass('show'))
       .addClass('fall')
