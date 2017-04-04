@@ -9,7 +9,10 @@ $(document).ready(()  => {
   const activeIdx = () => navBtns.reduce((acc, el, i) => $(el).hasClass('active') ? i : acc, 0)
 
   const updateMenu = idx => $([navBtns[idx]]).addClass('active').siblings().removeClass('active')
-  const scroll = (next) => panes.removeClass(`screen${activeIdx()}`).addClass(`screen${next}`)
+  var scroll      = (idx) => {
+    $('.left-scroll').css({ transform: `translateY(${-100 * idx}vh)` });
+    $('.right-scroll').css({ transform: `translateY(${100 * idx}vh)` });
+  }
 
   const readyScroll = (screen) => {
     if (screen < 0 || screen > 6) {

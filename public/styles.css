@@ -110,68 +110,6 @@ body {
           transition-delay: .2s;
 }
 
-.left-scroll.screen0 {
-  -webkit-transform: translateY(0vh);
-          transform: translateY(0vh);
-}
-.right-scroll.screen0 {
-  -webkit-transform: translateY(0vh);
-          transform: translateY(0vh);
-}
-
-.left-scroll.screen1 {
-  -webkit-transform: translateY(-100vh);
-          transform: translateY(-100vh);
-}
-.right-scroll.screen1 {
-  -webkit-transform: translateY(100vh);
-          transform: translateY(100vh);
-}
-
-.left-scroll.screen2 {
-  -webkit-transform: translateY(-200vh);
-          transform: translateY(-200vh);
-}
-.right-scroll.screen2 {
-  -webkit-transform: translateY(200vh);
-          transform: translateY(200vh);
-}
-
-.left-scroll.screen3 {
-  -webkit-transform: translateY(-300vh);
-          transform: translateY(-300vh);
-}
-.right-scroll.screen3 {
-  -webkit-transform: translateY(300vh);
-          transform: translateY(300vh);
-}
-
-.left-scroll.screen4 {
-  -webkit-transform: translateY(-400vh);
-          transform: translateY(-400vh);
-}
-.right-scroll.screen4 {
-  -webkit-transform: translateY(400vh);
-          transform: translateY(400vh);
-}
-
-.left-scroll.screen5 {
-  -webkit-transform: translateY(-500vh);
-          transform: translateY(-500vh);
-}
-.right-scroll.screen5 {
-  -webkit-transform: translateY(500vh);
-          transform: translateY(500vh);
-}
-
-.left-scroll.screen6 {
-  -webkit-transform: translateY(-600vh);
-          transform: translateY(-600vh);
-}
-.right-scroll.screen6 {
-  -webkit-transform: translateY(600vh);
-          transform: translateY(600vh);
-}
 
 .section {
   contain: strict;
@@ -333,6 +271,7 @@ body {
           transform: scale(.7);
   top: 55px;
   pointer-events: none;
+  will-change: clip-path;
   clip-path: url("https://mbr84.github.io/cssfx/index.html#eyes");
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 55% 100%, 50% 100%, 45% 100%, 40% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 55% 100%, 50% 100%, 45% 100%, 40% 100%, 0% 100%);
@@ -365,6 +304,7 @@ body {
   top: 70%;
   right: 24%;
   pointer-events: none;
+  will-change: clip-path;
   clip-path: url("https://mbr84.github.io/cssfx/index.html#neutral-mouth");
   -webkit-clip-path: polygon(14.0px 15.0px, 13.38197px 14.90211px, 12.82443px 14.61803px, 12.38197px 14.17557px, 12.09789px 13.61803px, 12.0px 13.0px, 12.09789px 12.38197px, 12.38197px 11.82443px, 12.82443px 11.38197px, 13.38197px 11.09789px, 14.0px 11.0px, 13px 11px, 14px 11px, 14.5px 11px, 15px 11px, 16px 11px, 17px 11px, 18px 11px, 19px 11px, 20px 11px, 21px 11px, 22px 11px, 23px 11px, 24px 11px, 25px 11px, 26px 11px,26px 11px,26px 11px,26px 11px,26px 11px,26px 11px, 27px 11px, 27.5px 11px, 28px 11px, 29px 11px, 30px 11px,30px 11px, 31px 11px, 32px 11px, 40px 11px, 41px 11px, 42px 11px, 43px 11px, 44px 11px,44px 11px,44px 11px,44px 11px,44px 11px, 45px 11px, 46px 11px, 47px 11px, 48px 11px, 49px 11px, 50px 11px, 51px 11px, 52px 11px, 53px 11px, 60.0px 11.0px, 60.61803px 11.09789px, 61.17557px 11.38197px, 61.61803px 11.82443px, 61.90211px 12.38197px, 62.0px 13.0px, 61.90211px 13.61803px, 61.61803px 14.17557px, 61.17557px 14.61803px, 60.61803px 14.90211px, 60px 15px);
           clip-path: polygon(14.0px 15.0px, 13.38197px 14.90211px, 12.82443px 14.61803px, 12.38197px 14.17557px, 12.09789px 13.61803px, 12.0px 13.0px, 12.09789px 12.38197px, 12.38197px 11.82443px, 12.82443px 11.38197px, 13.38197px 11.09789px, 14.0px 11.0px, 13px 11px, 14px 11px, 14.5px 11px, 15px 11px, 16px 11px, 17px 11px, 18px 11px, 19px 11px, 20px 11px, 21px 11px, 22px 11px, 23px 11px, 24px 11px, 25px 11px, 26px 11px,26px 11px,26px 11px,26px 11px,26px 11px,26px 11px, 27px 11px, 27.5px 11px, 28px 11px, 29px 11px, 30px 11px,30px 11px, 31px 11px, 32px 11px, 40px 11px, 41px 11px, 42px 11px, 43px 11px, 44px 11px,44px 11px,44px 11px,44px 11px,44px 11px, 45px 11px, 46px 11px, 47px 11px, 48px 11px, 49px 11px, 50px 11px, 51px 11px, 52px 11px, 53px 11px, 60.0px 11.0px, 60.61803px 11.09789px, 61.17557px 11.38197px, 61.61803px 11.82443px, 61.90211px 12.38197px, 62.0px 13.0px, 61.90211px 13.61803px, 61.61803px 14.17557px, 61.17557px 14.61803px, 60.61803px 14.90211px, 60px 15px);
@@ -385,6 +325,7 @@ body {
   border-radius: 0 0 90px 90px;
   background: -webkit-radial-gradient(at 50% 50%, saddlebrown 30%, #4d3017 88%);
   background: radial-gradient(at 50% 50%, saddlebrown 30%, #4d3017 88%);
+  will-change: clip-path;
           clip-path: url("https://mbr84.github.io/cssfx/index.html#neutral-mouth");
   -webkit-clip-path: polygon(14.0px 15.0px, 13.38197px 14.90211px, 12.82443px 14.61803px, 12.38197px 14.17557px, 12.09789px 13.61803px, 12.0px 13.0px, 12.09789px 12.38197px, 12.38197px 11.82443px, 12.82443px 11.38197px, 13.38197px 11.09789px, 14.0px 11.0px, 13px 11px, 14px 11px, 14.5px 11px, 15px 11px, 16px 11px, 17px 11px, 18px 11px, 19px 11px, 20px 11px, 21px 11px, 22px 11px, 23px 11px, 24px 11px, 25px 11px, 26px 11px,26px 11px,26px 11px,26px 11px,26px 11px,26px 11px, 27px 11px, 27.5px 11px, 28px 11px, 29px 11px, 30px 11px,30px 11px, 31px 11px, 32px 11px, 40px 11px, 41px 11px, 42px 11px, 43px 11px, 44px 11px,44px 11px,44px 11px,44px 11px,44px 11px, 45px 11px, 46px 11px, 47px 11px, 48px 11px, 49px 11px, 50px 11px, 51px 11px, 52px 11px, 53px 11px, 60.0px 11.0px, 60.61803px 11.09789px, 61.17557px 11.38197px, 61.61803px 11.82443px, 61.90211px 12.38197px, 62.0px 13.0px, 61.90211px 13.61803px, 61.61803px 14.17557px, 61.17557px 14.61803px, 60.61803px 14.90211px, 60px 15px);
           clip-path: polygon(14.0px 15.0px, 13.38197px 14.90211px, 12.82443px 14.61803px, 12.38197px 14.17557px, 12.09789px 13.61803px, 12.0px 13.0px, 12.09789px 12.38197px, 12.38197px 11.82443px, 12.82443px 11.38197px, 13.38197px 11.09789px, 14.0px 11.0px, 13px 11px, 14px 11px, 14.5px 11px, 15px 11px, 16px 11px, 17px 11px, 18px 11px, 19px 11px, 20px 11px, 21px 11px, 22px 11px, 23px 11px, 24px 11px, 25px 11px, 26px 11px,26px 11px,26px 11px,26px 11px,26px 11px,26px 11px, 27px 11px, 27.5px 11px, 28px 11px, 29px 11px, 30px 11px,30px 11px, 31px 11px, 32px 11px, 40px 11px, 41px 11px, 42px 11px, 43px 11px, 44px 11px,44px 11px,44px 11px,44px 11px,44px 11px, 45px 11px, 46px 11px, 47px 11px, 48px 11px, 49px 11px, 50px 11px, 51px 11px, 52px 11px, 53px 11px, 60.0px 11.0px, 60.61803px 11.09789px, 61.17557px 11.38197px, 61.61803px 11.82443px, 61.90211px 12.38197px, 62.0px 13.0px, 61.90211px 13.61803px, 61.61803px 14.17557px, 61.17557px 14.61803px, 60.61803px 14.90211px, 60px 15px);
@@ -1129,8 +1070,12 @@ figure {
 }
 
 .fall {
-  -webkit-animation: 1.5s fall-down;
-          animation: 1.5s fall-down;
+  -webkit-animation: .5s fall-down;
+          animation: .5s fall-down;
+}
+
+.delay-show {
+  transition-delay: .4s;
 }
 
 @-webkit-keyframes fall-down  {
@@ -1140,28 +1085,16 @@ figure {
     visibility: visible;
   }
 
-  20% {
+  60% {
     -webkit-transform: scale(1.1) translateY(-30px);
     transform: scale(1.1) translateY(-30px);
     visibility: visible;
   }
 
-  40% {
+  100% {
     -webkit-transform: scale(1.1) translateY(100vh);
     transform: scale(1.1) translateY(100vh);
     visibility: visible;
-  }
-
-  41% {
-    -webkit-transform: translateY(100vh);
-    transform: translateY(100vh);
-    visibility: hidden;
-  }
-
-  100% {
-    -webkit-transform: rotateX(-90deg);
-    transform: rotateX(-90deg);
-    visibility: hidden;
   }
 }
 
@@ -1173,28 +1106,16 @@ figure {
     visibility: visible;
   }
 
-  20% {
+  60% {
     -webkit-transform: scale(1.1) translateY(-30px);
     transform: scale(1.1) translateY(-30px);
     visibility: visible;
   }
 
-  40% {
+  100% {
     -webkit-transform: scale(1.1) translateY(100vh);
     transform: scale(1.1) translateY(100vh);
     visibility: visible;
-  }
-
-  41% {
-    -webkit-transform: translateY(100vh);
-    transform: translateY(100vh);
-    visibility: hidden;
-  }
-
-  100% {
-    -webkit-transform: rotateX(-90deg);
-    transform: rotateX(-90deg);
-    visibility: hidden;
   }
 }
 
@@ -1207,27 +1128,10 @@ figure {
           transform: rotateX(-90deg);
   -webkit-transform-origin: top;
           transform-origin: top;
-}
-
-.short-pane {
-  -webkit-transition: -webkit-transform .8s cubic-bezier(.24,1.61,.35,.89);
-  transition: -webkit-transform .8s cubic-bezier(.24,1.61,.35,.89);
-  transition: transform .8s cubic-bezier(.24,1.61,.35,.89);
-  transition: transform .8s cubic-bezier(.24,1.61,.35,.89), -webkit-transform .8s cubic-bezier(.24,1.61,.35,.89);
-}
-
-.medium-pane {
-  -webkit-transition: -webkit-transform .8s cubic-bezier(.24,1.61,.35,.89);
-  transition: -webkit-transform .8s cubic-bezier(.24,1.61,.35,.89);
-  transition: transform .85s cubic-bezier(.24,1.61,.35,.89);
-  transition: transform .85s cubic-bezier(.24,1.61,.35,.89), -webkit-transform .85s cubic-bezier(.24,1.61,.35,.89);
-}
-
-.long-pane {
-  -webkit-transition: -webkit-transform .8s cubic-bezier(.24,1.61,.35,.89);
-  transition: -webkit-transform .8s cubic-bezier(.24,1.61,.35,.89);
-  transition: transform .95s cubic-bezier(.24,1.61,.35,.89);
-  transition: transform .95s cubic-bezier(.24,1.61,.35,.89), -webkit-transform .95s cubic-bezier(.24,1.61,.35,.89);
+  transition: transform;
+  transition-duration: .85s;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(.24,1.61,.35,.89)
 }
 
 .show {

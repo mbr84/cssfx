@@ -1,64 +1,26 @@
 /* eslint-disable no-undef */
-
 $(document).ready(() => {
-  var activePanes = {
-    one: false,
-    two: false,
-    three: false,
-    four: false,
-    five: false,
-    six: false,
+  const codeButtonClicks = Rx.Observable.fromEvent($('.code-button'), 'click');
+  const animationEnds = Rx.Observable.fromEvent($('.code-snip'), 'animationend');
+
+  const assignIds = (klass) => $(`.${klass}`).each(index => $(this).attr('id', `${klass}-${index}`))
+  const getIdNum = (e) => e.target.id.split('-')[2]
+  assignIds('code-button')
+  assignIds('code-snip')
+
+  const updateTransitionClasses = (el)  => {
+    const shown =  el.parent().children()
+      .filter(() => this.classList.contains('show'))
+      .addClass('fall')
+    if (shown.length > 0) el.css('transition-delay', '.4s')
   }
 
-  $('.code-snip').each(function(index) {
-    var newId = 'code-snip' + "_" + index
-    $(this).attr('id', newId)
-    if ($(this).height() > 300) {
-      $(`#${newId}`).toggleClass('long-pane')
-    } else if ($(this).height() > 200) {
-      $(`#${newId}`).toggleClass('medium-pane')
-    } else {
-      $(`#${newId}`).toggleClass('short-pane')
-    }
+  codeButtonClicks.map(e => $(`#code-snip-${getIdNum(e)}`))
+    .do(el => updateTransitionClasses(el))
+    .forEach(codeSnip => codeSnip.addClass('show'))
+
+  animationEnds.forEach(e => {
+    e.target.style.transitionDelay = '0s'
+    e.target.classList.remove('fall', 'show');
   })
-
-  let inTransition = false
-
-  const showCode = (e) => {
-    const code = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane div[data-lang='${e.target.dataset.lang}']`);
-    const codePane = $(`div[data-screen='${e.currentTarget.dataset.screen}'] + .code-pane`);
-    const activePane = activePanes[e.currentTarget.dataset.screen]
-
-    if (!activePane) {
-      code.toggleClass('show');
-      activePanes[e.currentTarget.dataset.screen] = code;
-    } else {
-      if (code.hasClass('show')) {
-        code.toggleClass('fall');
-        setTimeout(() => {
-          code.toggleClass('show');
-          activePanes[e.currentTarget.dataset.screen] = false;
-          code.toggleClass('fall');
-        }, 450);
-      } else {
-        activePane.toggleClass('fall');
-        setTimeout(() => {
-          code.toggleClass('show');
-          activePane.toggleClass('show');
-          activePanes[e.currentTarget.dataset.screen] = code;
-          activePane.toggleClass('fall');
-        }, 450)
-      }
-    }
-  }
-
-  $('.menu-bar').click((e) => {
-    if (inTransition) return;
-    if (e.target.classList[0] === "code-button") {
-      inTransition = true;
-      setTimeout(() => inTransition = false, 1000)
-      showCode(e);
-    }
-  })
-
 })
