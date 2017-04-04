@@ -10,7 +10,7 @@ $(document).ready(() => {
 
   const updateTransitionClasses = (el)  => {
     const shown =  el.parent().children()
-      .filter(() => this.classList.contains('show'))
+      .filter(() => $(this).hasClass('show'))
       .addClass('fall')
     if (shown.length > 0) el.css('transition-delay', '.4s')
   }
