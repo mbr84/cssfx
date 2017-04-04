@@ -208,8 +208,8 @@
                     <div class="code-snip" data-lang="js">
                       <pre><code class="javascript">
  $('.space').mousemove(function (e) {
-   var offset = $(this).offset();
-   var relativeX = (e.pageX - offset.left);
+   let offset = $(this).offset();
+   let relativeX = (e.pageX - offset.left);
 
    $('.space').hover(() => {
      $(this).css({
@@ -343,7 +343,7 @@
    document.getElementsByClassName('box')[0].className = `box ${e.target.dataset.face}`;
  });
  $(document).on('keyup', (e) => {
-   var box = document.getElementsByClassName('box')[0];
+   const box = document.getElementsByClassName('box')[0];
    switch (e.which) {
      case 49:
        box.className = 'box show-front';
@@ -909,7 +909,7 @@
      Hey there! Thanks for checking out my site, CSSfx
    &lt;/div&gt;
    &lt;div class="step"&gt;
-     Navigation is easy, but var me walk you through it
+     Navigation is easy, but let me walk you through it
    &lt;/div&gt;
    &lt;div class="step"&gt;
      The site is divided into a handful of sections
