@@ -3,7 +3,7 @@ $(document).ready(()  => {
   const menuClicks = Rx.Observable.fromEvent($('[data-position]'), 'click');
   const mobileButtons = Rx.Observable.fromEvent($('.mobile-buttons'), 'click touch');
   const wheels = Rx.Observable.fromEvent(document, 'wheel');
-  $('pre').on('wheel', e => e.stopPropagation())
+  Rx.Observable.fromEvent($('pre'), 'wheel').forEach(e => e.stopPropagation())
 
   const panes = $('.left-scroll, .right-scroll')
   const navBtns = Array.from($('[data-position]'));
