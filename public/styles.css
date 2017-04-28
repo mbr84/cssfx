@@ -819,11 +819,11 @@ figure {
 }
 
 
-#mobile {
+.mobile {
   display: none;
 }
 
-#desktop {
+.desktop {
   display: block;
 }
 
@@ -1339,13 +1339,13 @@ div[data-screen="five"] .code-button:last-child:active {
   }
 
 
-  #mobile {
+  .mobile {
     display: block;
     height: 100vh;
     left: 18%;
   }
 
-  #desktop {
+  .desktop {
     display: none;
   }
 }
@@ -1365,7 +1365,7 @@ div[data-screen="five"] .code-button:last-child:active {
     justify-content: space-between;
   }
 
-  #mobile {
+  .mobile {
     left: -13%;
   }
 
@@ -1481,7 +1481,7 @@ div[data-screen="five"] .code-button:last-child:active {
             transform: scale(1.1);
   }
 
-  #mobile {
+  .mobile {
     left: -23%;
   }
 
