@@ -1041,6 +1041,10 @@ figure {
           transform-style: preserve-3d;
 }
 
+.demo, .code-container {
+  will-change: transform;
+}
+
 .menu-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1049,7 +1053,6 @@ figure {
   margin-bottom: 16px;
 
 }
-
 
 .code-pane {
   padding: 0 5px;
