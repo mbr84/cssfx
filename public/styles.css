@@ -1041,7 +1041,7 @@ figure {
           transform-style: preserve-3d;
 }
 
-.demo, .code-container {
+.demo, .code-button {
   will-change: transform;
 }
 
@@ -1072,7 +1072,7 @@ figure {
 .delay-show {
   transition-delay: .4s;
 }
-
+/*body {will-change: transform !important;}*/
 @-webkit-keyframes fall-down  {
   0% {
     -webkit-transform: none;
