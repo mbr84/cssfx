@@ -1041,8 +1041,8 @@ figure {
           transform-style: preserve-3d;
 }
 
-.demo, .code-button {
-  will-change: transform;
+.demo, .code-button, .section {
+  will-change: transform, scroll-position;
 }
 
 .menu-bar {
