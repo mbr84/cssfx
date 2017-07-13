@@ -7,6 +7,12 @@ body {
   font-family: 'Catamaran', sans-serif;
 }
 
+h1.hidden {
+    font-size: 0;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
 /* section scroll */
 
 .contents, .mobile-buttons {
